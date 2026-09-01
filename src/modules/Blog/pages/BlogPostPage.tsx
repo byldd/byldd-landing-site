@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { PageHero } from "@/components/site/page-hero";
 import { Container } from "@/components/ui";
-import { Reveal } from "@/components/motion/primitives";
 import { CTA } from "@/components/sections/cta";
-import { blogPosts, getPost } from "@/modules/Blog/utils/blog";
+import { getPost } from "@/modules/Blog/utils/blog";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -19,55 +15,65 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, url: `/blog/${post.slug}/` },
+    title: post.meta?.title || post.title,
+    description: post.meta?.description || post.excerpt,
+    openGraph: {
+      title: post.meta?.title || post.title,
+      description: post.meta?.description || post.excerpt,
+      url: `/blog/${post.slug}/`,
+    },
   };
 }
 
 export async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
+
+  const featuredImage =
+    post.featuredImage && typeof post.featuredImage !== "string" ? post.featuredImage : null;
+  const featuredImageUrl = featuredImage?.url;
+  const featuredImageWidth = featuredImage?.width ?? 1600;
+  const featuredImageHeight = featuredImage?.height ?? 900;
 
   return (
     <main>
-      <PageHero eyebrow={`${post.readingTime} min read`} title={post.title} subtitle={post.excerpt} />
+      <PageHero eyebrow={`${post.readingTime ?? 5} min read`} title={post.title} subtitle={post.excerpt} />
 
       <section className="bg-brand-mist py-24 md:py-32">
-        <Container className="max-w-2xl">
-          <Reveal>
-            <article className="flex flex-col gap-5">
-              {post.blocks.map((b, i) =>
-                b.type === "h" ? (
-                  <h2 key={i} className="mt-6 text-2xl font-semibold text-brand-ink">
-                    {b.text}
-                  </h2>
-                ) : b.type === "list" ? (
-                  <ul key={i} className="flex list-disc flex-col gap-2 pl-6 text-lg leading-relaxed text-brand-ink/75 marker:text-brand-purple">
-                    {(b.items ?? []).map((it, j) => (
-                      <li key={j}>{it}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p key={i} className="text-lg leading-relaxed text-brand-ink/75">
-                    {b.text}
-                  </p>
-                ),
-              )}
-            </article>
-          </Reveal>
+        <Container>
+          {featuredImageUrl && (
+            <figure className="mx-auto mb-14 max-w-5xl overflow-hidden rounded-3xl md:mb-20">
+              <Image
+                src={featuredImageUrl}
+                alt={featuredImage.alt || post.title}
+                width={featuredImageWidth}
+                height={featuredImageHeight}
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1024px"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
+          )}
 
-          <div className="mt-14 border-t border-brand-ink/10 pt-8">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-violet hover:text-brand-purple"
-            >
-              ← All insights
-            </Link>
+          <div className="w-auto">
+            <article>
+              <RichText
+                data={post.content}
+                className="flex flex-col gap-5 text-lg leading-relaxed text-brand-ink/75 [&_a]:font-medium [&_a]:text-brand-violet [&_a]:underline [&_a]:underline-offset-4 [&_blockquote]:border-l-4 [&_blockquote]:border-brand-purple [&_blockquote]:pl-5 [&_h2]:mt-6 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-brand-ink [&_h3]:mt-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-brand-ink [&_ol]:flex [&_ol]:list-decimal [&_ol]:flex-col [&_ol]:gap-2 [&_ol]:pl-6 [&_ul]:flex [&_ul]:list-disc [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:pl-6 [&_li]:pl-1 [&_li::marker]:text-brand-purple"
+              />
+            </article>
+
+            <div className="mt-14 border-t border-brand-ink/10 pt-8">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-violet hover:text-brand-purple"
+              >
+                ← All insights
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

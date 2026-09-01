@@ -10,7 +10,7 @@ export const nav = [
   { label: "How We Work", href: "/#process" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "About", href: "/about" },
-  { label: "Insights", href: "/blog" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 /**
@@ -373,7 +373,7 @@ export const footer = {
       links: [
         { label: "How We Work", href: "/#process" },
         { label: "About", href: "/about" },
-        { label: "Insights", href: "/blog" },
+        { label: "Blog", href: "/blog" },
         { label: "FAQs", href: "/faqs" },
         { label: "Contact", href: "/contact" },
       ],

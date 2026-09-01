@@ -1,4 +1,4 @@
 export type LegalSection = {
   heading: string;
-  body: string[];
+  body: (string | { heading: string; text: string })[];
 };

@@ -4,79 +4,141 @@ export const LAST_UPDATED = "July 2026";
 
 type LegalDoc = { title: string; intro: string; sections: LegalSection[] };
 
+
 export const terms: LegalDoc = {
   title: "Terms of Service",
   intro: "The terms that govern your use of the Byldd website and our engagements.",
   sections: [
     {
-      heading: "1. Agreement",
+      heading: "1. Acceptance of Terms",
       body: [
-        "By accessing byldd.com or engaging Byldd for services, you agree to these terms. If you're entering into them on behalf of a company, you confirm you have authority to do so.",
+        "By using our website or engaging with Byldd’s services, you agree to these Terms of Service.",
       ],
     },
     {
-      heading: "2. Services",
+      heading: "2. Services Overview",
       body: [
-        "Byldd provides product strategy, design, and software development services. The specific scope, deliverables, timeline, and fees for any engagement are set out in a separate statement of work agreed between us.",
+        "Byldd provides software design, development, and product consulting services for startups and enterprises. Specific terms for each engagement are outlined in client agreements.",
       ],
     },
     {
       heading: "3. Intellectual property",
       body: [
-        "Unless agreed otherwise in writing, ownership of the deliverables we build for you transfers to you on full payment. Byldd retains rights to its pre-existing tools, know-how, and general methodologies.",
+        "All content, design assets, and materials on this site are the property of Byldd unless otherwise noted. You may not copy, reproduce, or redistribute without written consent.",
       ],
     },
     {
-      heading: "4. Confidentiality",
+      heading: "4. User Responsibilities",
       body: [
-        "Each party will keep the other's non-public information confidential and use it only to perform the engagement.",
+        "You agree not to misuse our site or services, engage in illegal activity, or attempt to disrupt systems or access data you’re not authorized to.",
       ],
     },
     {
-      heading: "5. Liability",
+      heading: "5. Liability Disclaimer",
       body: [
-        "The website is provided 'as is'. To the extent permitted by law, Byldd is not liable for indirect or consequential loss arising from use of this site. Liability under any engagement is governed by its statement of work.",
+        "While we strive for accuracy and uptime, Byldd is not liable for any indirect, incidental, or consequential damages resulting from website use or service reliance.",
       ],
     },
     {
-      heading: "6. Contact",
-      body: ["Questions about these terms? Email contactus@byldd.com."],
+      heading: "6. Termination",
+      body: ["We reserve the right to suspend or terminate access to the website or services for violations of these terms.",],
+    },
+    {
+      heading: "7. Governing Law",
+      body: ["These terms are governed by the laws of Hong Kong (or your company’s legal jurisdiction).",],
+    },
+     {
+      heading: "BYLDD SMS Terms & Conditions By opting in to receive SMS messages from BYLDD, you agree to the following:",
+      body: [""],
+    },
+     {
+      heading: "1. Program Description",
+      body: ["You will receive text messages related to your inquiry, such as responses from our team, appointment scheduling, and reminders."],
+    },
+     {
+      heading: "2. Age Requirement",
+      body: ["By accessing or using our services and agreeing to receive mobile messages, you represent and warrant that you are at least 18 years of age. Our services are not intended for use by anyone under the age of 18."],
+    },
+     {
+      heading: "3. Privacy",
+      body: ["Your use of our services is also governed by our Privacy Policy. Please review our Privacy Policy at Privacy Policy to understand our practices regarding your personal data."],
+    },
+    {
+      heading: "4. Opt-Out",
+      body: ["You can cancel the SMS service at any time. Just text 'STOP' to the shortcode or number we message you from. After you send the SMS message 'STOP' to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us."],
+    },
+    {
+      heading: "5. Help",
+      body: ["If you are experiencing issues with the messaging program you can reply with the keyword 'HELP' for more assistance."],
+    },
+    {
+      heading: "6. Message Frequency",
+      body: ["Message frequency varies."],
+    },
+    {
+      heading: "7. Pricing",
+      body: ["Message and data rates may apply."],
+    },
+    {
+      heading: "8. Carrier Liability",
+      body: ["Carriers are not liable for delayed or undelivered messages."],
     },
   ],
 };
 
 export const privacy: LegalDoc = {
   title: "Privacy Policy",
-  intro: "How Byldd collects, uses, and protects the information you share with us.",
+  intro: "At Byldd, your privacy isn’t just a formality — it’s part of how we build trust. This Privacy Policy explains what information we collect, how we use it, and how we keep it secure when you visit our website or work with us.",
   sections: [
     {
-      heading: "1. What we collect",
+      heading: "1. Information We Collect",
       body: [
-        "We collect information you provide directly — such as your name, email, and project details when you contact us — and basic, aggregated analytics about how the site is used.",
+        {
+  heading: "Personal data",
+  text: "Name, email address, phone number, and company information submitted through forms or inquiries.",
+},
+{
+  heading: "Usage data",
+  text: "Browser type, IP address, device information, and interactions on our website.",
+},
+{
+  heading: "Cookies",
+  text: "Used to analyse traffic, personalise experiences, and improve site functionality.",
+},
+{
+  heading: "Your Rights and Data Deletion",
+  text: "You have the right to request access to the personal data we hold about you, or to request that we delete your data entirely. To exercise these rights or to withdraw your consent for SMS messaging, please email us at contactus@byldd.com or reply STOP to any text message you receive from us.",
+},
       ],
     },
     {
-      heading: "2. How we use it",
+      heading: "2. How We Use Your Information",
       body: [
-        "We use your information to respond to enquiries, deliver our services, and improve the site. We do not sell your personal information.",
+        "To respond to inquiries and provide requested services.",
+        "To improve our website and offerings.",
+        " To send updates or newsletters (only if you opt in)",
+        " To ensure compliance with applicable laws",
+
       ],
     },
     {
-      heading: "3. Sharing",
+      heading: "3. SMS/Text Messaging",
       body: [
-        "We share information only with service providers who help us operate (for example, email or analytics tools), and where required by law.",
+        { heading:"SMS/Text Messaging",
+          text: "By checking the SMS consent box on our website forms, you agree to receive text messages from Byldd related to your inquiry, including responses to your questions, appointment scheduling, and reminders. Consent is not a condition of purchase or of working with us. Message frequency varies. Message and data rates may apply. Reply STOP at any time to opt out. Reply HELP for assistance, or contact us at contactus@byldd.com. We do not share, sell, or rent mobile phone numbers or SMS opt-in data to third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. Limited sharing with vendors who deliver our messages occurs only as necessary to send messages to you.",
+        }
       ],
     },
     {
-      heading: "4. Your rights",
+      heading: "4. Data Security",
       body: [
-        "You can request access to, correction of, or deletion of your personal information at any time by emailing contactus@byldd.com.",
+        "We use SSL encryption, secure servers, and limited data access to protect your personal information. Your data is not sold or rented to third parties.",
       ],
     },
     {
-      heading: "5. Retention & security",
+      heading: "5. Cookies",
       body: [
-        "We keep personal information only as long as needed for the purposes above and take reasonable measures to protect it.",
+        "We use cookies to enhance user experience, monitor analytics, and remember your preferences. You can modify or disable cookies in your browser settings.",
       ],
     },
   ],
@@ -87,26 +149,36 @@ export const cookies: LegalDoc = {
   intro: "How and why byldd.com uses cookies.",
   sections: [
     {
-      heading: "1. What cookies are",
+      heading: "What Are Cookies?",
       body: [
-        "Cookies are small text files stored on your device that help websites work and understand how they're used.",
+        "Cookies are small files placed on your device to store information. We use them to enhance performance, improve navigation, and tailor your experience.",
       ],
     },
     {
-      heading: "2. How we use them",
+      heading: "Types of Cookies We Use",
+      body: [ "",],
+    },
+    {
+      heading: "1. Essential Cookies",
       body: [
-        "We use essential cookies to run the site and, where enabled, privacy-respecting analytics cookies to understand aggregate usage so we can improve the experience.",
+        "Required for core site functionality",
       ],
     },
     {
-      heading: "3. Managing cookies",
-      body: [
-        "You can control or delete cookies through your browser settings. Disabling some cookies may affect how parts of the site function.",
-      ],
+      heading: "2. Analytics Cookies",
+      body: ["Measure performance and visitor behavior"],
     },
-    {
-      heading: "4. Contact",
-      body: ["Questions about cookies? Email contactus@byldd.com."],
+      {
+      heading: "3.  Preference Cookies",
+      body: ["Store language and display settings"],
+    },
+      {
+      heading: "4.  Marketing Cookies",
+      body: ["(Used only if you opt in) Personalize ads and content"],
+    },
+      {
+      heading: "Managing Cookies",
+      body: ["You can accept, reject, or manage cookie preferences directly through our banner or browser settings."],
     },
   ],
 };

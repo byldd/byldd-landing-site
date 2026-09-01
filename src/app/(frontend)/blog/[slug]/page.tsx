@@ -1,11 +1,10 @@
 import {
   BlogPostPage,
   generateMetadata,
-  generateStaticParams,
 } from "@/modules/Blog/pages/BlogPostPage";
 
-export const dynamicParams = false;
-export { generateMetadata, generateStaticParams };
+export const dynamic = "force-dynamic";
+export { generateMetadata };
 
 export default function Page(props: PageProps<"/blog/[slug]">) {
   return <BlogPostPage params={props.params} />;

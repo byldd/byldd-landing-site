@@ -23,13 +23,21 @@ export function LegalPage({
             <Eyebrow tone="muted">Last updated: {updated}</Eyebrow>
           </Reveal>
           <div className="mt-10 flex flex-col gap-10">
-            {sections.map((s) => (
-              <Reveal key={s.heading}>
-                <h2 className="text-2xl font-semibold text-brand-ink">{s.heading}</h2>
+            {sections.map((section) => (
+              <Reveal key={section.heading}>
+                <h2 className="text-2xl font-semibold text-brand-ink">{section.heading}</h2>
+
                 <div className="mt-3 flex flex-col gap-3 leading-relaxed text-brand-ink/70">
-                  {s.body.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
+                  {section.body.map((item, index) =>
+                    typeof item === "string" ? (
+                      <p key={index}>{item}</p>
+                    ) : (
+                      <p key={item.heading}>
+                        <span className="font-semibold text-brand-ink">{item.heading}:</span>{" "}
+                        {item.text}
+                      </p>
+                    ),
+                  )}
                 </div>
               </Reveal>
             ))}
