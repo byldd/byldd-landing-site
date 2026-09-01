@@ -9,6 +9,7 @@ import sharp from 'sharp'
 
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
+import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
 
 const filename = fileURLToPath(import.meta.url)
@@ -24,7 +25,7 @@ export default buildConfig({
       titleSuffix: '— Byldd',
     },
   },
-  collections: [Pages, Media, Users],
+  collections: [Pages, Posts, Media, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

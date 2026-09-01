@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
-
+/* 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -126,5 +126,144 @@
   }
   html {
     @apply font-sans;
+  }
+} */
+
+
+@theme {
+  --color-brand-purple: #834dfb;
+  --color-brand-purple-light: #a98bfb;
+  --color-brand-violet: #6b34e0; /* deeper purple for small labels/eyebrows — clears AA on light bg */
+  --color-brand-gradient-end: #b08cff; /* canonical sparkle gradient endpoint */
+  --color-brand-lavender: #ddd6f5;
+  --color-brand-mist: #f1f0f6;
+  --color-brand-cream: #e7ddce;
+  --color-brand-cream-hover: #efe7d9;
+  --color-brand-ink: #0d0d0d;
+  --color-brand-navy: #241544;
+  --color-brand-night: #160c2e;
+
+  --radius-card: 2rem;
+
+  --shadow-soft: 0 1px 2px rgba(13, 13, 13, 0.04), 0 12px 40px -12px rgba(36, 21, 68, 0.18);
+  --shadow-glow: 0 0 0 1px rgba(131, 77, 251, 0.18), 0 24px 70px -20px rgba(131, 77, 251, 0.45);
+}
+
+/* next/font CSS variables wired into Tailwind's font utilities */
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-general), var(--font-jakarta), ui-sans-serif, sans-serif;
+}
+
+:root {
+  --background: var(--color-brand-mist);
+  --foreground: var(--color-brand-ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* clear the fixed header on anchor jumps */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-brand-purple) 28%, transparent);
+    color: var(--color-brand-ink);
+  }
+  /* Tighter, more confident display type — matches the deck's headline weight */
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    line-height: 0.98;
+  }
+  /* Eyebrow / label treatment: General Sans, uppercase, wide tracking */
+  .eyebrow {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* The signature "Byldd ___" gradient sweep on key phrases */
+  .text-gradient {
+    background: linear-gradient(96deg, var(--color-brand-purple) 0%, var(--color-brand-gradient-end) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  @keyframes byldd-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(6deg); }
+  }
+  @keyframes byldd-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.06); }
+  }
+  @keyframes byldd-rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes byldd-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-float { animation: byldd-float 9s ease-in-out infinite; }
+  .animate-float-slow { animation: byldd-float 14s ease-in-out infinite; }
+  .animate-pulse-glow { animation: byldd-pulse 7s ease-in-out infinite; }
+  .animate-rise { animation: byldd-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .marquee-track { animation: byldd-marquee 36s linear infinite; }
+}
+
+/* Hide scrollbar chrome on a horizontally-scrollable container while keeping
+   it scrollable — used by the reduced-motion marquee fallback, where a native
+   overflow-x:auto would otherwise show the OS scrollbar track. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* No-JS / pre-hydration safety net: scroll-reveal wrappers ship with inline
+   opacity:0 from Motion; without JS they'd never un-hide, so force them visible. */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

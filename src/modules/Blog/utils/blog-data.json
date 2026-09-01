@@ -1,0 +1,1737 @@
+[
+  {
+    "slug": "how-much-does-it-cost-to-build-an-app-part-1",
+    "title": "How Much Does It Cost To Build A Product?",
+    "excerpt": "Part 1 of our guide breaks down app development costs, helping you budget smartly for your startup’s first product.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "If you're an aspiring tech founder and you’re trying to figure out how much of an investment your idea is going to take, this post is for you. Ideally, you want to figure this out without having to talk to someone trying to sell you something. Understandable. Let's get started."
+      },
+      {
+        "type": "h",
+        "text": "How much does it cost to build a product?"
+      },
+      {
+        "type": "p",
+        "text": "Typically, for most dev shops, it'll be between $50K and $100K."
+      },
+      {
+        "type": "p",
+        "text": "With Byldd, about $15K and under 2 months."
+      },
+      {
+        "type": "h",
+        "text": "How can you build a quality product with such a small investment?"
+      },
+      {
+        "type": "p",
+        "text": "That’s the real question. There are a couple of reasons."
+      },
+      {
+        "type": "p",
+        "text": "The cost of creating a software product is influenced by a few factors, but it mostly comes down to the amount of developer hours needed. The fewer hours needed from developers, the quicker and cheaper it will be."
+      },
+      {
+        "type": "p",
+        "text": "Typically, the cost can range from $50K to $100K, with a development period of anywhere from 3 to 6 months. This timeline and budget depend on the expertise of the development team and the intricacy of the product, as well as other factors."
+      },
+      {
+        "type": "p",
+        "text": "At Byldd, we prioritize launching products quickly and cost-effectively. We aim to get you to market as fast as possible so you can secure paying customers or raise funds for future product development."
+      },
+      {
+        "type": "p",
+        "text": "To make that happen, we have to reduce the number of developer hours involved in the product, and there are a few specific ways we do this:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "We limit the scope of the MVP . We focus on building a product that solves the problem well enough that customers will pay for it. The MSP (minimum sellable product) is not as feature-rich as the product will eventually become. We cut out whatever isn’t necessary for version 1, but that doesn't mean it's clunky. The product NEEDS to be intuitive, sleek, modern, and easy to use - it also needs to be simple and solve the core problem well enough that customers will pay for it",
+          "We use our own IP extensively. Our proprietary IP can write code based on the nature of the product. For example, it can automatically create the functionality to create, edit, or delete users for a product that will need a user database. This easily accelerates development timeline by 2 months.",
+          "We have modules for commonly needed functions. Our product development process has been streamlined through the creation of reusable code segments for routine functions. For example, integrating subscription payments into a product, complete with billing, invoices, and revenue dashboards, is as simple as checking a box. Essential features like user logins, registration, payments, subscriptions, admin dashboards, image uploads, video streaming, direct messaging, and more come pre-configured and won’t incur any additional development costs or time."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "This approach allows us to save around 80-90% of the development hours needed. This allows us to charge founders less money, and we can usually launch a sellable product under $15K in 4-6 weeks."
+      }
+    ]
+  },
+  {
+    "slug": "product-development-outsourcing-strategies",
+    "title": "Product Development Outsourcing Strategies for Faster Innovation and Reduced Costs",
+    "excerpt": "Unlock faster innovation and reduced costs with strategic product development outsourcing.",
+    "readingTime": 5,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Speed matters. So does staying lean. Outsourcing product development-when done right-unlocks both. It gives startups and scaleups alike access to specialized expertise without the long-term commitment of building a team from scratch. The goal isn’t just saving money-it’s reducing risk, accelerating go-to-market, and freeing up internal bandwidth to focus on your real differentiators: strategy, brand, customers."
+      },
+      {
+        "type": "h",
+        "text": "What Is Product Development Outsourcing?"
+      },
+      {
+        "type": "p",
+        "text": "At its core, it’s partnering with external teams to build all or parts of your product. That could mean design, engineering, testing, deployment, or all of it. The best setups are collaborative and dynamic, where your external team functions like an embedded partner-not a vendor."
+      },
+      {
+        "type": "p",
+        "text": "This isn’t just for software. It works across hardware, digital services, and even tech-enabled ops."
+      },
+      {
+        "type": "h",
+        "text": "Why Outsourcing Can Be a Superpower"
+      },
+      {
+        "type": "p",
+        "text": "Most early-stage founders-especially the non-technical ones-fall into one of two traps: either they overbuild (spending $50K-100K on version 1), or they underbuild (handing a vague spec to a freelancer and praying it works). Both are recipes for heartbreak."
+      },
+      {
+        "type": "list",
+        "items": [
+          "You avoid permanent headcount and fixed overhead.",
+          "You tap into talent that’s done this before-many times over.",
+          "You move faster and smarter, getting to users and revenue quicker.",
+          "And you stay focused on the business while letting others handle the tech.",
+          "That’s the real value: not just saving money, but investing your limited time and resources in the highest-leverage areas."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "The Hidden Pitfalls to Watch For"
+      },
+      {
+        "type": "p",
+        "text": "Of course, outsourcing isn’t magic. Done wrong, it becomes a cost center, not a growth lever."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Misaligned expectations and unclear specs are the #1 reason projects fail.",
+          "Without strong PM discipline and product context, output can miss the mark.",
+          "Time zones, cultural gaps, and lack of shared language (product language, not English) can slow things down or create misfires.",
+          "And without airtight contracts, you might risk your IP."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "How We’ve Built Byldd to Solve Exactly This"
+      },
+      {
+        "type": "p",
+        "text": "At Byldd, we built our entire company to fix this problem-helping founders build MVPs that are just good enough to get revenue, validate the idea, and then iterate based on real user feedback."
+      },
+      {
+        "type": "p",
+        "text": "We’ve automated massive chunks of the dev process. Think: plug-and-play modules for payments, dashboards, user management, notifications, and more. Our proprietary IP literally writes code based on structured input. That means we launch in 30-45 days for under $15K-sometimes under $10K-and our clients skip the typical 3–6 month build phase."
+      },
+      {
+        "type": "p",
+        "text": "And it’s not just code. We act as a thinking partner-helping you figure out what to build first, what to skip, how to talk to customers, and how to set up your roadmap so that you can scale when traction hits."
+      },
+      {
+        "type": "h",
+        "text": "Best Practices for Outsourcing Product Development (The Right Way)"
+      },
+      {
+        "type": "p",
+        "text": "If you’re outsourcing product development, you're not just hiring hands-you’re bringing on strategic partners. Here’s how to make it work:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Anchor Everything in the Problem You’re Solving Define your product’s job. Not what it looks like, but what problem it solves. Everything else is noise-cut it.",
+          "Limit Scope with Surgical Precision Don’t build the dream. Build the test. Your v1 should be the fastest route to either a customer saying “yes” or giving you insight into why they didn’t.",
+          "Prioritize Communication and Context Communication breaks when context is missing. Give your partner clarity on goals, users, and the “why” behind decisions-not just a list of tasks.",
+          "Work With a Team That Understands Startups Not all vendors are built the same. You want a team that gets early-stage realities-tradeoffs, pivots, feedback loops-not just shipping tickets.",
+          "Set Weekly Checkpoints and Metrics That Matter Whether it’s dev velocity, prototype completion, or user feedback loops-track progress with real, measurable outcomes. Avoid vanity metrics.",
+          "Think Long-Term From Day One The right partner grows with you. Plan for handoff points, code maintainability, and knowledge transfer early on."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "FAQs"
+      },
+      {
+        "type": "p",
+        "text": "Q: What are the significant benefits of outsourcing product development? The big one? Speed to learning. You get to market faster, cheaper, and with access to experience you likely don’t have in-house. You also save on hiring time, reduce fixed costs, and gain the flexibility to scale up or down as needed-all while staying laser-focused on your customers and growth."
+      },
+      {
+        "type": "p",
+        "text": "Q: How do you select a reliable product development outsourcing partner? Look for thinking partners, not task takers. Prioritize teams that ask the right questions, challenge your assumptions, and have a track record of helping founders get to revenue. Bonus points if they’ve built IP, modular systems, or internal tooling to move fast-like we have at Byldd."
+      },
+      {
+        "type": "p",
+        "text": "Q: What are the common pitfalls to avoid in product development outsourcing?"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Scoping based on features, not outcomes.",
+          "Picking vendors who say yes to everything.",
+          "Failing to set up IP and data ownership early.",
+          "These lead to bloated timelines, half-baked builds, and product-market flops."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Q: What strategies help ensure IP protection when outsourcing product development? Use strong NDAs and MSAs that explicitly cover IP ownership, work-for-hire clauses, and data security. Make sure code repos are owned by you from day one. At Byldd, we assign IP and access control protocols from the start-every line of code belongs to the founder."
+      },
+      {
+        "type": "p",
+        "text": "Q: How do outsourcing teams handle communication and project management efficiently? It’s all about rhythm and transparency. Weekly check-ins, shared task boards, async updates, and direct lines of communication. At Byldd, every founder works with a dedicated product manager and gets a clear roadmap with milestone-based reporting. You’ll always know what’s happening, why, and what’s next."
+      },
+      {
+        "type": "p",
+        "text": "Q:What are best practices for integrating outsourced product development with in-house teams? Start with clear ownership boundaries. Set up a single source of truth for specs, workflows, and feedback. Use shared tools (Slack, Notion, Shortcut, etc.), and bring your external team into the same loop as internal stakeholders. Think of them as an extension-not an add-on."
+      },
+      {
+        "type": "h",
+        "text": "Conclusion"
+      },
+      {
+        "type": "p",
+        "text": "Outsourcing isn’t a shortcut-it’s a strategy. Done right, it can shave months off your launch timeline, unlock expert talent, and get you real customer feedback faster than most internal teams can manage. But it only works if you treat it as a partnership, not a transaction."
+      },
+      {
+        "type": "p",
+        "text": "That’s exactly what we do at Byldd. We help you build something customers will pay for-fast, lean, and built to scale. If you're ready to move from idea to revenue, we should talk."
+      }
+    ]
+  },
+  {
+    "slug": "custom-software-development-your-guide-to-enterprise-innovation-and-growth",
+    "title": "Custom Software Development: Your Guide to Enterprise Innovation and Growth",
+    "excerpt": "If you’re running an enterprise without an internal tech team, here’s the reality: your off-the-shelf tools weren’t built for you.",
+    "readingTime": 5,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "If you’re running an enterprise without an internal tech team, here’s the reality: your off-the-shelf tools weren’t built for you. They weren’t built to scale with your workflows, integrate with your stack, or deliver the kind of visibility your operations demand."
+      },
+      {
+        "type": "p",
+        "text": "And when you outsource development, you end up managing deliverables - not outcomes."
+      },
+      {
+        "type": "p",
+        "text": "This is where custom software development steps in. Not just as a project, but as a strategic partnership. One that doesn’t just build software - it builds systems that drive efficiency, automate operations, and evolve with your business."
+      },
+      {
+        "type": "p",
+        "text": "At Byldd , we partner with enterprises to become that product team you don’t have - delivering enterprise-grade custom applications fast, cost-effectively, and aligned with your strategic roadmap."
+      },
+      {
+        "type": "h",
+        "text": "Understanding Custom Software Development"
+      },
+      {
+        "type": "p",
+        "text": "Custom software development - when done right - is about building leverage into your business ."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tailored Functionality : You don’t need more features. You need the right ones - the ones that solve real operational bottlenecks.",
+          "Workflow Alignment : Every system we build reflects how you operate. Not how some SaaS startup decided you should.",
+          "Ownership : You control the IP, the roadmap, and the direction. No vendor lock-ins. No recurring licensing traps."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Think of it as an internal product team - minus the hiring, training, and burn."
+      },
+      {
+        "type": "h",
+        "text": "1. Real Business Problem Solving"
+      },
+      {
+        "type": "p",
+        "text": "Every application we deliver is designed to solve a specific pain point. Whether it’s syncing disconnected systems, automating repetitive tasks, or delivering better visibility across functions - the focus is always outcomes, not features."
+      },
+      {
+        "type": "h",
+        "text": "2. Digital Transformation That Works"
+      },
+      {
+        "type": "p",
+        "text": "Transformation isn’t a tech trend. It’s about using technology to actually do business better . Custom software allows you to:"
+      },
+      {
+        "type": "p",
+        "text": "Eliminate operational drag Drive faster decision-making with real-time data Build around your customers - not around someone else’s product roadmap"
+      },
+      {
+        "type": "h",
+        "text": "3. Long-Term Efficiency Gains"
+      },
+      {
+        "type": "p",
+        "text": "Custom software lets you codify what works. Automate it. Scale it. That’s how you reduce costs without cutting corners - and set yourself up for growth that doesn’t break ops."
+      },
+      {
+        "type": "h",
+        "text": "Core Components of Custom Software Development"
+      },
+      {
+        "type": "p",
+        "text": "What we’ve learned building dozens of systems for lean enterprise teams:"
+      },
+      {
+        "type": "h",
+        "text": "User-Friendly Applications"
+      },
+      {
+        "type": "p",
+        "text": "Good software is invisible. It fits into your workflows. It’s intuitive. It doesn’t need a training manual. That’s where UI/UX design rooted in user behaviour - not aesthetics - makes a difference."
+      },
+      {
+        "type": "h",
+        "text": "Seamless System Integration"
+      },
+      {
+        "type": "p",
+        "text": "Most enterprise headaches come from data silos. Custom software becomes the connective tissue between your CRM, ERP, billing systems, and more - reducing manual inputs and increasing data trust."
+      },
+      {
+        "type": "h",
+        "text": "Scalable, Connected Platforms"
+      },
+      {
+        "type": "p",
+        "text": "We don’t build one-off tools. We build infrastructure. Modular platforms that scale across teams and adapt as your business evolves. Think of it as setting the foundation for your next five years of growth."
+      },
+      {
+        "type": "h",
+        "text": "Custom Software vs. Off-the-Shelf : Why It Matters for Enterprises?"
+      },
+      {
+        "type": "p",
+        "text": "Off-the-shelf makes sense when your processes are cookie-cutter. But if you’re building anything complex, layered, or proprietary - custom is non-negotiable ."
+      },
+      {
+        "type": "p",
+        "text": "Enterprise investments are about long-term value. With custom software, here’s how to assess ROI:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Time Savings : Fewer manual hours, fewer mistakes",
+          "Speed to Insight : Real-time visibility, better decisions",
+          "Reduced Software Spend : No stacked subscriptions or licensing bloat",
+          "Growth Enablement : Systems that let you scale without chaos"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "And because you own the stack - the payoff compounds."
+      },
+      {
+        "type": "h",
+        "text": "The Collaborative Development Process"
+      },
+      {
+        "type": "p",
+        "text": "Here’s the difference: we’re not just another dev shop. We embed ourselves into your business. We use agile development to iterate fast, validate often, and align with your outcomes at every step."
+      },
+      {
+        "type": "p",
+        "text": "We’re thinking partners - not just coders. And we build systems that work not just technically, but strategically ."
+      },
+      {
+        "type": "p",
+        "text": "Outsourcing your software shouldn’t feel like a compromise. Done right, it’s an advantage - especially when you partner with a team that understands business, not just tech."
+      },
+      {
+        "type": "p",
+        "text": "Custom software development is your strategic blueprint for enterprise growth . It’s how you stay lean, move fast, and keep control - without building an in-house team from scratch."
+      },
+      {
+        "type": "p",
+        "text": "If you’re ready to build systems that don’t just work - but work for you - let’s talk."
+      },
+      {
+        "type": "h",
+        "text": "FAQs"
+      },
+      {
+        "type": "p",
+        "text": "Q1: What is custom software development? Custom software development is the process of designing, building, and deploying technology tailored specifically to a business’s unique needs. Unlike off-the-shelf solutions, it aligns precisely with your operations, goals, and growth plans - enabling smarter, leaner execution."
+      },
+      {
+        "type": "p",
+        "text": "Q2: How does custom software benefit enterprises? It’s all about alignment and leverage. Custom software helps streamline operations, enhance customer experiences, and scale seamlessly. It integrates tightly with existing tools and systems, provides exactly the features your team needs (and none of the fluff), and becomes a competitive edge that’s hard to replicate."
+      },
+      {
+        "type": "p",
+        "text": "Q3: Is custom software more expensive than off-the-shelf solutions?"
+      },
+      {
+        "type": "p",
+        "text": "Upfront - yes. Over time - absolutely not. While the initial costs might be higher, custom software saves significantly on licensing, workarounds, and inefficiencies. At Byldd , we focus on ROI from day one by helping founders build lean, revenue-generating MVPs for as low as $10–15K within 4–6 weeks."
+      },
+      {
+        "type": "p",
+        "text": "Q4: How long does it take to develop custom software?"
+      },
+      {
+        "type": "p",
+        "text": "It depends on complexity, but our goal is speed without sacrificing quality. A typical MVP at Byldd takes 4 to 6 weeks. We leverage proprietary automation and reusable modules to cut down development time by up to 80–90%, helping founders get to market faster."
+      },
+      {
+        "type": "p",
+        "text": "Q5: Can custom software integrate with existing systems? Absolutely. Seamless integration is one of the core strengths of custom development. Whether it's CRM, ERP, payment gateways, or third-party APIs, we ensure your software works with your current ecosystem, enabling smooth data flow and operational efficiency."
+      },
+      {
+        "type": "p",
+        "text": "Q6: What makes Byldd’s approach to custom development different? We’re built for velocity and validation. Our proprietary tools automate standard features - logins, subscriptions, admin dashboards - so your budget and timeline go toward what actually moves the needle. We act as thinking partners, not just builders, and stay with you long-term to help iterate, grow, and scale."
+      }
+    ]
+  },
+  {
+    "slug": "tips-to-avoid-ai-fix-loop",
+    "title": "Tips to Avoid Falling Into an AI Fix Loop",
+    "excerpt": "Avoid common pitfalls in AI development with Byldd's expert tips. Enhance your workflow and build smarter by preventing fix loops in your projects.",
+    "readingTime": 9,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "At Byldd, we’ve worked closely with early-stage startups and founders navigating the pitfalls of AI-powered development tools. This guide compiles our top practical insights to help you build smarter and avoid common fix-loop traps."
+      },
+      {
+        "type": "p",
+        "text": "Ideally, you want to prevent these loops before they start (or at least make them less likely). Here are some best practices to avoid getting stuck in the first place :"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Write clear and specific prompts/instructions: Many fix loops begin with ambiguity. If you tell the AI, “Fix the login, it doesn’t work,” it might not know what “doesn’t work” means and try random fixes. Instead, describe the problem in detail: e.g., “After logging in, the app should go to the dashboard, but instead it stays on the login page.” The more context you give (including error messages or what you expected vs what happened), the better the AI’s first attempt will be. Clear problem descriptions reduce wild goose chases.",
+          "Always provide the error messages and logs: Don’t make the AI guess the error – feed it the information. Copy-paste the exact error text or describe the wrong behavior precisely. For example, if a terminal or console error appears, include it in your prompt. Users have found that giving all relevant errors/output to the AI leads to more direct fixes, whereas leaving it to infer the issue can lead to loops. Think of it as giving the AI the puzzle pieces it needs.",
+          "Take an incremental approach (small steps): Build or debug in bite-sized pieces. If you ask the AI to implement a huge feature all at once, it might introduce multiple bugs at once, making it harder to pinpoint issues. Instead, have it add or fix one thing at a time. For example, enable an authentication step first, test it, then move to the next part. Many experienced AI users adopt a test-driven or iterative workflow : add one feature, run it, fix those bugs, then proceed. This way, if something breaks, you know exactly which change caused it, and you won’t tumble into a cascade of errors. As one AI dev guide notes, “smaller increments allow for rapid diagnosis… preventing runaway complexity”. In practice: turn off any “auto-fix everything” modes and handle changes one by one.",
+          "Use version control or save points: If your platform allows, use git or the platform’s version history to your advantage. Commit a working state of your app before adding a new feature or accepting an AI fix. That way, if you sense a loop beginning, you can revert to the last good version easily. A community tip is to mark commits where everything works (even using emojis or tags like “working build”) and you can always roll back. Lovable, for instance, integrates with GitHub; make sure to connect that so you have a safety net. If the AI breaks something badly, it might be faster to revert and try a new approach than to untangle a mess.",
+          "Plan and structure before coding: When starting a project with AI, it helps to outline what you’re building (in plain English or pseudo-code) before the AI writes all the code. This acts like a roadmap for the AI and reduces meandering. For instance, you can write a short design doc or even a bulleted list: what pages/components you need, what each should do, what technologies to use. Provide this upfront to the AI to anchor it. If the AI has this blueprint, it’s less likely to produce a structurally unsound solution that it later struggles to fix. In Lovable’s docs, they advise a clear prompt structure (project overview, key components, user flow, etc.) for better results.",
+          "Don’t blindly trust – verify as you go: Especially if you’re not a coding expert, it’s tempting to trust the AI’s confident assertions. But always test the app after a fix or generation. Click the buttons, try the feature, or run the code to see if it actually works. AI assistants can introduce subtle issues (or even big ones) that aren’t obvious until running the app.",
+          "Know when to stop and switch modes: Perhaps most importantly, if you notice the AI struggling or the conversation going in circles, stop the “fix” mode and switch tactics (more on this in the next section). On Replit, for example, you might stop using the Ghostwriter Agent (which autonomously writes code) and switch to Ghostwriter’s Chat mode (Assistant) to discuss the problem. On Lovable, if the Try to Fix button fails a couple of times, don’t click it ten more times – the docs literally say if it fails more than three times in a row, it likely won’t resolve it automatically. Time to try something else, like manual debugging or using chat. In Cursor or any IDE with an AI, that might mean opening a fresh chat or even trying a different model (if you have GPT-4 vs another model) to get a new perspective."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "How to Break Out of an AI Fix Loop (Step by Step)"
+      },
+      {
+        "type": "p",
+        "text": "When we onboard startups at Byldd, it’s not uncommon to find teams tangled in AI-generated messes- endless loops of attempted fixes. We’ve built internal playbooks to help teams regain control and build confidently"
+      },
+      {
+        "type": "p",
+        "text": "So you’ve realized: “We’re definitely in a loop – the bug still isn’t fixed after multiple AI attempts.” Take a breath. Here’s a step-by-step game plan to get unstuck :"
+      },
+      {
+        "type": "p",
+        "text": "1. Pause the automated fixes. Stop accepting new code changes from the AI until you figure out the plan. In Replit Ghostwriter’s case, this means stopping the Agent from making more edits. In Lovable, stop hitting “Try to Fix” after the second or third failure. The key is to break the cycle by not giving the AI another chance to do the same thing. You might even copy your code to a safe place (or revert to the last good version) so you have a clean baseline to return to."
+      },
+      {
+        "type": "p",
+        "text": "2. Switch to analysis mode (use chat to diagnose): Now, treat the AI not as an auto-fixer but as a debugging partner . Most platforms have a mode for this: e.g., Replit has Ghostwriter Assistant (chat interface) separate from the autonomous Agent; Lovable has a Chat-Only Mode you can enter for conversation. Open a new chat session if possible (fresh context can help the AI “think” more clearly, without the baggage of the previous failed attempts in the prompt history). Then, describe the situation and ask the AI to diagnose and explain rather than fix immediately. For example, you might say in chat: “I keep getting redirected back to login after signing in. The AI tried a few fixes and none worked. Can we figure out what’s going wrong step by step?”. By doing this, the AI will output an analysis or plan instead of directly modifying code."
+      },
+      {
+        "type": "p",
+        "text": "Tip: In Lovable’s chat mode, you can do something similar by asking, “Can you walk me through what’s happening and what you’ve tried so far?”"
+      },
+      {
+        "type": "p",
+        "text": "4. Verify the AI’s understanding (or use a second opinion): Once the AI presents an analysis or plan, read it critically . Does it address the error or bug you’re seeing? Does it mention the relevant parts of the code? As a non-technical user, you might not follow every detail, but you can often judge if the explanation is on-topic. If something seems off (e.g., it’s focusing on the wrong component entirely), you might need to steer it: “Actually, the issue is on the login page, not the signup page. Let’s focus there.” The goal is to make sure the AI and you are on the same page about the problem . If you’re unsure about the AI’s diagnosis, you can even take that explanation and ask another AI (or another developer friend) if it makes sense – sometimes a fresh AI model like Claude or ChatGPT in a new chat can catch something the first one missed"
+      },
+      {
+        "type": "p",
+        "text": "5. Have the AI propose a specific fix (plan first, then execute): Now that you (hopefully) have a clear understanding of the bug, ask the AI to suggest how to fix it in theory . For example: “Given that analysis, what do you suggest we do to fix it? Outline the steps without changing the code yet.” This is essentially asking for a plan of attack. If the plan sounds reasonable, you then tell the AI “Okay, go ahead and implement these changes.” By separating the planning from the execution, you ensure the AI isn’t just blindly coding. You also get a chance to spot if the plan might do something destructive or irrelevant."
+      },
+      {
+        "type": "p",
+        "text": "6. Use debugging tools or prints to gather more clues (if needed): What if the AI still seems stumped? You might need to generate more information for it (and for you). One clever technique is to ask the AI to insert debug statements (logging/printouts) into the code to show what’s happening at runtime. For example, you can prompt: “Add some debug outputs to tell me the values of key variables when I try to log in, and then run the app.” This way, the AI will modify the code to print, say, whether the user object is null, or which function is being called, etc."
+      },
+      {
+        "type": "p",
+        "text": "Apply the fix (and test thoroughly): Once a likely solution is implemented (whether by the AI or manually by you following the plan), run your app and verify the issue is resolved. Don’t just trust the AI’s word – actually test the scenario that was failing. If the login was looping, try logging in now. If the page was crashing, see if it loads now."
+      },
+      {
+        "type": "h",
+        "text": "Build Smart. Ship Fast."
+      },
+      {
+        "type": "p",
+        "text": "Falling into an AI fix loop can feel frustrating and endless - but it doesn’t have to be. At Byldd, we've seen that the most successful founders treat AI like a collaborator, not a crutch. The key is to stay in control : communicate clearly, work incrementally, test rigorously, and know when to shift gears."
+      },
+      {
+        "type": "p",
+        "text": "Building with AI is powerful, but like any tool, it requires the right mindset and method. Stay structured, stay curious, and always be willing to pause and rethink. If you keep learning from the loop instead of getting lost in it, you'll not only build faster - you'll build smarter."
+      },
+      {
+        "type": "p",
+        "text": "Need help building a revenue-ready MVP without falling into fix-loop hell?"
+      }
+    ]
+  },
+  {
+    "slug": "keep-ai-app-clean-prevent-spaghetti-code",
+    "title": "Keep Your AI-Built App Clean: Why AI Code Turns to Spaghetti & How to Prevent It",
+    "excerpt": "Struggling with messy AI code? Explore why it turns to spaghetti and find practical tips to keep your AI-built app clean and maintainable.",
+    "readingTime": 10,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "AI tools can write code faster than ever - but without the right guardrails, that speed often comes at the cost of structure and maintainability. If you’ve noticed your AI-generated codebase getting harder to navigate or update, you’re not alone. This blog breaks down why AI-built code tends to devolve into spaghetti and how to stay ahead of the mess with clear strategies and practical prompts."
+      },
+      {
+        "type": "p",
+        "text": "Need a hand keeping your AI-generated code clean?"
+      },
+      {
+        "type": "p",
+        "text": "Byldd’s product development team helps non-technical founders ship production-ready apps-fast, lean, and under budget."
+      },
+      {
+        "type": "h",
+        "text": "Why AI-Generated Code Easily Turns to Spaghetti"
+      },
+      {
+        "type": "p",
+        "text": "When humans write code, good developers plan the structure (even if roughly) before diving into details. AI, on the other hand, works step-by-step responding to prompts . Unless guided, it doesn’t inherently plan out an architecture. This can lead to spaghetti implementations for a few key reasons:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "No High-Level Design: Out-of-the-box, an AI code assistant doesn’t strategize how to organize an application. It will try to satisfy the immediate request as directly as possible. If you ask for a new feature or fix, the AI might insert it in an arbitrary spot that works in isolation but ignores overall organization. The AI isn’t opinionated about separation of concerns unless you explicitly instruct it. Over time, as more features and fixes accrete, the code becomes a patchwork of quick solutions rather than a coherent design – fertile ground for spaghetti code.",
+          "Over-Accommodating Edge Cases: AI is often very eager to please. If you mention a bunch of scenarios (“make sure it handles X, Y, and Z”), it might handle them all literally by adding more conditional branches or special-case code everywhere. The result is overly complex logic trying to anticipate everything. For example, an AI might generate those 10-layer if-else chains “just in case” to cover every edge case mentioned. A human might refactor or find a pattern behind these cases; the AI tends to just bolt them on.",
+          "Incremental “Glue” Fixes: When using chat-based coding, you might notice a bug or needed change and ask the AI to fix it. The AI often glues a fix on top of existing code rather than restructuring the code properly which makes the code function correctly but also makes it messier over time.",
+          "Lack of Memory or Context: Some AI coding tools have limited awareness of the entire project context, especially if it’s split across multiple files or the conversation has moved on. If the AI doesn’t fully “remember” how a certain module was structured earlier, it might introduce redundant logic or conflicting approaches in different parts of the codebase.",
+          "No Self-Refactoring: Human developers periodically refactor (clean up and reorganize) their code as it grows. AI won’t refactor on its own unless asked. It doesn’t get “uncomfortable” with messy code the way a skilled programmer would. Without prompts to improve structure, an AI will continue piling on code in a linear way."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "How to Avoid Spaghetti Code When Working with AI"
+      },
+      {
+        "type": "p",
+        "text": "Preventing a mess is easier than cleaning one up. When you rely on AI to write code, you need to play the role of an architect and project manager guiding the AI. Here are practical steps to keep the code organized and clear:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Start with Structure in Mind: Before asking the AI to generate a big chunk of your app, break the problem down. For example, instead of saying “Build me a website with X, Y, Z features” and getting a monolithic blob of code, you can outline components: “Let’s create a function for handling user login, a separate module for the database, and a front-end script for the UI. We’ll do these one by one.” By working module-by-module, you encourage cleaner boundaries. You can explicitly prompt: “Provide a high-level plan or file structure first.” Many chat-to-code platforms allow you to create multiple files – use that to your advantage. A clear plan reduces the chance of intertwined logic.",
+          "Ask for Clean, Documented Code: Don’t be shy about telling the AI to follow best practices. You can include instructions like “Please use clear function names and add comments explaining each section” . Well-placed comments act as signposts in the code, making it easier for you (or another AI prompt later) to understand the intent of each part. Similarly, ask for meaningful naming of variables and functions (e.g. avoid generic names like temp or data1 that make the tangle worse). Consistent coding style and naming makes the code feel less chaotic.",
+          "Modularize Tasks: Treat the AI as a junior developer who needs guidance on modular design. For instance, if building a web app, you might prompt for separate files or functions for distinct parts: a file just for API routes, another for database models, another for UI logic. Many AI coding tools (like Replit or Cursor) let you open multiple files – utilize that by saying “Create a new file for component X” . Within a single file, you can also instruct: “Refactor this by splitting it into smaller functions.” Modular code (small, focused functions) is the enemy of spaghetti – it forces clarity. If the AI returns a huge 300-line function, follow up with: “Split this function into smaller helper functions and explain what each does.” This practice aligns with real-world strategies like modularization and meaningful naming to prevent spaghetti code.",
+          "Control the Scope of AI Changes: When iterating with an AI, it’s easy to let it make sweeping edits across the project in one go – that’s often when unintended tangles occur. Instead, break down your requests and limit what the AI should touch at one time. For example, “Only update the login() function to handle the new role, and don’t change other files yet.” By containing changes, you reduce surprise side-effects and keep diffs small.",
+          "Review as You Go: Since you might not be a coding expert, use the AI itself or built-in tools to explain the code back to you each step of the way. For instance, after the AI generates code, ask: “Explain how this code is structured and why you chose this approach.” If the explanation reveals a convoluted flow, you can then say, “Can we simplify this logic or make it more readable?” Modern AI coding assistants like Replit’s Ghostwriter have one-click “Explain Code” features to summarize a selected snippet in plain English.",
+          "Enforce Best Practices with Tools: If you’re using a platform like VS Code or an online IDE, consider enabling a linter or code analysis extension (more on tools in a later section). For example, SonarLint or similar can highlight “code smells” in real-time as the AI writes code. These tools might warn about things like too many nested loops or duplicate code blocks. For a non-technical user, the warnings might be technical, but pay attention to ones about complexity or duplication. They serve as an early warning that, “Hey, the AI’s solution might be getting messy.” You can then ask the AI to refactor or simplify that part."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Byldd Insight: Our engineers pair AI velocity with senior-level review-so your code stays clean while you move fast. See our process."
+      },
+      {
+        "type": "h",
+        "text": "How to Untangle and Fix Spaghetti Code (Step-by-Step)"
+      },
+      {
+        "type": "p",
+        "text": "1. Identify Problem Areas: First, pinpoint where the mess is worst. Is it one gigantic file? A particular function that spans hundreds of lines or dozens of if/else cases?"
+      },
+      {
+        "type": "p",
+        "text": "Or you can simply notice, “I have to scroll a lot to read this function” or “I see similar code in three places.” Write down these pain points."
+      },
+      {
+        "type": "p",
+        "text": "2. Isolate One Logic Strand at a Time: Just like untangling real spaghetti or knotted cables, pick one thread and follow it through. For code, this means focus on one functionality at a time. If the code mixes database logic with UI updates and error handling all in one spot, decide which aspect to pull out first. For example, “The validation checks are all over this code – let’s isolate those.” You might prompt the AI: “Extract all the input validation logic into a separate function (or module) and call that from the main code.” This immediately reduces intermixing. Do this for one concern at a time (e.g. separate data parsing, or separate rendering from computation). After each extraction, test that the app still works as before."
+      },
+      {
+        "type": "p",
+        "text": "3. Introduce Meaningful Names and Comments: As you or the AI separate pieces, give them clear names. Rename variables and functions to reflect what they do. For instance, a variable named x isn’t helpful, but userList is. Many AI editors allow you to issue a “Rename variable X to Y” command across the code. This is low-hanging fruit that improves readability without altering behavior. Add comments for sections that were particularly confusing to unravel, explaining in plain language what they now do."
+      },
+      {
+        "type": "p",
+        "text": "4. Break Large Functions or Files: If you have a function doing too much, split it up . You can literally tell the AI: “This function is too long; split it into smaller helper functions and make sure each has a single purpose.” For example, a 200-line processOrder() function could be broken into validateOrder(), calculatePrice(), saveOrder(), etc. The AI can suggest how to slice it – be sure to ask it to update all calls accordingly."
+      },
+      {
+        "type": "p",
+        "text": "5. Use AI to Explain and Verify: At each refactoring step, leverage your AI assistant as a tutor. For instance, after isolating a piece of logic into a new function, ask “Does this function have any unintended side effects? Is it still doing the same thing as before?” The AI can analyze and compare the behavior. You could even ask “What are some test cases to ensure this refactoring didn’t break anything?” and then have the AI generate simple tests. If something breaks, the tests (or the app’s behavior) will let you know, and you can undo or adjust with the AI’s help."
+      },
+      {
+        "type": "p",
+        "text": "6. Gradually Simplify Conditionals: Spaghetti code often has complex conditional logic. Once pieces are modular, you can tackle simplifying those conditions. One technique is to use guard clauses or invert some logic to reduce nesting (the AI can do this if you prompt “simplify this nested if-else structure” ). Another technique is to replace many conditionals with a cleaner pattern (like using a configuration object or a state machine). For a non-technical user, it’s fine if you don’t know these patterns – you can ask, “This code has a lot of if statements; what are ways to refactor it?” The AI might suggest using polymorphism or lookup tables, depending on the language. For example, instead of 10 if/elif to handle commands, maybe a dictionary of command names to handler functions. Implement such suggestions with caution (ensure you understand the new structure), but they can drastically untangle logic."
+      },
+      {
+        "type": "p",
+        "text": "7. Document and Draw a Map: As things improve, update any documentation or create a simple diagram of the new structure. You can even ask the AI to generate a high-level summary of the code flow now: “Summarize how data flows through these modules after refactoring.” This serves two purposes: (a) it validates that the code is now organized (if the AI can summarize it clearly, it’s a good sign), and (b) it gives you a reference to prevent future spaghetti. If later you (or the AI) add features, you can follow the same structure to keep things tidy."
+      },
+      {
+        "type": "p",
+        "text": "That’s it folks! Hope this in-depth guide helped you understand how to avoid and solve spaghetti code in your vibe-coded app."
+      },
+      {
+        "type": "p",
+        "text": "Spaghetti code doesn’t just slow development- it stalls fundraising, derails features, and kills momentum. At Byldd, we pair AI speed with architectural discipline so you can move fast, scale confidently, and keep your codebase investor-ready from day one."
+      },
+      {
+        "type": "p",
+        "text": "Let Byldd be your thinking partner and product execution team - so you can focus on growing the business, not fixing broken code."
+      }
+    ]
+  },
+  {
+    "slug": "prevent-code-bloat-2025-guide-non-tech-founders",
+    "title": "The Ultimate Guide To Preventing Code Bloat in 2025 : A Non-Tech Founder’s Guide",
+    "excerpt": "Prevent code bloat in 2025! Discover essential strategies for non-tech founders using AI tools to build lean, efficient, and scalable apps.",
+    "readingTime": 8,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Building with AI tools but your codebase keeps ballooning? Here’s how to stay lean, ship faster, and avoid bloated builds-even if you don’t know how to code."
+      },
+      {
+        "type": "p",
+        "text": "Looking to build your product fast without code bloat? Byldd helps non-technical founders build lean, scalable apps using AI and custom development."
+      },
+      {
+        "type": "h",
+        "text": "Strategies to Avoid Code Bloat with AI Tools"
+      },
+      {
+        "type": "p",
+        "text": "How can you as a non-expert coder harness AI tools like Replit or Cursor without ending up with a bloated codebase? Here are several strategies to keep your AI-assisted development lean and efficient:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Be Specific and Clear in Your Prompts: The way you ask the AI for code greatly influences what it gives you. Instead of a vague request, be explicit about what you want and what you don’t want. For example, rather than saying “Build me a todo app,” you might say: “Build a simple todo list app with only the ability to add, remove, and list tasks. Keep the code minimal and only include the core functionality . Avoid adding any extra features or libraries that aren’t necessary.” By setting these expectations, you guide the AI to focus on essentials.",
+          "Ask for Simpler Solutions: Sometimes an AI will by default produce a very generic, robust solution with lots of parts. If you suspect the answer is overkill, try prompting the AI to simplify. For instance: “Can you refactor this to be shorter or more straightforward?” or “Is there a simpler way to do X without so many functions?” Treat the AI a bit like a junior developer who gave you an overly complex draft – it often can revise and produce a leaner version if asked.",
+          "Break Tasks into Smaller Chunks: Avoid asking the AI to generate a huge amount of functionality in one go. If you request an entire multi-feature application in one prompt, the AI is likely to generate a ton of boilerplate and extra code to cover everything. Instead, divide your project into smaller pieces . For example, first ask for a simple function or a single feature (like “just the function to filter the CSV” or “just the UI for adding a task, nothing else”). When that piece is lean and working, move on to the next feature. Smaller prompts naturally limit how much the AI can bloat the solution, and it’s easier for you to review each part.",
+          "Set Constraints or Style Guidelines: Some AI coding tools allow you to specify preferences. If possible, use these. For example, you might configure or tell the AI your project style: “We prefer functional programming style without unnecessary classes,” or “Keep functions under 30 lines if possible.” You can even say in your prompt: “Keep the solution under 50 lines of code.” While the AI doesn’t guarantee to stick to that, giving it a target can encourage it to compress the solution. Also, explicitly say if you don’t want certain things: e.g. “Do not include any database code” or “No external logging framework, just print errors directly.” By setting these boundaries, you prevent the AI from pulling in whole sub-systems that add bulk.",
+          "Use Test-Driven or Requirement-Driven Prompts: A more advanced (but powerful) technique to avoid extraneous code is to define the problem very tightly – often through tests or specific requirements. For instance, if you have a clear expected output or behavior, mention that. “I have input X, and I expect output Y. Only implement what’s needed to achieve that.” Some developers use test-driven development (TDD) with AI: they write a couple of simple tests or scenarios, and then ask the AI to write code that passes those tests. This naturally limits the scope to just what’s needed for the tests, preventing the AI from wandering off into adding unrelated features. Even if you’re not writing actual test code, you can describe a scenario: “The code should do A, B, C. It does not need to handle other cases.” This keeps the AI focused and often “prevents the common problem of AI generating impressive but unnecessary functionality” .",
+          "Regularly Refactor During Development: Refactoring means cleaning up and simplifying code without changing what it does. Instead of waiting until your whole project is written to trim the bloat, do it in stages. After the AI helps you get a feature working, take a short pause to see if that code can be made leaner. You can even ask the AI: “Now refactor this code to remove any duplicate or unnecessary parts.” .",
+          "Learn from Examples of Good Prompts: If you have time, look for or create a “prompting playbook” – a set of example prompts that yield good, clean code. Some teams found that when they documented what a good prompt looks like (and what a bad prompt looks like), the quality of AI-generated code improved significantly. For your personal use, you can keep notes: “Prompt phrasing X produced a bloated answer, but phrasing Y got a cleaner result.” Over time, you’ll develop an intuition for guiding the AI effectively. Remember, how you ask matters a lot in what you get."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Need expert support breaking your product idea into lean, buildable features? Byldd specializes in product strategy and MVP builds for non-tech founders."
+      },
+      {
+        "type": "h",
+        "text": "Identifying and Fixing Code Bloat in Your Existing Codebase"
+      },
+      {
+        "type": "p",
+        "text": "Scan for Obviously Unused Code: Start by looking for functions, classes, or large blocks of code that aren’t actually being used by your app. If you’re not sure, one trick is to search through your project for the name of a function to see if it’s referenced elsewhere. Any code that is never used is a prime candidate for removal. Often, you’ll find the app behaves exactly the same – just with less code behind the scenes."
+      },
+      {
+        "type": "p",
+        "text": "Look for Duplicate Code or Logic: If you notice the same snippet of code appearing in multiple places, that’s duplication bloat. For instance, you might find two functions that are 90% identical, or the same long condition checked in several spots. This often happens with AI-generated code. To fix this, you can consolidate the logic: perhaps create one common function that both pieces of code call, then remove the duplicates. If you’re not comfortable refactoring manually, you can ask the AI assistant, “I see similar code in A and B – can you combine these into one function and update references?”"
+      },
+      {
+        "type": "p",
+        "text": "Simplify Overly Complex Functions: Identify the functions or files that seem unnecessarily long or complicated for what they accomplish. A telltale sign is a function that spans many dozens of lines and tries to do too many things. Break it down and ask: is all of this needed? Sometimes you’ll find a function contains a lot of conditional branches or sub-functions that handle scenarios you don’t actually require. For example, if you have a function that not only does your task but also has a lot of logging, debugging output, or extra computation “just in case,” consider trimming those parts. You can do this by:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Reading through and commenting out a section you suspect is extraneous, then running the program to see if it still behaves correctly.",
+          "Or, ask the AI: “Explain what this big function is doing.” Once you understand it, you might realize half of it is not needed. Then you can prompt: “Now please provide a simpler version of this function that only does X and Y (the core tasks), and removes any unnecessary steps.”"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Remove Redundant Checks or Layers: If the code seems to be checking the same condition multiple times, or if there are multiple layers of function calls that could be collapsed into one, consider refactoring those. For example, maybe the AI wrote a function processData() that just calls another function coreProcessData() with the same arguments - that extra layer may not be needed. Or perhaps every time you call a function, it logs a message “Function X started” and “Function X ended” - if you don’t need these logs, you can remove those lines and shrink the code. When reviewing AI code, developers have found “redundant checks [and] unnecessary type conversions” that make the code bloated. Deleting or simplifying those will have no negative effect other than making the code cleaner. Just be cautious to distinguish redundant checks from genuinely necessary ones – if uncertain, you can test with and without the check to see if it changes anything important."
+      },
+      {
+        "type": "p",
+        "text": "Use AI to Assist Cleanup: Remember you can also leverage AI chatbots like OpenAI’s ChatGPT (especially GPT-4),Google Bard,Claude,etc in a pinch by copy-pasting your code."
+      },
+      {
+        "type": "p",
+        "text": "This requires no installation – simply ask something like, “Review this code for any redundant or overly verbose sections and suggest improvements.” The AI will explain what could be removed or simplified. While this is outside your editor, it’s an accessible option for quick feedback."
+      },
+      {
+        "type": "p",
+        "text": "Test After Each Change: As you remove or refactor code, regularly run your application (or tests, if you have them) to make sure everything still works. This way, you’ll know if something you removed was actually needed. If a change causes an issue, you can always revert that specific change. This incremental approach ensures you don’t accidentally break your project while cleaning it up."
+      },
+      {
+        "type": "p",
+        "text": "If you're unsure how to refactor code safely, Byldd’s AI-enhanced dev team can help optimize and streamline your codebase-without needing you to be technical."
+      },
+      {
+        "type": "p",
+        "text": "Continue the Cycle: Once you’ve cleaned up the obvious bloat, keep these habits in your workflow. Occasionally audit new code that gets added (especially if an AI wrote it) with the same critical eye. This continuous improvement mindset will keep bloat from piling up again. It’s much easier to prune a few unnecessary lines here and there during development than to slash through a jungle of bloat six months later."
+      },
+      {
+        "type": "p",
+        "text": "At Byldd, we work with non-technical founders every day to bring AI-assisted apps and MVPs to life-fast, functional, and free of unnecessary bloat. Whether you’re building in Replit, Cursor, or with GPT-powered chat-to-code tools, we can help you go from idea to launch-ready in weeks, not months."
+      }
+    ]
+  },
+  {
+    "slug": "how-does-it-work-what-is-your-process-like",
+    "title": "How does it work? What is your process like?",
+    "excerpt": "Byldd’s proven process transforms startup ideas into real product’s efficiently, affordably, and in under 30 days.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "We’ll start with a few deep dives with the founder. The purpose of the deep dives is to figure out the product vision, industry analysis, competitor analysis and product strategy. We do about 2-3 deep dives to fully understand the founder’s vision and also to figure out technical feasibility and alternatives. This helps us nail down what probelm we’re trying to solve and for whom - our beachhead customers. These will be the first set of customers that we’ll be going after and we’ll define the scope of the product according to their most pressing problems."
+      },
+      {
+        "type": "p",
+        "text": "Once we’ve identified the target audience, we then nail down all the user stories. User stories are a compilation of everything that the platfrom needs to do, starting with the basics like “Users should be able to log in” to nailing down the complexities of exactly how the product will function."
+      },
+      {
+        "type": "p",
+        "text": "With the user stories defined, we create the user journies and the low fidelity wireframes. This gives us a good idea of how users will interact with the product. We iterate over these as many times as necessary to make sure we’re creating the best, most intutive experience for users. User experience is critical to the success of an app and we want to make sure that end users can immediately figure out how to use a product without needing any kind of instruction."
+      },
+      {
+        "type": "p",
+        "text": "We then work on high fidelity wireframes - in this phase, we finalize all of the aesthetic aspects of the product, including color themes, fonts, etc. Once again, we can experiment and play with a lot of options here and finalize whatever feels best."
+      },
+      {
+        "type": "p",
+        "text": "The finished hi-fed wireframes will give us an exact idea of what the final product is going to look like. We only kick off the development phase once we’re fully satisfied with those wireframes."
+      },
+      {
+        "type": "p",
+        "text": "During the development phase, we have weekly demo calls where we’ll show you the progress made and finalize product decisions. You’ll also have access to a demo app where you will have the ability to play with the product yourself. We’ll keep doing this until the product is fully developed."
+      },
+      {
+        "type": "p",
+        "text": "Once the product is developed, we’ll help you market it to your target audience and get your initial paying customers. These customers are going to be incredibly valuable - no only for the revenue they give us, but because they feel the problem so acutely that they were willing to pay to experiment with a brand new product. Their feedback will help us drive further product development and scale the business. Paying customers are also the best way to validate and de-risk a venture. These customers will help us go to angels and seed-stage VCs for fundraising."
+      },
+      {
+        "type": "p",
+        "text": "Once we’ve gotten this validation, we’re able to build a multi-month product scaling strategy. We shift to a longer term development process where we have a dedicated product team working exclusively with you over several months or years to achieve that vision."
+      }
+    ]
+  },
+  {
+    "slug": "navigating-the-saas-landscape-as-a-non-technical-founder",
+    "title": "Navigating the SaaS Landscape as a Non-Technical Founder",
+    "excerpt": "A practical guide to building and scaling SaaS as a non-technical founder. Learn how to succeed without writing code.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "If you're venturing into the realm of SaaS businesses without a tech background, fret not. Let's demystify this journey for you. It's a path less trodden but brimming with opportunities if navigated smartly."
+      },
+      {
+        "type": "h",
+        "text": "The Unique Edge of Non-Technical Founders"
+      },
+      {
+        "type": "p",
+        "text": "First off, your non-technical background isn't a setback, it's a differentiator. You bring fresh perspectives, often focusing more on customer needs and market demands than on the technology itself. This customer-centric approach is crucial for identifying gaps in the market and ensuring your SaaS solution actually solves real problems."
+      },
+      {
+        "type": "h",
+        "text": "Starting Point: Ideation and Market Fit"
+      },
+      {
+        "type": "p",
+        "text": "Begin by crystallizing your idea. What pain point are you addressing? How does it improve your potential customers' lives or businesses? Remember, a great idea should marry simplicity with innovation. As a non-technical founder, leverage your strengths – maybe it's your industry knowledge, sales acumen, or network. These are invaluable in the early stages."
+      },
+      {
+        "type": "h",
+        "text": "Building Your Dream Team"
+      },
+      {
+        "type": "p",
+        "text": "Now, the tricky part – turning your vision into a digital solution. As you’re not coding the product yourself, you need to have someone that can translate your vision into a set of instructions for developers to follow. Partnering with companies like Byldd for this can be a game changer. They specialize in helping non-technical founders build and launch their MVPs, providing both the technical expertise and industry insights to get your SaaS off the ground without the steep learning curve."
+      },
+      {
+        "type": "h",
+        "text": "Understanding the Tech"
+      },
+      {
+        "type": "p",
+        "text": "While you don't need to become a developer overnight, having a basic understanding of the tech behind your product is beneficial. It aids in communication with your team and gives you a better grasp of what's possible within your timeline and budget."
+      },
+      {
+        "type": "h",
+        "text": "Advantages and Disadvantages"
+      },
+      {
+        "type": "p",
+        "text": "Let's be real: there are challenges. You'll need to rely more on your team for technical decisions, and there's a steeper learning curve in understanding SaaS metrics and tech-specific business models."
+      },
+      {
+        "type": "p",
+        "text": "But, the advantages? Your focus on customer experience, market needs, and overall strategy can lead to a more user-friendly, market-responsive product. You're more likely to think outside the box, not being confined by technical constraints."
+      },
+      {
+        "type": "h",
+        "text": "Navigating the Build Process"
+      },
+      {
+        "type": "p",
+        "text": "You don't have to go at it alone. Firms like Byldd offer tailored support, helping you build an MVP efficiently. They understand the unique challenges non-technical founders face and provide the necessary tools and guidance. This partnership can significantly reduce your go-to-market time and ensure your product aligns with your vision."
+      },
+      {
+        "type": "h",
+        "text": "Final Thoughts: Embrace Your Unique Perspective"
+      },
+      {
+        "type": "p",
+        "text": "Your journey as a non-technical founder in the SaaS space might be challenging, but it's also filled with unique opportunities. Embrace your perspective, lean on expert partners like Byldd , and stay focused on your customer's needs. Remember, some of the most successful SaaS companies were started by non-technical founders who dared to dream big and think differently."
+      }
+    ]
+  },
+  {
+    "slug": "how-to-get-your-first-customer-with-cold-email",
+    "title": "How to Get Your First Customer with Cold Email",
+    "excerpt": "Learn how to write and send cold emails that convert, so you can land your startup’s first paying customers fast.",
+    "readingTime": 7,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Are you struggling to get your first customer? Reaching out to users, but no one's buying? Cold emailing can be a powerful way to reach out to potential customers and generate leads."
+      },
+      {
+        "type": "p",
+        "text": "The first step in getting your first customer with cold email is to identify your target audience. This typically involved criteria like job title, job role, industry, and niche. You need to identify who are you trying to reach and what their pain points are:"
+      },
+      {
+        "type": "p",
+        "text": "Once you have a clear understanding of your target audience, you can craft a message that speaks directly to them. Personalization is key when it comes to cold emailing, so take the time to research your prospects and tailor your message accordingly."
+      },
+      {
+        "type": "h",
+        "text": "What is Cold Emailing?"
+      },
+      {
+        "type": "p",
+        "text": "Cold emailing is the process of sending an email to a potential customer or client that you have not communicated with before. The goal of cold emailing is to introduce yourself, your product or service, and to try to start a conversation that may lead to a sale."
+      },
+      {
+        "type": "h",
+        "text": "Why use Cold Emailing?"
+      },
+      {
+        "type": "p",
+        "text": "Cold emailing is a great tool for many reasons. Let’s take a look at a few:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Low Cost: Cold emailing is a low-cost way to reach out to potential customers. Unlike other marketing channels, such as advertising or direct mail, cold emailing doesn't require a large budget.",
+          "Targeted: With cold emailing, you can target specific individuals or businesses that you believe would be a good fit for your product or service. This allows you to focus on the most promising leads.",
+          "Scalable: Cold emailing can be scaled up or down depending on your needs. If you need more customers, you can send more emails. If you need to focus on other aspects of your business, you can scale back your cold emailing efforts."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Overall, cold emailing can be an effective way to get your first customers, but it requires a strategic approach and a willingness to experiment and iterate on your approach."
+      },
+      {
+        "type": "h",
+        "text": "Creating a Targeted Prospect List"
+      },
+      {
+        "type": "p",
+        "text": "To successfully acquire customers through cold email, you must create a targeted prospect list. This list should consist of potential customers who are likely to have the problem or pain point that your product solves. Here are some steps to help you create a targeted prospect list:"
+      },
+      {
+        "type": "h",
+        "text": "Identifying Your Ideal Customer"
+      },
+      {
+        "type": "p",
+        "text": "This includes understanding who they are, what they do, and what their pain points are. Consider factors such as demographics, industry, job title, and company size."
+      },
+      {
+        "type": "h",
+        "text": "Researching Potential Customers"
+      },
+      {
+        "type": "p",
+        "text": "Once you have identified your ideal customer, it's time to start researching potential customers. This can include using tools such as LinkedIn, Google, Apollo, Clay, and industry databases to find individuals and companies who fit your ideal customer profile."
+      },
+      {
+        "type": "p",
+        "text": "When finding leads, it's important to gather as much information as possible like their name, job title, company name, email address, and any other relevant information. The more information you have, the more personalized your cold email can be."
+      },
+      {
+        "type": "p",
+        "text": "You should also prioritize your list based on factors such as likelihood to buy and potential value."
+      },
+      {
+        "type": "h",
+        "text": "Crafting Your Cold Email"
+      },
+      {
+        "type": "p",
+        "text": "When it comes to cold emailing, crafting the perfect message makes all the difference in whether or not you get a response. The Follow Up newsletter provides a ton of great information on crafting your cold emails, as well as cold email best practices. Here are some key elements to keep in mind when crafting your cold email."
+      },
+      {
+        "type": "h",
+        "text": "Writing a Compelling Subject Line"
+      },
+      {
+        "type": "p",
+        "text": "Your subject line is the first thing your recipient will see, so it needs to be attention-grabbing. Make it clear, concise, and relevant to your message. The key is to make the subject line not read like a “sales email” while also avoiding using clickbait or false promises.."
+      },
+      {
+        "type": "h",
+        "text": "Personalizing Your Message"
+      },
+      {
+        "type": "p",
+        "text": "Personalization is key when it comes to cold emailing. Take the time to research your recipient and tailor your message to their specific needs and interests. Use their name and reference any relevant information you've gathered. This will show that you've done your homework and you’re reaching out for a good reason."
+      },
+      {
+        "type": "h",
+        "text": "Including a Clear Call to Action"
+      },
+      {
+        "type": "p",
+        "text": "Your email should have a clear call to action (CTA) that tells your recipient what you want them to do next. Whether it's scheduling a call, signing up for a free trial, or simply responding to your email, make it clear and easy for them to take the next step."
+      },
+      {
+        "type": "p",
+        "text": "Remember to keep your email short, sweet, and to the point. The easier it is for the recipient to understand, the more likely they are to respond."
+      },
+      {
+        "type": "h",
+        "text": "Following Up After Sending"
+      },
+      {
+        "type": "p",
+        "text": "When it comes to cold emailing, the magic is in the follow up."
+      },
+      {
+        "type": "h",
+        "text": "When to Follow Up"
+      },
+      {
+        "type": "p",
+        "text": "It's important to give your potential customer time to read and respond to your initial email before following up. Generally, 3-5 business days in between emails is a good rule of thumb."
+      },
+      {
+        "type": "h",
+        "text": "How to Politely Persist"
+      },
+      {
+        "type": "p",
+        "text": "When following up, it's important to be polite and respectful. Remember that your potential customer is likely busy and receiving many emails like yours, so you don't want to come across as pushy or annoying."
+      },
+      {
+        "type": "p",
+        "text": "Here are a few tips for following up politely:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Use a clear and concise subject line that indicates you're following up on a previous email.",
+          "Mention your previous email in the body of the email to jog their memory.",
+          "Keep your email short, brief, and to the point.",
+          "Offer value in your follow-up email, such as a relevant article or resource.",
+          "End with a clear call to action, like a phone call or meeting."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "It's also important to note that persistence doesn't mean spamming your potential customer with multiple emails a day. Space out your follow-up emails and make sure each one provides value."
+      },
+      {
+        "type": "h",
+        "text": "Analyzing and Improving Your Strategy"
+      },
+      {
+        "type": "p",
+        "text": "Once you have sent out your cold emails, it's time to analyze your results and make necessary adjustments to your strategy. Here are the things you should be analyzing:"
+      },
+      {
+        "type": "h",
+        "text": "Interpreting Email Metrics"
+      },
+      {
+        "type": "p",
+        "text": "Email metrics can provide valuable insights into the effectiveness of your cold email campaign. Here are some important metrics to track and analyze:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Open rate: The percentage of recipients who opened your email. A low open rate could mean your subject line needs improvement or that your email list needs to be refined.",
+          "Click-through rate (CTR): The percentage of recipients who clicked on a link in your email. A low CTR may indicate that your email content is not engaging enough or your call-to-action needs to be clearer. Side note: In many cases it is best to leave links out of your email to increase deliverability rates.",
+          "Reply rate: The percentage of recipients who responded to your email. Positive: The percentage of recipients that responded positively to your email (booked a call, moved to the next step, etc.). Negative: Percentage of recipients that responded unfavorably (not interested, etc.)."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "By tracking and analyzing these metrics, you can identify areas of your cold email campaign that need improvement and make data-driven decisions to optimize your strategy."
+      },
+      {
+        "type": "h",
+        "text": "Making Necessary Adjustments"
+      },
+      {
+        "type": "p",
+        "text": "Based on the insights gained from analyzing your email metrics, you may need to make some adjustments to your cold email strategy. Here are some adjustments to consider:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Refining your email list: If you have a low open rate, you may need to refine your email list to ensure that you are targeting the right audience.",
+          "Improving your subject line: If you have a low open rate, you may need to improve your subject line to make it more compelling and attention-grabbing.",
+          "Personalizing your email content: If you have a low response rate, you may need to personalize your email content to make it more relevant and engaging to the recipient.",
+          "Testing different approaches: If you are not seeing the results you want, you may need to test different approaches to see what works best for your target audience."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "By making these adjustments and continuing to track your email metrics, you can improve the effectiveness of your cold email campaign and increase your chances of getting your first customer."
+      }
+    ]
+  },
+  {
+    "slug": "the-price-of-love-estimating-the-costs-to-launch-a-dating-app-startup",
+    "title": "The Price of Love: Estimating the Costs to Launch a Dating App Startup",
+    "excerpt": "Planning a dating app startup? Estimate the full cost of design, development, and launch before you build.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "In today's digital age, the quest for romance has undergone a digital transformation. Dating apps have taken center stage, connecting individuals in search of love, companionship, or fleeting encounters. If you're considering launching your dating app startup, understanding the costs involved is crucial. In this article, we'll explore the intricacies of building a dating app, from critical features to often-overlooked expenses, drawing insights from the experiences of industry experts."
+      },
+      {
+        "type": "list",
+        "items": [
+          "User Profiles: Allow users to create detailed profiles, including photos, personal information, and preferences.",
+          "Matching Algorithms: Develop sophisticated algorithms that suggest potential matches based on user data, interests, and behavior.",
+          "Messaging and Chat: Enable real-time messaging to facilitate communication between users.",
+          "Geolocation Services: Implement location-based features to help users discover matches in their vicinity.",
+          "User Authentication: Ensure robust user verification and authentication processes to enhance security.",
+          "Notifications: Keep users engaged with notifications for matches, messages, and profile activity.",
+          "User Reporting: Include reporting tools that allow users to flag inappropriate content or behavior.",
+          "Privacy Settings: Give users control over their data and privacy, including the ability to hide profiles or limit visibility.",
+          "Admin Management: Develop admin tools for content moderation, user management, and reporting."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Building all of these from scratch can cost founders anywhere between 50K to 150K. Luckily, services like Byldd use tools like automation and pre-built modules to kick-start the development process and save founders time and money."
+      },
+      {
+        "type": "p",
+        "text": "So when you use a service like this, you're really only paying for building the Matching Algorithm which is the secret sauce behind your business model. We're able to launch dating apps in under a month and for less than $15K."
+      },
+      {
+        "type": "p",
+        "text": "Besides the usual investment for app development, you will also need to consider investments for core business functions like the following:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Marketing and User Acquisition: Allocate a budget for marketing strategies, including social media advertising, influencer partnerships, and app store optimization (ASO).",
+          "Operations and Customer Support: Establish an operational team for daily tasks, customer support, and community management.",
+          "Legal and Compliance: Ensure compliance with data protection regulations, user agreements, and intellectual property rights.",
+          "Content Moderation: Consider outsourcing content moderation or using AI tools to maintain a safe environment."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Launching a dating app startup is an exciting endeavor, but it comes with a price tag. Costs can vary widely depending on your app's complexity and features. It's essential to budget carefully and strategically allocate resources to ensure a successful launch and sustained growth. By understanding both the critical features and auxiliary expenses involved, you should be able to start your entrepreneurial journey with confidence and financial preparedness."
+      }
+    ]
+  },
+  {
+    "slug": "how-much-does-it-cost-to-build-a-social-media-startup",
+    "title": "How much does it cost to build a social media platform?",
+    "excerpt": "Find out the true cost of building a social media startup, including essential features, timelines, and pricing tips.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Creating a social media startup can be an exciting venture, but it's essential to have a clear understanding of the costs involved. Beyond the core development expenses, several critical features and auxiliary costs need consideration. In this article, we'll explore the cost breakdown of launching a social media platform, including must-have features and often overlooked expenses."
+      },
+      {
+        "type": "p",
+        "text": "Social network businesses are built on network effects - you'll only be interested in getting on a platform if there is content or people there you care about (either friends/family or content you're interested in). To encourage those network effects, we need to a certain set of features in your social media MVP for it to be marketable."
+      },
+      {
+        "type": "list",
+        "items": [
+          "User Registration and Profiles: Allow users to create accounts, complete profiles, and manage their personal information. Ensure robust security measures to protect user data.",
+          "News Feed: Develop a customizable news feed that displays posts, updates, and content from friends and followed accounts.",
+          "Content Posting: Enable users to create and share text, images, videos, and links. Implement content scheduling and editing features.",
+          "Notifications: Send real-time notifications for likes, comments, messages, and other interactions to keep users engaged.",
+          "Social Interactions: Include features such as likes, comments, and shares to encourage user engagement.",
+          "Privacy Settings: Give users control over who can view their content and interact with them.",
+          "User Engagement Analytics: Provide users with insights into their post performance, including views, likes, and shares.",
+          "Messaging System: Implement private and group messaging features, with multimedia sharing capabilities.",
+          "Search and Discovery: Create an effective search algorithm that helps users discover relevant content and users.",
+          "Admin Management: Ensure robust admin controls for content moderation, user management, and reporting.",
+          "Reporting Tools: Enable users to report inappropriate content and users, fostering a safe and respectful environment. This is critical to getting your app approved on the app stores."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Additionally, you're not gonna be building a platform that does just those things - you're obviously competing with the Instagrams and TikToks of the world so you're gonna be adding your own secert sauce."
+      },
+      {
+        "type": "p",
+        "text": "If you were to build a product like this from scratch, you'd be looking at something in the $50k to $100k range. This means that engineers are spending development hours building all of those features from nothing - and you're being billed for those hours."
+      },
+      {
+        "type": "p",
+        "text": "With Byldd, it's a little different - we have prebuilt modules for most of the things on that list above so you effectivley pay next to nothing for them. The only thing we would spend development time on would be that secret sauce mentioned above. This is why we're able to get social media apps in a month for about $10-$15k."
+      }
+    ]
+  },
+  {
+    "slug": "customer-acquisition-strategies-free-free-trial-freemium",
+    "title": "Customer Acquisition Strategies - Free vs Free Trial vs Freemium",
+    "excerpt": "Compare free trial vs freemium models and choose the best customer acquisition strategy for your startup's success.",
+    "readingTime": 7,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "If you’re a founder building a software product, chances are that it will be a challenge to get paying customers. ‘Build it and they will come’ is not a valid go-to-market strategy. You’re gonna have to come up with a way to incentivize customers to use your product. You will most probably also want to incentivize them to pay you and purchase your product."
+      },
+      {
+        "type": "p",
+        "text": "Creating a customer acquisition strategy for startups is not one-size-fits-all- every business and industry is so different and there are exceptions to every rule. To paraphrase Ben Horowitz, there is no silver bullet. We’re gonna need a whole lot of lead bullets."
+      },
+      {
+        "type": "p",
+        "text": "As an aside, it is possible to have customers pay before allowing them to use your product. However, this requires one of two things:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "A highly trusted, established brand name and value proposition, for example, Netflix famously does not offer free trials. Or,",
+          "A monopoly or effective monopoly and customers with an urgent, possibly desperate, need. For example, emergency rooms or internet service providers in the US. This is generally more difficult to do with software."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "We’re gonna assume that, since you’re an early-stage founder, you don’t have an internationally acclaimed brand nor are you a monopoly. Hence, we’re not gonna be covering this strategy in any more detail."
+      },
+      {
+        "type": "p",
+        "text": "The other assumption we’ll make is that you have some kind of inorganic strategy in use to drive eyeballs to your business, be it paid search, paid social media, influencer marketing, or billboards on a highway."
+      },
+      {
+        "type": "p",
+        "text": "Let’s think of organic strategies in your customer acquisition plan"
+      },
+      {
+        "type": "p",
+        "text": "Let’s start with establishing the most popular customer acquisition strategy for startups and talking through what they mean. These are:"
+      },
+      {
+        "type": "p",
+        "text": "Unsurprisingly, they all involve giving away value for free in exchange for the users’ attention."
+      },
+      {
+        "type": "p",
+        "text": "This is probably the most popular customer acquisition strategy for startups, especially for consumer goods. Facebook and Instagram of the world use this model, as do most digital newspapers and content creators, from the New York Times to BuzzFeed."
+      },
+      {
+        "type": "p",
+        "text": "This pattern establishes a multi-sided marketplace, with one side of the business designed to create content to attract users’ attention. And the other to monetize that attention by"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tracking user interests and selling that data to advertisers, or"
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "You have the opportunity to create network effects. Users will share content and pull their network to the platform. They may also generate their content.",
+          "You don’t necessarily need a ‘lot’ of users if you can successfully capture a niche. Advertisers will pay a premium for the highly targeted advertising opportunity."
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "You need to control and stretch the costs of generating new content",
+          "It’s very expensive to start - you may have no revenue for the first few years.",
+          "A strong distribution team is necessary to effectively sell ads."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The free trial customer acquisition strategy typically gives users full access to the product for a limited amount of time after which the user is forced to either subscribe or leave the platform. This is pretty popular for most enterprise tools, for example, Shopify, BigCommerce, and other e-commerce infrastructure providers utilize this. Other enterprise tools like the Adobe suite also use this kind of acquisition strategy."
+      },
+      {
+        "type": "p",
+        "text": "AWS, Google Cloud, Azure, and other IAAS providers offer a variation of this model by offering free credits for a year - full access with a budget."
+      },
+      {
+        "type": "p",
+        "text": "This free trial marketing strategy tends to work well for products that can deliver results within the period of the trial. The purpose of the trial is to de-risk the investment and show users how the product is going to deliver value. If it’s not possible to do that within the trial period, or if the product requires a complicated setup or sensitive information, it’s typically not going to be an effective way to convert users. If it’s not immediately clear in the trial how value is going to be delivered, it’s going to hamper your growth efforts."
+      },
+      {
+        "type": "list",
+        "items": [
+          "For software businesses, offering a free trial has almost negligible costs. It’s the cost of adding one new user to the platform.",
+          "You de-risk the user’s investment and can quickly demonstrate the value of your product. Do this quickly enough and you’ll get cash upfront."
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Once the trial is over, the business no longer has the customer’s attention. While it’s possible to retarget users via email or social, it’s a harder sell.",
+          "You need some brand recognition to convince users to put down their CC when they sign up for the trial. Users will be reluctant if they’ve never heard of you before.",
+          "If you’re solving critical problems but those are infrequent (once a month or less frequently) then users will subscribe to the free trial but will not convert to paying customers.",
+          "All your free trial users are effectively worthless if they don’t convert to paying customers."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The freemium marketing strategy pattern gives users access to a limited number of features and data indefinitely. This tends to be popular for user-centric consumer goods that don’t typically cannot generate network effects. For example, Spotify offers a limited product for free users. Skype is also completely free if you want to use it to make Skype-to-Skype calls. Users pay to call cell phones or landlines."
+      },
+      {
+        "type": "p",
+        "text": "It’s an incredibly powerful marketing tool to say a user-centric product is ‘free forever’. This pattern tends to work well for products that deliver value over some time and can create lock-in habits."
+      },
+      {
+        "type": "p",
+        "text": "On the consumer side, this tends to work well with health and wellness apps. Those businesses use this model to hook the user and capture data while charging a premium for advanced features."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Couch to 5K, a marathon training app, offers the first 4 weeks of training for free.",
+          "My fitness pal, a diet tracking and weight loss app, lets users track their consumption for free but make premium features like meal plans and recipes exclusive to paying users.",
+          "Waking up, a meditation app by Sam Harris offers beginner lessons for free and charges a premium for advanced content."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "This pattern is pretty common on the enterprise side as well. Dropbox, a data storage solution, offers a limited amount of storage (3 GB) for all free users while charging more for more storage. iCloud and Google Drive have imitated this pattern."
+      },
+      {
+        "type": "list",
+        "items": [
+          "The demand at the price of zero is many times higher than the demand at a very low price.",
+          "The business has multiple possible avenues to monetize free users, from advertising, ‘pay per view’ type events or content, and one-time digital purchases",
+          "As with the free trial, the cost of adding a new user is almost negligible.",
+          "As with the free trial, you de-risk the investment for the user and give them a powerful demonstration of the value you deliver.",
+          "Unlike with the free trial, your freemium users are not worthless and can be monetized even if they’re not paying you directly."
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Conversion is difficult if too much value is being delivered in the free tier. A careful balance needs to be found.",
+          "It will be ineffective if you can solve the user’s most critical problems on the free tier. They will have no incentive to convert.",
+          "The costs of servicing free users have to be controlled and subsidized by the premium users."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "At the end of the day, your business’s value will depend on how much free cash flow you can generate. Trial users and freemium users are vanity metrics that don’t mean anything if you can’t attach an average dollar value to them."
+      },
+      {
+        "type": "p",
+        "text": "To start with, you need to make a decision based on your assumed user journey and the value you’re trying to deliver. But that’s not all however, that’s not the end of the conversation by far. As your start acquiring your first users and getting feedback, you need to experiment with different patterns and variations to see which shows the most promise. Make sure the metrics you are measuring are as close to the money as possible. For example, the number of users who signed up for your trial doesn’t matter nearly as much as the percentage of users who are paying you and your CAC, LTV, and free cash flow."
+      },
+      {
+        "type": "p",
+        "text": "Most importantly, talk to your customers. Find out why your customers are your customers and modify your content, freemium and free trials accordingly to capitalize on what matters to your target market. Don’t confuse correlation with causation and don’t make assumptions. Ask your customers what made them convert and emphasize that on your platform. When your users unsubscribe, ask them what made them churn and try to solve those problems."
+      },
+      {
+        "type": "p",
+        "text": "Byldd helps founders build profitable, investor-ready software businesses. Reach out to us here to chat."
+      }
+    ]
+  },
+  {
+    "slug": "founder-series-building-a-streaming-platform-part-1",
+    "title": "Founder Series: Building A Streaming Platform Part 1",
+    "excerpt": "Dive into part 1 of our Founder Series, revealing the process of launching a custom streaming platform from the ground up.",
+    "readingTime": 3,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Four founders reached out last week asking about building products with a video streaming component. These are subscription platforms that either focused entirely on streaming or had streaming as a major component. Some of these were specialized Netflix-esque content platforms while others were platforms like Coursera where video streaming was one part of a much larger whole. In both cases, the streaming considerations for early stage companies and founders remain the same."
+      },
+      {
+        "type": "p",
+        "text": "The purpose of writing this is to remove some of the obfuscation surrounding streaming platforms and arm founders with knowledge of building a VOD platform entails."
+      },
+      {
+        "type": "p",
+        "text": "We're gonna cover the decisions they can expect to make so that can speak intelligently with their development partners with the goal of building something for scalability while remaining lean. The content coming up applies to all major over the top (OTT)/streaming business models including subscriber video on delivery (SVOD), advertising video on delivery (AVOD) or transactional video on delivery (TVOD)."
+      },
+      {
+        "type": "p",
+        "text": "This is going to be a 4 part series. In the first three parts we’ll cover the three most important build vs buy decisions founders will make when building streaming product, and how to evaluate options and make decisions intelligently."
+      },
+      {
+        "type": "p",
+        "text": "Part 1: Storage (and correspondingly upload) Part 2: Distribution Part 3: Playback"
+      },
+      {
+        "type": "p",
+        "text": "In part 4, we’ll cover two special cases of streaming - streaming VR content and live-streaming."
+      },
+      {
+        "type": "h",
+        "text": "Storage and Upload"
+      },
+      {
+        "type": "p",
+        "text": "When we think of video streaming we’re typically going to be uploading content between 1 and 15 GB. For these components our major cost considerations will be the cost of data transfer per GB and the cost of storage per GB. We’ll also only consider the first 50TB of data for simplicity."
+      },
+      {
+        "type": "p",
+        "text": "We’re going to use Platform as a Service (PaaS) providers like AWS, Google Could and Microsoft Azure instead of pre-packaged solutions to save the founder as much money as possible. All three of the major PaaS providers have storage solutions. They all have their respective upload services."
+      },
+      {
+        "type": "p",
+        "text": "Before going into this, I have to make clear a controversial assumption we’re going to make. Ready? Here goes - all three of the major providers provide a similar level of service. Ready to bring out the pitchforks? Get over it. There might have a been a time 10 years ago where there were serious service difference between the three. It’s no longer the case. In our application, for dumb data storage, they’re the same."
+      },
+      {
+        "type": "p",
+        "text": "AWS owns the 800 pound gorilla (and most of the market) with S3, short for Simple Storage Service. Google Cloud has Cloud Storage. And finally, Microsoft Azure has Azure Blob Storage."
+      },
+      {
+        "type": "p",
+        "text": "Cost of Data Transfer: $0.09 Per GB Cost of Storage (First 50 TB): $0.023 Per GB Cost of Upload: Free"
+      },
+      {
+        "type": "p",
+        "text": "Cost of Data Transfer: $0.12 per GB Cost of Storage (First 50 TB): $0.02 per GB Cost of Upload: Free"
+      },
+      {
+        "type": "h",
+        "text": "Azure Blob Storage"
+      },
+      {
+        "type": "p",
+        "text": "Cost of Data Transfer: Free Cost of Storage (First 50 TB): $0.0208 per GB Cost of Upload: Free"
+      },
+      {
+        "type": "p",
+        "text": "Azure clearly seems to come out ahead in terms of pricing. However, AWS has a serious advantage because it’s the market leader. That means that many CDN services already have build-in integrations connecting their network with client’s S3 buckets. While it’s possible to replicate this functionality for Azure or Google Cloud, the minuscule price difference isn’t worth development effort. That means, in the end, using s3 is going to be cheaper for you as a founder even though azure costs less."
+      },
+      {
+        "type": "p",
+        "text": "So for our streaming app, we’ll be using AWS’s S3 as our storage and upload solution."
+      }
+    ]
+  },
+  {
+    "slug": "project-lead-responsibilities-and-requirements",
+    "title": "Project Lead Responsibilities and Requirements",
+    "excerpt": "Understand the essential responsibilities and skills every startup project lead needs to manage teams and deliver results.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "The next career step for a software engineer at Byldd is to become a project lead. The project lead position is a combination of technical and managerial position, about 65% and 35% respectively. It has several additional responsibilities beyond the responsibilities of a full-stack engineer."
+      },
+      {
+        "type": "p",
+        "text": "Project Leads perform all the duties of full-stack engineering in addition to organizing and guiding their teams. They set objectives and targets for their projects and organize resources to achieve those targets."
+      },
+      {
+        "type": "h",
+        "text": "So how does a FSE get promoted to Project Lead?"
+      },
+      {
+        "type": "p",
+        "text": "Step 1. Demonstrate that you possess the necessary attributes and attitude necessary to be come a project lead. See the Good PM / Bad PM post for more information about what kind of behavior is expected."
+      },
+      {
+        "type": "p",
+        "text": "Step 2. After demonstrating responsibility, ask for the opportunity to lead the development of a single key feature within a large project. In this step, you'll primarily be focusing on being the technical leader for the project."
+      },
+      {
+        "type": "p",
+        "text": "Step 3. The final step in the process is to manage and deliver an independent small project successfully. This requires the candidate to be both the technical leader and to maintain the relationship with our customer."
+      },
+      {
+        "type": "p",
+        "text": "Candidates must display the attitude and responsibility that go with the PL role before they are considered for it. Here are the characteristics of Project Leads and it is what we look for in PL candidates."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They must have the right attitude. Project leads are fully responsible for their projects. That includes delivering on time, delivering in budget and assuring a high level of quality in line with the Byldd standard. PLs take ownership and are responsible for their teams performance. They do not assign blame or make excuses.",
+          "They are intensely passionate about doing good, high quality work for the sake of doing good work. Discipline is important to them and they don't take shortcuts at the expense of quality. Project Leads hold themselves and their teams to high standards of quality.",
+          "They think before they act. They put time and effort into thinking through edge cases, backward compatibility issues and other potential problems before a single line of code is written. They care about user experience and make it a point that whatever they produce is easy to understand and use for their intended user.",
+          "Finally, and definitely not least, they are excellent communicators and know their audience well. They are able to confidently speak to founders in a business context and to engineers in technical contexts. Excellent communication skills are necessary for understanding and converting founder's domain expertise into technical specifications for engineers to execute on."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Are you working at Byldd and want to be considered for a PL role? Ask for an evaluation."
+      },
+      {
+        "type": "p",
+        "text": "Are you a founder and want amazing project leads to help build your project? Reach out to us here to chat."
+      }
+    ]
+  },
+  {
+    "slug": "good-engineer-bad-engineer",
+    "title": "Good Engineer / Bad Engineer",
+    "excerpt": "Uncover the key differences between good and bad engineers and how they can make or break your startup’s product.",
+    "readingTime": 2,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "This has been heavily influenced by Ben Horowitz’s Good PM / Bad PM guide."
+      },
+      {
+        "type": "p",
+        "text": "Good engineers make history. Bad engineers destroy companies. This document aims to articulate what separates the good from the bad."
+      },
+      {
+        "type": "p",
+        "text": "A good engineer cares about doing good work for the sake of doing good work. Bad engineers put in the minimum that’s expected of them and count the minutes till quitting time."
+      },
+      {
+        "type": "p",
+        "text": "A good engineer takes initiative, a bad engineer waits for instruction."
+      },
+      {
+        "type": "p",
+        "text": "Good engineers understand the products they’re building. They take the time to understand the business and the users’ experience. They have a vested interest in the success of the businesses they’re helping develop. Bad engineers care more about building or using the latest technology than they do about achieving the business goals of our customers."
+      },
+      {
+        "type": "p",
+        "text": "Good engineers care about the customers and think about what they want and need. They can also clearly distinguish between want and need and build to solve those needs. It may not necessarily be what the customer asks for. Bad engineers build whatever is asked of them without considering purpose."
+      },
+      {
+        "type": "p",
+        "text": "Good engineers care about user experience. They understand that it’s their job to make products that are easy to understand and use. They know that great products are made by taking feedback from users. Bad engineers complain about users ‘not getting it’ or ‘being stupid’. Beyond that, they understand the value of backward compatibility. They know that not everyone is going to have the latest version of applications and that they need to account the experience of existing users."
+      },
+      {
+        "type": "p",
+        "text": "Good engineers care about the business and understand that without happy customers they, and Byldd, would not exist."
+      },
+      {
+        "type": "p",
+        "text": "Do you want good engineers working on your vision? Reach out to us here ."
+      }
+    ]
+  },
+  {
+    "slug": "good-project-manager-bad-project-manager",
+    "title": "Good Project Manager / Bad Project Manager",
+    "excerpt": "Explore what defines a great vs. poor project manager and how they influence project outcomes in a startup environment.",
+    "readingTime": 3,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "Byldd exists to help non-technical founders build software products and businesses. Our goal is to help our partners go to market with products that can generate recurring revenue, can become profitable and that users keep coming back to. As a company, this puts us in a unique position. We're not just some development agency that executes on clearly defined objectives or clears backlog tickets for larger firms. Our success is tied to the success of our partners. Therefore, we must ensure that the success of project managers is tied to the success of the projects they manage."
+      },
+      {
+        "type": "p",
+        "text": "We must not only execute the project effectively but also guide owners towards implementing scalable architecture, incorporating product best practices and focusing on good user experiences."
+      },
+      {
+        "type": "p",
+        "text": "With this in mind, I've adapted Ben Horowitz's Good Product Manager / Bad Product Manager for our context. Overall, there are 4 critical areas in which a PM needs to display world class skill. These are Ownership, Communication, Execution and Focus. Let's go through what these things mean, one by one."
+      },
+      {
+        "type": "h",
+        "text": "Ownership"
+      },
+      {
+        "type": "p",
+        "text": "A good project manager is the CEO of the project."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They take full responsibility of their project and measure themselves in terms of the project's success.",
+          "They are responsible for everything that does and does not happen on their project.",
+          "They know the context of the project extremely well and they take responsibility for delivering and executing a winning plan."
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "They depend on external direction for decisions.",
+          "They blame team members or other departments for shortcomings."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Just as a CEO doesn't make excuses or assign blame, a PM should not either."
+      },
+      {
+        "type": "h",
+        "text": "Communication"
+      },
+      {
+        "type": "p",
+        "text": "Good project managers communicate very effectively."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They ask themselves - What do I know? Who needs to know it? Have I told them? - and are proactive (instead of reactive) in their communication.",
+          "They clearly define the scope, schedule and budget of their projects. They notice deviations, address them and, if necessary, rectify them.",
+          "They err on the side of clarity vs explaining the obvious.",
+          "They work to ensure that every angle and assumption of the project is thought through and tested."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Bad managers complain that they spend all day answering questions."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They don't bother explaining the obvious.",
+          "They let their team make assumptions and decisions based on those assumptions."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "Execution"
+      },
+      {
+        "type": "p",
+        "text": "Good project managers execute effectively. They focus on high-leverage activities and ensure that their teams can operate smoothly. Paraphrasing Andrew Grove, high-leverage activities are activities that generate a disproportionately high level of output. For example, setting clear objectives for the team."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They protect engineers from distractions, excessive meetings and business decisions.",
+          "They issue clear instructions and set clear goals for their team members.",
+          "They ensure that they first focus on blocking issues and high-leverage activities.",
+          "They do the hard work of thinking through problems so that their team members can focus on executing smoothly."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Bad project managers don't spend the effort to think through the project and as a result are always reacting to situations."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They are always putting out fires, solving problems on the fly and risk getting overwhelmed.",
+          "They let engineers think through problems and make business decisions. This is a bad idea - engineers don't have the full context and hence make suboptimal decisions leading to uncontrolled technical debt.",
+          "Their lack of foresight forces rushed decision making which turns into a spiral."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "Focus"
+      },
+      {
+        "type": "p",
+        "text": "Good project managers focus on the value their product will bring to the market."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Their focus is directly on revenue and customers. They remain lean for the benefit of the entrepreneur and don't waste budget on frivolous features.",
+          "Indirectly, their focus is on user experience and product quality.",
+          "They help entrepreneurs identify and test the critical assumptions.",
+          "They send their status updates on time because they are disciplined."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Bad product managers focus on the number of features and bells and whistles."
+      },
+      {
+        "type": "list",
+        "items": [
+          "They count features without thinking of impact.",
+          "They forget to send status updates because they don't value discipline."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "automating-internal-processes",
+    "title": "Automating Internal Processes",
+    "excerpt": "Learn how automating internal operations can streamline your startup, boost efficiency, and accelerate scalability.",
+    "readingTime": 3,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "A few months ago, we worked with an event management company offering a concierge service for private events. The company was about a year old and was dealing an ever increasing number of inbound leads, so much so that often, the sales team was unable to meet demand in a timely manner."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Account Executive studies the request and has a brief phone call with the client, explaining the process (3-4 minutes).",
+          "AE goes through the company's internal database to identify 10 to 15 venues that match the client's requirements. She takes screenshots and copies descriptions, puts them in a word doc and creates a PDF. (12-15 minutes)",
+          "AE sends the email to the client and follows up with them after a certain time. (3 minutes)",
+          "When a client indicated interest in a venue, a proposal was created on behalf of the venue and sent to the client. (10 mins)",
+          "Based on the clients feedback, steps 2 to 4 could repeat a few times."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Since it was such time consuming and labor intensive process, members of the sales team were not able to handle with more than 3 new clients per hour. Even if they devoted 50% of their time to dealing with new clients, they’d still only be able to handle around 12 leads a day."
+      },
+      {
+        "type": "p",
+        "text": "The other problem was a lack of insight into the client's behavior. The team had no way of tracking whether the client had opened the email, opened the PDF, liked or disliked venues, had questions or comments etc unless they decided to reply to the email."
+      },
+      {
+        "type": "p",
+        "text": "The company needed to find a way to deal with the increase in demand. Doubling the sales team wasn't a realistic option from either a scalability or financial perspective. They reached out to us to help them solve the problem."
+      },
+      {
+        "type": "p",
+        "text": "After spending a week studying their process, we prototyped a process automation tool that would drop the lead time from 22 to 5 minutes. Using Byldd's proprietary tools we were able to create the software in about 15 days."
+      },
+      {
+        "type": "list",
+        "items": [
+          "We build an event dashboard for both the client and AE. On this dashboard, the AE is able to search for and add recommended venues. These are immediately visible to the client on their version of the dashboard.",
+          "The client is able to interact with the suggested venues and able to request a proposal. Clicking that button generates a standard proposal pre-filled with all of the events information. The AE is able to edit whatever needs to change and send it to the client.",
+          "Client event dashboard tracking - we started tracking and notifying AEs whenever a client landed on their event page for the first time and every time they interacted with the suggested venues."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Our implementation dropped the time per client from 22 minutes to 5 minutes. This eventually allowed the company to grow their revenue 10 fold with the same sales head count."
+      },
+      {
+        "type": "p",
+        "text": "We were later called in to integrate the system we created with salesforce which we did easily because of Byldd's flexible and extensible nature."
+      },
+      {
+        "type": "p",
+        "text": "Byldd's proprietary technology reduces the time and cost of new product development by 90%. Thinking about building something? Contact Us ."
+      }
+    ]
+  },
+  {
+    "slug": "entrepreneurs-perspective-building-a-streaming-platform-alternatives-and-decision-making",
+    "title": "Building a Streaming Platform - Alternatives and Decision Making",
+    "excerpt": "Discover an entrepreneur’s journey in building a streaming platform, with real insights into decision-making and alternatives.",
+    "readingTime": 5,
+    "blocks": [
+      {
+        "type": "h",
+        "text": "What is SVOD?"
+      },
+      {
+        "type": "p",
+        "text": "SVOD stands for Subscriber Video on Delivery. Products like Netflix, Prime Videos and Disney+ are SVOD platform (more or less). It’s one of the possible variations of OTT (over the top) content products."
+      },
+      {
+        "type": "p",
+        "text": "OTT just means that’s its a streaming media service offered to viewers over the internet. The revenue model is really what determines whether the platform is S(Subscriber eg Netflix) VOD, T(Transactional eg Sports Websites where you pay per game or season) VOD, or A(Advertising eg. YouTube) VOD. The underlying technology for video streaming remains the same."
+      },
+      {
+        "type": "p",
+        "text": "Some time ago, a client reached out to us for help building a SVOD platform to provide lessons to people in the a specialized industry. This article is a summary of the options that are available for entrepreneurs or businesses looking to build a video or audio streaming service as well as their respective tradeoffs."
+      },
+      {
+        "type": "h",
+        "text": "Why is it so effing difficult?"
+      },
+      {
+        "type": "p",
+        "text": "It is difficult to get OTT video right primarily because of the unpredictable variations in the viewing experiences. Some of the things businesses need to consider are:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Location - where are your users located? Businesses need to invest in a distribution network that facilitates smooth access to content for those areas. This means you need servers, databases and a delivery network that allows your users to reach your content.",
+          "Device - what devices are your users using to view content? There are hundreds of different devices - computers, tablets and phones - that users could be using to try to access your content. Those devices don’t all support the same video formats. You need to create replica videos for all your content in different formats and write logic to serve the right content to the right device. More importantly, you need to figure out which content doesn’t work with what device.",
+          "Bandwidth - what kind of internet speed do your users have? What happens when they are trying to access content from a 3G network? Businesses need to create varying levels of video quality and ensure fallback happens smoothly."
+        ]
+      },
+      {
+        "type": "h",
+        "text": "What are my options?"
+      },
+      {
+        "type": "p",
+        "text": "There are generally three major routes a business can take when building a streaming service. Each route has trade-offs in upfront capital investment required, time to development, and long-term costs."
+      },
+      {
+        "type": "h",
+        "text": "Infrastructure as a Service (IAAS)"
+      },
+      {
+        "type": "p",
+        "text": "This is the heavyweight option and the most customizable. It is also the most expensive to get up and running."
+      },
+      {
+        "type": "p",
+        "text": "All the major cloud infrastructure, Google Cloud, Amazon Web Services, Microsoft Azure, etc, providers have functionality that allow engineers to build their own Netflix. The fixed costs to build infrastructure there is relatively low - a few hundred dollars - while the variable costs will change depending on how much usage your platform is getting. I don’t expect a new business to exceed $100 / month in usage costs."
+      },
+      {
+        "type": "p",
+        "text": "The real cost drivers are the engineering hours you need to put in to solve the three problems we discussed above. These are the kinds of problems that can only be solved by specialist teams which means you’ll likely have find some engineers who are deeply familiar with Netflix’s (or competitor’s) infrastructure. Your costs could vary anywhere between $200,000 to more than $1,000,000."
+      },
+      {
+        "type": "p",
+        "text": "So when should you pick this option? When you’ve proven your model and know you’re gonna hit that hockey stick growth. When you’re sure that a million dollar investment is going to be worth it."
+      },
+      {
+        "type": "h",
+        "text": "Platform as a Service (PAAS)"
+      },
+      {
+        "type": "p",
+        "text": "The complexities of OTT content delivery are so difficult to solve that businesses have formed that offer this as a service. Companies like Anvedo and Wowza offer platforms that have been battle tested as a service. These platforms make it possible for the business to invest engineering effort only on the business logic of their platform with the complexities of OTT - bandwidth management, distribution network, and device variation - being offloaded to these providers."
+      },
+      {
+        "type": "p",
+        "text": "For example, if you wanted to build the next Netflix, you’d invest your time figuring out how to implement that DELIGHTFUL ‘Skip Trailer’ feature and build a solid recommendation engine while leaving the content management to Wowza."
+      },
+      {
+        "type": "p",
+        "text": "Costs vary here depending on what kind of functionality you want to build onto the product and the kinds of devices you want to support. A simple product with nothing besides authentication and subscription payments would cost less than one with a recommendation engine and review system. Building applications for IOS, Android, and TVs will cost more."
+      },
+      {
+        "type": "p",
+        "text": "Byldd can be especially helpful here. Byldd uses its proprietary tools to automate away much of the redundant parts of building new software products. Things like payment processing, admin and user-level authentication system,s and review systems are modularized and can be added at the click of a button. It also creates the infrastructure to interact with your data by automagically building a complete REST API for your resources. This reduces the time and cost of building a streaming service by 50 to 70%."
+      },
+      {
+        "type": "p",
+        "text": "Subscription to the platforms themselves has a fixed cost of about $50/month plus streaming cost which is typically charged by the number of hours of content streamed. For new businesses, I don’t expect the cost to exceed $150/month."
+      },
+      {
+        "type": "h",
+        "text": "Software as a Service (SAAS)"
+      },
+      {
+        "type": "p",
+        "text": "There are other businesses who provide end to end generic solutions for OTT. Services like Uscreen will create a streaming web application for a few hundred dollars a year. These products are the least customizable and you have the least control over your user’s experiences."
+      },
+      {
+        "type": "p",
+        "text": "These are white label streaming services that put your branding and logo on their existing streaming applications. While this is a great way to experiment, it is not a sustainable long term solution because they charge by the subscriber. The current basic plan on Uscreen limits you to 300 subscribers. You can find your costs expanding very rapidly on platforms like this."
+      },
+      {
+        "type": "p",
+        "text": "The other drawback is that these providers own the software. So if you ever wanted to implement something custom, like a recommendation engine, you’d have to hire their engineers for custom work."
+      },
+      {
+        "type": "h",
+        "text": "What option should you choose?"
+      },
+      {
+        "type": "p",
+        "text": "Long Answer: like everything else, it depends. In most cases though, especially initially, your best bet is going to be using a platform to host and distribute your content. There are plenty of reliable, relatively inexpensive platforms available for use. And if you ever experience the growing pains of Netflix's scale, you could spend time and money building your infrastructure."
+      },
+      {
+        "type": "p",
+        "text": "Need help building a streaming platform? Contact Us ."
+      }
+    ]
+  }
+]
