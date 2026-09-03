@@ -1,81 +1,200 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight } from "@/components/brand/marks";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-const budgets = [
-  "$10k – $30k",
-  "$30k – $50k",
-  "$50k – $75k",
-  "$75k – $100k",
-  "$100k – $150k",
-  "$150k+",
-];
+import { ArrowUpRight } from "@/components/brand/marks";
+import { useCaptcha } from "@/hooks/use-captcha";
+import { BudgetField } from "@/modules/Contact/components/BudgetField";
+import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
+import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
+import { TextareaField } from "@/modules/Contact/components/TextareaField";
+import { TextInputField } from "@/modules/Contact/components/TextInputField";
+import {
+  openCalendly,
+  preloadCalendly,
+} from "@/modules/Contact/utils/calendly";
+import {
+  formatLeadQueryParams,
+  getIpAddress,
+  getLeadQueryParams,
+  persistLeadQueryParams,
+} from "@/modules/Contact/utils/lead-attribution";
+import {
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/schemas/contact-form-schema";
 
 const field =
   "w-full rounded-xl border border-brand-ink/15 bg-white px-4 py-3 text-brand-ink outline-none transition-colors placeholder:text-brand-ink/40 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
+const formEndpoint = "/api/contact";
 
-export function ContactForm({ email }: { email: string }) {
-  const [budget, setBudget] = useState(budgets[0]);
+export function ContactForm() {
+  const [phoneInputKey, setPhoneInputKey] = useState(0);
+  const { getCaptchaToken } = useCaptcha();
+  const {
+    register,
+    control,
+    handleSubmit,
+    setValue,
+    setError,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      budget: "",
+      message: "",
+      smsConsent: false,
+    },
+  });
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") || "");
-    const from = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
-    const subject = encodeURIComponent(`New project enquiry — ${name || "Byldd"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${from}\nBudget: ${budget}\n\n${message}`,
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  useEffect(() => {
+    persistLeadQueryParams();
+    void preloadCalendly().catch(() => undefined);
+  }, []);
+
+  const handlePhoneChange = useCallback(
+    (phone: string) => {
+      setValue("phone", phone, {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    },
+    [setValue],
+  );
+
+  const onSubmit = async (values: ContactFormValues) => {
+    try {
+      const [recaptchaToken, ip] = await Promise.all([
+        getCaptchaToken("submit"),
+        getIpAddress(),
+      ]);
+      const params = getLeadQueryParams();
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: values.name,
+          ip,
+          agent: window.navigator.userAgent,
+          email: values.email,
+          phone: values.phone,
+          budget: values.budget,
+          message: values.message,
+          isChecked: values.smsConsent === true,
+          pageUrl: window.location.href,
+          utm: formatLeadQueryParams(params),
+          // recaptchaToken,
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok || result?.error) {
+        throw new Error(
+          result?.error || "We couldn't submit your enquiry. Please try again.",
+        );
+      }
+
+      await openCalendly(values.name, values.email);
+      reset();
+      setPhoneInputKey((key) => key + 1);
+    } catch (error) {
+      setError("root", {
+        type: "server",
+        message:
+          error instanceof Error
+            ? error.message
+            : "We couldn't submit your enquiry. Please try again.",
+      });
+    }
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-4">
+    <form
+      className="flex flex-col gap-4"
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-1.5">
-          <span className="text-sm font-medium text-brand-ink/70">Name</span>
-          <input name="name" required className={field} placeholder="Your name" />
-        </label>
-        <label className="flex flex-col gap-1.5">
-          <span className="text-sm font-medium text-brand-ink/70">Email</span>
-          <input name="email" type="email" required className={field} placeholder="you@company.com" />
-        </label>
+        <TextInputField
+          id="contact-name"
+          label="Name"
+          registration={register("name")}
+          className={field}
+          error={errors.name?.message}
+          placeholder="Your full name"
+          autoComplete="name"
+        />
+        <TextInputField
+          id="contact-email"
+          label="Email"
+          registration={register("email")}
+          className={field}
+          error={errors.email?.message}
+          type="email"
+          placeholder="Your email ID"
+          autoComplete="email"
+        />
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <span className="text-sm font-medium text-brand-ink/70">Budget</span>
-        <div className="flex flex-wrap gap-2">
-          {budgets.map((b) => (
-            <button
-              type="button"
-              key={b}
-              onClick={() => setBudget(b)}
-              className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-                budget === b
-                  ? "border-brand-purple bg-brand-purple text-white"
-                  : "border-brand-ink/15 text-brand-ink/70 hover:border-brand-purple/40"
-              }`}
-            >
-              {b}
-            </button>
-          ))}
-        </div>
-      </div>
+      <PhoneInput
+        key={phoneInputKey}
+        className={field}
+        error={errors.phone?.message}
+        onChange={handlePhoneChange}
+      />
 
-      <label className="flex flex-col gap-1.5">
-        <span className="text-sm font-medium text-brand-ink/70">What are you building?</span>
-        <textarea name="message" rows={4} required className={field} placeholder="A sentence or two about your idea…" />
-      </label>
+      <BudgetField control={control} />
+
+      <TextareaField
+        id="contact-message"
+        label="What are you building?"
+        registration={register("message")}
+        className={field}
+        error={errors.message?.message}
+        placeholder="Tell us about your product..."
+        hint="(NDA Covered)"
+      />
+
+      <SmsConsentField control={control} />
 
       <button
         type="submit"
-        className="group mt-2 inline-flex w-fit items-center gap-2.5 rounded-full bg-brand-purple px-6 py-3 font-semibold text-white shadow-[0_10px_30px_-8px_rgba(131,77,251,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_44px_-10px_rgba(131,77,251,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+        disabled={isSubmitting}
+        className="group mt-2 inline-flex w-fit items-center gap-2.5 rounded-full bg-brand-purple px-6 py-3 font-semibold text-white shadow-[0_10px_30px_-8px_rgba(131,77,251,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_44px_-10px_rgba(131,77,251,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Enquiry
+        {isSubmitting ? "Submitting..." : "Book a Strategy Session"}
+
         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </button>
+
+      <p className="m-0 text-center text-xs text-brand-ink/60">
+        <Link href="/privacy" className="text-brand-purple hover:underline">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link href="/terms" className="text-brand-purple hover:underline">
+          Terms of Service
+        </Link>
+      </p>
+
+      {errors.root && (
+        <p
+          role="alert"
+          aria-live="polite"
+          className="m-0 text-center text-sm text-red-500"
+        >
+          {errors.root.message}
+        </p>
+      )}
     </form>
   );
 }
