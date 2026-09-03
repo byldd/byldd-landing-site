@@ -13,7 +13,14 @@ const budgets = [
   { label: "$150k+", value: "150000-200000$" },
 ];
 
-export function BudgetField({ control }: { control: Control<ContactFormValues> }) {
+export function BudgetField({
+  control,
+  idPrefix = "contact",
+}: {
+  control: Control<ContactFormValues>;
+  idPrefix?: string;
+}) {
+  const errorId = `${idPrefix}-budget-error`;
   const {
     field: budgetField,
     fieldState: { error },
@@ -23,7 +30,7 @@ export function BudgetField({ control }: { control: Control<ContactFormValues> }
     <fieldset
       className="flex flex-col gap-1.5"
       aria-invalid={Boolean(error)}
-      aria-describedby={error ? "contact-budget-error" : undefined}
+      aria-describedby={error ? errorId : undefined}
     >
       <legend className="mb-1.5 text-sm font-medium text-brand-ink/70">
         Budget
@@ -52,7 +59,7 @@ export function BudgetField({ control }: { control: Control<ContactFormValues> }
       </div>
 
       {error && (
-        <span id="contact-budget-error" className="text-sm text-red-500">
+        <span id={errorId} className="text-sm text-red-500">
           {error.message}
         </span>
       )}

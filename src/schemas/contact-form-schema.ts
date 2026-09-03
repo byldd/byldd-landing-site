@@ -38,7 +38,7 @@ export const contactSubmissionSchema = contactFormSchema
     isChecked: z.boolean(),
     pageUrl: z.string().url(),
     utm: z.string(),
-    recaptchaToken: z.string().min(1),
+    recaptchaToken: z.string().min(1).optional(),
   });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
