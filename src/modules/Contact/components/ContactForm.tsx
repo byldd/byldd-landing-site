@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ArrowUpRight } from "@/components/brand/marks";
+import { useCaptcha } from "@/hooks/use-captcha";
 import { BudgetField } from "@/modules/Contact/components/BudgetField";
 import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
@@ -30,18 +31,9 @@ const field =
   "w-full rounded-xl border border-brand-ink/15 bg-white px-4 py-3 text-brand-ink outline-none transition-colors placeholder:text-brand-ink/40 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 const formEndpoint = "/api/contact";
 
-type ContactFormProps = {
-  className?: string;
-  idPrefix?: string;
-  submitLabel?: string;
-};
-
-export function ContactForm({
-  className = "",
-  idPrefix = "contact",
-  submitLabel = "Book a Strategy Session",
-}: ContactFormProps = {}) {
+export function ContactForm() {
   const [phoneInputKey, setPhoneInputKey] = useState(0);
+  const { getCaptchaToken } = useCaptcha();
   const {
     register,
     control,
@@ -79,7 +71,10 @@ export function ContactForm({
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
-      const ip = await getIpAddress();
+      const [recaptchaToken, ip] = await Promise.all([
+        getCaptchaToken("submit"),
+        getIpAddress(),
+      ]);
       const params = getLeadQueryParams();
       const response = await fetch(formEndpoint, {
         method: "POST",
@@ -95,6 +90,7 @@ export function ContactForm({
           isChecked: values.smsConsent === true,
           pageUrl: window.location.href,
           utm: formatLeadQueryParams(params),
+          recaptchaToken,
         }),
       });
       const result = (await response.json().catch(() => null)) as {
@@ -123,13 +119,13 @@ export function ContactForm({
 
   return (
     <form
-      className={`flex flex-col gap-4 ${className}`}
+      className="flex flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <TextInputField
-          id={`${idPrefix}-name`}
+          id="contact-name"
           label="Name"
           registration={register("name")}
           className={field}
@@ -138,7 +134,7 @@ export function ContactForm({
           autoComplete="name"
         />
         <TextInputField
-          id={`${idPrefix}-email`}
+          id="contact-email"
           label="Email"
           registration={register("email")}
           className={field}
@@ -151,16 +147,15 @@ export function ContactForm({
 
       <PhoneInput
         key={phoneInputKey}
-        id={`${idPrefix}-phone`}
         className={field}
         error={errors.phone?.message}
         onChange={handlePhoneChange}
       />
 
-      <BudgetField control={control} idPrefix={idPrefix} />
+      <BudgetField control={control} />
 
       <TextareaField
-        id={`${idPrefix}-message`}
+        id="contact-message"
         label="What are you building?"
         registration={register("message")}
         className={field}
@@ -176,7 +171,7 @@ export function ContactForm({
         disabled={isSubmitting}
         className="group mt-2 inline-flex w-fit items-center gap-2.5 rounded-full bg-brand-purple px-6 py-3 font-semibold text-white shadow-[0_10px_30px_-8px_rgba(131,77,251,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_44px_-10px_rgba(131,77,251,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? "Submitting..." : submitLabel}
+        {isSubmitting ? "Submitting..." : "Book a Strategy Session"}
 
         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </button>
