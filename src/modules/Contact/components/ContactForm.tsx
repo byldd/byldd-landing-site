@@ -90,7 +90,7 @@ export function ContactForm() {
           isChecked: values.smsConsent === true,
           pageUrl: window.location.href,
           utm: formatLeadQueryParams(params),
-          // recaptchaToken,
+          recaptchaToken,
         }),
       });
       const result = (await response.json().catch(() => null)) as {
