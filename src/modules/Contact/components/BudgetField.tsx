@@ -13,18 +13,20 @@ const budgets = [
   { label: "$150k+", value: "150000-200000$" },
 ];
 
+type BudgetFieldProps = {
+  control: Control<ContactFormValues>;
+  idPrefix?: string;
+};
+
 export function BudgetField({
   control,
   idPrefix = "contact",
-}: {
-  control: Control<ContactFormValues>;
-  idPrefix?: string;
-}) {
-  const errorId = `${idPrefix}-budget-error`;
+}: BudgetFieldProps) {
   const {
     field: budgetField,
     fieldState: { error },
   } = useController({ name: "budget", control });
+  const errorId = `${idPrefix}-budget-error`;
 
   return (
     <fieldset

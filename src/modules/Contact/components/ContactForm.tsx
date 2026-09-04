@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ArrowUpRight } from "@/components/brand/marks";
+import { useCaptcha } from "@/hooks/use-captcha";
 import { BudgetField } from "@/modules/Contact/components/BudgetField";
 import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
@@ -42,6 +43,7 @@ export function ContactForm({
   submitLabel = "Book a Strategy Session",
 }: ContactFormProps = {}) {
   const [phoneInputKey, setPhoneInputKey] = useState(0);
+  const { getCaptchaToken } = useCaptcha();
   const {
     register,
     control,
@@ -79,7 +81,10 @@ export function ContactForm({
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
-      const ip = await getIpAddress();
+      const [recaptchaToken, ip] = await Promise.all([
+        getCaptchaToken("submit"),
+        getIpAddress(),
+      ]);
       const params = getLeadQueryParams();
       const response = await fetch(formEndpoint, {
         method: "POST",
@@ -95,6 +100,7 @@ export function ContactForm({
           isChecked: values.smsConsent === true,
           pageUrl: window.location.href,
           utm: formatLeadQueryParams(params),
+          recaptchaToken,
         }),
       });
       const result = (await response.json().catch(() => null)) as {
