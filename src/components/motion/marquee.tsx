@@ -116,6 +116,18 @@ export function Marquee({
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!interactive) return;
     if (e.pointerType === "mouse" && e.button !== 0) return; // left-button drags only
+
+    // Pointer capture on a clickable child can retarget pointerup/click to this
+    // container in desktop browsers. Keep native mouse clicks on cards intact;
+    // desktop dragging still works from the gaps, while touch dragging remains
+    // available across the full track.
+    if (
+      e.pointerType === "mouse" &&
+      (e.target as Element).closest("button, a, input, select, textarea")
+    ) {
+      return;
+    }
+
     dragging.current = true;
     dragMoved.current = false;
     dragStartX.current = e.clientX;
