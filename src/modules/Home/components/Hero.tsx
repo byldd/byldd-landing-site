@@ -31,8 +31,7 @@ export function Hero() {
 
           <Reveal delay={0.3}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/80 [text-shadow:0_1px_14px_rgba(22,12,46,0.7)] sm:text-xl">
-              Byldd turns uncertainty into clarity — so founders ship what customers
-              actually use. Engineered with clarity, built to scale, designed to last.
+              We co-create next-generation software products with visionary founders and forward-thinking enterprises.
             </p>
           </Reveal>
 

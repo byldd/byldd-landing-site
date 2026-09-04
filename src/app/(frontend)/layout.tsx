@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import RecaptchaProvider from "@/providers/recaptcha-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { ScrollThread } from "@/components/motion/scroll-thread";
@@ -36,13 +36,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="bg-background text-foreground flex min-h-full flex-col"
         suppressHydrationWarning
       >
+        <RecaptchaProvider>
         <SmoothScroll>
           <ScrollThread />
           <Header />
+
           {children}
           <Footer />
         </SmoothScroll>
         <Toaster />
+        </RecaptchaProvider>
       </body>
     </html>
       

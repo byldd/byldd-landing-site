@@ -57,7 +57,7 @@ export function ContactPage() {
 
           {/* Form */}
           <Reveal delay={0.15} className="rounded-card border border-brand-ink/[0.07] bg-white p-8 md:p-10">
-            <ContactForm email={footer.email} />
+            <ContactForm />
           </Reveal>
         </Container>
       </section>
