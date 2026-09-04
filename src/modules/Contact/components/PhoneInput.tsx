@@ -7,10 +7,16 @@ import "intl-tel-input/styles";
 type PhoneInputProps = {
   className: string;
   error?: string;
+  id?: string;
   onChange: (phone: string) => void;
 };
 
-export function PhoneInput({ className, error, onChange }: PhoneInputProps) {
+export function PhoneInput({
+  className,
+  error,
+  id = "contact-phone",
+  onChange,
+}: PhoneInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -55,16 +61,16 @@ export function PhoneInput({ className, error, onChange }: PhoneInputProps) {
       <span className="text-sm font-medium text-brand-ink/70">Phone</span>
       <input
         ref={inputRef}
-        id="contact-phone"
+        id={id}
         type="tel"
         className={`${className} !pl-[100px]`}
         placeholder="Phone number"
         autoComplete="tel"
         aria-invalid={Boolean(error)}
-        aria-describedby={error ? "contact-phone-error" : undefined}
+        aria-describedby={error ? `${id}-error` : undefined}
       />
       {error && (
-        <span id="contact-phone-error" className="text-sm text-red-500">
+        <span id={`${id}-error`} className="text-sm text-red-500">
           {error}
         </span>
       )}
