@@ -222,7 +222,7 @@ export const clientLogos = [
 
 /** Client testimonials — real partners + their YouTube videos from byldd.com. */
 export const testimonials = {
-  headline: "Our work speaks through our partners.",
+  headline: "What Byldding with us looks like",
   sub: "From seed-stage startups to Fortune 500 teams, Byldd delivers secure, scalable software — on time, on budget. Hear it from them.",
   /**
    * Reels with a real pull-quote. The quote is rendered by our own overlay
