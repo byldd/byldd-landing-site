@@ -5,6 +5,14 @@ type CalendlyApi = {
   initPopupWidget: (options: { url: string }) => void;
 };
 
+export type CalendlyScheduledEvent = MessageEvent<{
+  event?: string;
+  payload?: {
+    event?: { uri?: string };
+    invitee?: { uri?: string };
+  };
+}>;
+
 declare global {
   interface Window {
     Calendly?: CalendlyApi;
@@ -12,6 +20,20 @@ declare global {
 }
 
 let calendlyPromise: Promise<CalendlyApi> | undefined;
+
+export function isCalendlyScheduledEvent(
+  event: MessageEvent,
+): event is CalendlyScheduledEvent {
+  try {
+    const hostname = new URL(event.origin).hostname;
+    const isCalendlyOrigin =
+      hostname === "calendly.com" || hostname.endsWith(".calendly.com");
+
+    return isCalendlyOrigin && event.data?.event === "calendly.event_scheduled";
+  } catch {
+    return false;
+  }
+}
 
 export function preloadCalendly() {
   if (window.Calendly) return Promise.resolve(window.Calendly);

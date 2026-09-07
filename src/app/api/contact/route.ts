@@ -1,6 +1,5 @@
+import { sendToMakeAutomation } from "@/modules/Contact/utils/automations";
 import { contactSubmissionSchema } from "@/schemas/contact-form-schema";
-
-const formEndpoint = "https://form.byldd.com/data";
 
 export async function POST(request: Request) {
   try {
@@ -10,12 +9,20 @@ export async function POST(request: Request) {
       return Response.json({ error: "Invalid form submission." }, { status: 400 });
     }
 
-    const response = await fetch(formEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload.data),
-      cache: "no-store",
-    });
+    const formEndpoint = process.env.FORM_ENDPOINT_URL;
+    if (!formEndpoint) {
+      throw new Error("Missing FORM_ENDPOINT_URL");
+    }
+
+    const [response] = await Promise.all([
+      fetch(formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...payload.data, utmData: undefined }),
+        cache: "no-store",
+      }),
+      sendToMakeAutomation(payload.data),
+    ]);
     const body = await response.text();
 
     return new Response(body || null, {
