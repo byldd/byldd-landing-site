@@ -1,5 +1,17 @@
 const STORED_QUERY_PARAMS_KEY = "queryParams";
 
+export type LeadUtmData = {
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmContent: string;
+  utmAdset: string;
+  utmAd: string;
+  utmId: string;
+  utmTerm: string;
+  utmBusinessCategory: string;
+};
+
 export function persistLeadQueryParams() {
   const search = window.location.search;
 
@@ -22,6 +34,32 @@ export function formatLeadQueryParams(params: URLSearchParams) {
     .filter(([, value]) => value.trim())
     .map(([key, value]) => `${key} = ${value}`)
     .join("\n");
+}
+
+export function getLeadUtmData(params: URLSearchParams): LeadUtmData {
+  const readParam = (...names: string[]) => {
+    for (const name of names) {
+      const value = params.get(name)?.trim();
+      if (value) return value;
+    }
+
+    return "Not provided";
+  };
+
+  return {
+    utmSource: readParam("utm_source", "utmSource"),
+    utmMedium: readParam("utm_medium", "utmMedium"),
+    utmCampaign: readParam("utm_campaign", "utmCampaign"),
+    utmContent: readParam("utm_content", "utmContent"),
+    utmAdset: readParam("utm_adset", "utmAdset"),
+    utmAd: readParam("utm_ad", "utmAd"),
+    utmId: readParam("utm_id", "utmId"),
+    utmTerm: readParam("utm_term", "utmTerm"),
+    utmBusinessCategory: readParam(
+      "utm_business_category",
+      "utmBusinessCategory",
+    ),
+  };
 }
 
 export async function getIpAddress() {

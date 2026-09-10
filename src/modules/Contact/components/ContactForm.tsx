@@ -13,6 +13,7 @@ import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
 import { TextInputField } from "@/modules/Contact/components/TextInputField";
 import {
+  isCalendlyScheduledEvent,
   openCalendly,
   preloadCalendly,
 } from "@/modules/Contact/utils/calendly";
@@ -20,16 +21,19 @@ import {
   formatLeadQueryParams,
   getIpAddress,
   getLeadQueryParams,
+  getLeadUtmData,
   persistLeadQueryParams,
 } from "@/modules/Contact/utils/lead-attribution";
 import {
   contactFormSchema,
   type ContactFormValues,
+  type ContactSubmission,
 } from "@/schemas/contact-form-schema";
 
 const field =
   "w-full rounded-xl border border-brand-ink/15 bg-white px-4 py-3 text-brand-ink outline-none transition-colors placeholder:text-brand-ink/40 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 const formEndpoint = "/api/contact";
+const calendlyBookingEndpoint = "/api/contact/calendly";
 
 type ContactFormProps = {
   className?: string;
@@ -43,6 +47,8 @@ export function ContactForm({
   submitLabel = "Book a Strategy Session",
 }: ContactFormProps = {}) {
   const [phoneInputKey, setPhoneInputKey] = useState(0);
+  const [pendingCalendlySubmission, setPendingCalendlySubmission] =
+    useState<ContactSubmission | null>(null);
   const { getCaptchaToken } = useCaptcha();
   const {
     register,
@@ -69,6 +75,44 @@ export function ContactForm({
     void preloadCalendly().catch(() => undefined);
   }, []);
 
+  useEffect(() => {
+    const handleCalendlyMessage = (event: MessageEvent) => {
+      if (!isCalendlyScheduledEvent(event)) return;
+
+      const submission = pendingCalendlySubmission;
+      if (!submission) return;
+
+      setPendingCalendlySubmission(null);
+      void (async () => {
+        try {
+          const response = await fetch(calendlyBookingEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ...submission,
+              calendlyEventUri: event.data.payload?.event?.uri,
+              calendlyInviteeUri: event.data.payload?.invitee?.uri,
+            }),
+            keepalive: true,
+          });
+
+          if (!response.ok) {
+            throw new Error("Calendly automation failed");
+          }
+        } catch {
+          setError("root", {
+            type: "server",
+            message:
+              "Your meeting was booked, but we couldn't save all of its details.",
+          });
+        }
+      })();
+    };
+
+    window.addEventListener("message", handleCalendlyMessage);
+    return () => window.removeEventListener("message", handleCalendlyMessage);
+  }, [pendingCalendlySubmission, setError]);
+
   const handlePhoneChange = useCallback(
     (phone: string) => {
       setValue("phone", phone, {
@@ -86,22 +130,24 @@ export function ContactForm({
         getIpAddress(),
       ]);
       const params = getLeadQueryParams();
+      const submission: ContactSubmission = {
+        name: values.name,
+        ip,
+        agent: window.navigator.userAgent,
+        email: values.email,
+        phone: values.phone,
+        budget: values.budget,
+        message: values.message,
+        isChecked: values.smsConsent === true,
+        pageUrl: window.location.href,
+        utm: formatLeadQueryParams(params),
+        utmData: getLeadUtmData(params),
+        recaptchaToken,
+      };
       const response = await fetch(formEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: values.name,
-          ip,
-          agent: window.navigator.userAgent,
-          email: values.email,
-          phone: values.phone,
-          budget: values.budget,
-          message: values.message,
-          isChecked: values.smsConsent === true,
-          pageUrl: window.location.href,
-          utm: formatLeadQueryParams(params),
-          recaptchaToken,
-        }),
+        body: JSON.stringify(submission),
       });
       const result = (await response.json().catch(() => null)) as {
         error?: string;
@@ -113,6 +159,7 @@ export function ContactForm({
         );
       }
 
+      setPendingCalendlySubmission(submission);
       await openCalendly(values.name, values.email);
       reset();
       setPhoneInputKey((key) => key + 1);
