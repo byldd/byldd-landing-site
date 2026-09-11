@@ -103,7 +103,7 @@ export const developmentPartnersContent = {
       title: "The Byldd difference",
       items: [
         "We pressure-test your idea before writing code",
-        "Market and revenue first",
+        "Market & revenue first",
         "A long-term product partner",
       ],
     },
@@ -116,10 +116,10 @@ export const developmentPartnersContent = {
   },
   flexibleTeam: {
     eyebrow: "",
-    heading: "Control costs while hitting goals—at every stage.",
+    heading: "Control costs while hitting goals - at all stages.",
     lead: "Byldd gives you a flexible full-stack product team:",
-    emphasizedLead: "engineers, designers, PM, QA and CTO oversight.",
-    trailingLead: "Build only the team you need, when you need it.",
+    emphasizedLead: "engineers, designers, PM, QA and CTO ",
+    trailingLead: "oversight - Build only the team you need, when you need it.",
     ctaLabel: "Get started",
     ctaHref: "#strategy-call",
     image: "/case/team-flex.gif",
@@ -130,26 +130,23 @@ export const developmentPartnersContent = {
     heading: "Avoid costly mistakes with a team that has built 100+ successful products.",
     carouselLabel: "Product case studies",
     studies: [
-      {
+       {
         title: "Rank and Rent Engine (RARE)",
         image: "/case/rare.webp",
-        description:
-          "We turned a fragmented Airtable-and-Twilio workflow into one scalable SaaS platform for SEO research, lead management, call tracking and billing. The first version launched with paying customers within 24 hours.",
-        result: "50% less manual work",
+        description:"Byldd partnered with entrepreneur Ryan Dalton to transform his fragmented Airtable- and Twilio-based rank-and-rent business into a scalable SaaS platform. The challenge was unifying SEO research, due diligence, CRM, call tracking, and billing in one seamless product. Our team designed and built RARE, integrating real-time SEO tools, automated lead management, and subscription billing. Despite complex API dependencies and multi-tenant architecture needs, the first version launched successfully with paying customers within 24 hours. Today, RARE saves users 50% of their time and drives growing subscription revenue.",
+        result: "",
       },
       {
         title: "Contra Padel",
         image: "/case/contra.webp",
-        description:
-          "A player-first sports ecosystem combining a mobile app, club platform and hardware data. Byldd delivered matchmaking, automated refunds and actionable performance insights under a tight timeline.",
-        result: "Showcased at the Olympic Museum",
+        description:"Sports-tech startup Contra Padel partnered with Byldd to build a player-first ecosystem combining a mobile app, club web platform, and Spider hardware integration for performance tracking. Existing platforms focused only on bookings, ignoring player engagement and cancellations. We delivered a product that automated matchmaking, streamlined club refunds, and decoded raw sensor data into actionable performance insights. Key challenges included binary hardware integration and building a phased matchmaking algorithm under tight timelines. The product was showcased at the Olympic Museum in Italy, earning recognition and positioning Contra Padel for investor traction.",
+        result: "",
       },
       {
         title: "Between",
         image: "/case/between.webp",
-        description:
-          "A mobile-first maternal-care platform for matching clients with birth workers, automating contracts and reducing payment friction. The product launched in three months alongside its marketing site.",
-        result: "Idea to market in 3 months",
+        description:"Between was founded to improve how clients connect with birth workers, addressing challenges around discovery, contracts, and payment friction in maternal care. Byldd worked with the founders to refine their Figma designs and deliver a mobile-first product in three months. The platform enabled easy doula-client matching, automated contracts, empathetic notifications, and a dispute-first payment model to minimize awkward conversations. Challenges included reconciling inconsistent designs mid-project and integrating vendor payouts. Despite problems, the product launched successfully alongside a marketing site, giving the founders a live solution to validate in-market and scale further",
+        result: "",
       },
     ],
   },
@@ -167,7 +164,7 @@ export const developmentPartnersContent = {
     closingText: "Even if we don't work together,",
     emphasizedClosingText: "you'll leave with clarity.",
     formHeading: "Get your no-cost product consultation",
-    formDescription: "Tell us a little about your idea. NDA covered.",
+    formDescription: "",
     formIdPrefix: "dev-partner-footer",
     submitLabel: "Get in touch",
   },
