@@ -11,7 +11,7 @@ export function CampaignCaseStudiesCarousel({
   ariaLabel,
 }: {
   studies: readonly CampaignCaseStudy[];
-  ariaLabel: string;
+  ariaLabel: string;   
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const lastIndex = studies.length - 1;
@@ -67,7 +67,7 @@ export function CampaignCaseStudiesCarousel({
                 <h3 className="mt-4 text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">
                   {study.title}
                 </h3>
-                <p className="mt-5 text-base leading-8 text-brand-ink/60 md:text-lg">
+                <p className="mt-5 text-sm leading-8 text-brand-ink/60 md:text-sm">
                   {study.description}
                 </p>
               </div>
