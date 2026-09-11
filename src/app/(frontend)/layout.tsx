@@ -6,6 +6,7 @@ import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { ScrollThread } from "@/components/motion/scroll-thread";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
 
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="bg-background text-foreground flex min-h-full flex-col"
         suppressHydrationWarning
       >
+        <AnalyticsScripts />
         <RecaptchaProvider>
         <SmoothScroll>
           <ScrollThread />

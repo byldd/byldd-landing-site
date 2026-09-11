@@ -12,6 +12,7 @@ import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
 import { TextInputField } from "@/modules/Contact/components/TextInputField";
+import { trackContactFormSubmission } from "@/modules/Contact/utils/analytics";
 import {
   isCalendlyScheduledEvent,
   openCalendly,
@@ -159,6 +160,7 @@ export function ContactForm({
         );
       }
 
+      trackContactFormSubmission();
       setPendingCalendlySubmission(submission);
       await openCalendly(values.name, values.email);
       reset();
