@@ -11,7 +11,7 @@ export function CampaignCaseStudiesCarousel({
   ariaLabel,
 }: {
   studies: readonly CampaignCaseStudy[];
-  ariaLabel: string;   
+  ariaLabel: string;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const lastIndex = studies.length - 1;
