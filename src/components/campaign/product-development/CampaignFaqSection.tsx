@@ -16,7 +16,7 @@ export function CampaignFaqSection({ content }: { content: CampaignFaqContent })
                   <Plus className="size-4" />
                 </span>
               </summary>
-              <p className="max-w-3xl pb-6 leading-7 text-brand-mist/60">{faq.answer}</p>
+              <p className="w-full pb-6 leading-7 text-brand-mist/60">{faq.answer}</p>
             </details>
           ))}
         </div>
