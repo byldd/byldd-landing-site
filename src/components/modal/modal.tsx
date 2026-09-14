@@ -21,7 +21,7 @@ type DialogWithFormProps = {
 };
 
 export function DialogWithForm({
-  children = "Let's Byldd",
+  children = "Get Started",
   idPrefix,
   onOpen,
   triggerClassName = "",

@@ -10,11 +10,11 @@ const benefits = [
 ];
 
 const backers = [
-  { src: "/brand/logos/google-new.svg", alt: "Google for Startups", width: 116 },
-  { src: "/brand/logos/yc.svg", alt: "Y Combinator", width: 104 },
-  { src: "/brand/logos/newage.svg", alt: "New Age Capital", width: 94 },
-  { src: "/brand/logos/rg.svg", alt: "RG", width: 58 },
-  { src: "/brand/logos/tackelbox.svg", alt: "Tacklebox", width: 104 },
+  { src: "/brand/logos/google-new.svg", alt: "Google for Startups", width: 116, invert: false },
+  { src: "/brand/logos/yc.svg", alt: "Y Combinator", width: 104, invert: false },
+  { src: "/brand/logos/newage.svg", alt: "New Age Capital", width: 94, invert: true },
+  { src: "/brand/logos/rg.svg", alt: "RG", width: 58, invert: true },
+  { src: "/brand/logos/tackelbox.svg", alt: "Tacklebox", width: 104, invert: false },
 ];
 
 export function CampaignHero() {
@@ -54,7 +54,7 @@ export function CampaignHero() {
 
           <div className="mt-10 border-t border-white/10 pt-7">
             <p className="eyebrow text-white/45">Our portfolio companies are backed by</p>
-            <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5 brightness-0 invert opacity-65">
+            <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5 opacity-65">
               {backers.map((backer) => (
                 <Image
                   key={backer.src}
@@ -62,7 +62,7 @@ export function CampaignHero() {
                   alt={backer.alt}
                   width={backer.width}
                   height={28}
-                  className="h-6 w-auto"
+                  className={`h-6 w-auto ${backer.invert ? "brightness-0 invert" : ""}`}
                 />
               ))}
             </div>
