@@ -37,11 +37,9 @@ export function Hero() {
 
           <Reveal delay={0.45}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Magnetic>
-                <Pill href="/contact">
-                  Book a Strategy Session
-                </Pill>
-              </Magnetic>
+              <Pill href="/contact">
+                Book a Strategy Session
+              </Pill>
               <Magnetic>
                 <Pill href="#process" variant="outlineLight">
                   See How We Work

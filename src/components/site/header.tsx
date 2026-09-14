@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "../brand/logo";
-import { Pill, Container } from "../ui";
+import { Container } from "../ui";
 import { Magnetic } from "../motion/magnetic";
 import { ServicesMenu, ServicesAccordion } from "./services-menu";
+import { DialogWithForm } from "@/components/modal/modal";
 import { nav } from "@/utils/content";
 
 export function Header() {
@@ -73,15 +76,15 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className={`transition-all duration-300 ${
+        className={`relative z-50 transition-all duration-300 ${
           scrolled ? "border-b border-brand-ink/5 bg-brand-mist/80 backdrop-blur-xl" : "bg-transparent"
         }`}
       >
         <Container className="flex h-18 items-center justify-between py-3.5">
           <Magnetic>
-            <a href="/" className={`flex items-center rounded-lg ${focusRing}`} aria-label="Byldd home">
+            <Link href="/" className={`flex items-center rounded-lg ${focusRing}`} aria-label="Byldd home">
               <Logo className="text-[26px]" tone={dark ? "dark" : "light"} />
-            </a>
+            </Link>
           </Magnetic>
 
           <nav className="hidden items-center gap-9 lg:flex">
@@ -103,11 +106,7 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Magnetic>
-              <Pill href="/contact">
-                Let&apos;s Byldd
-              </Pill>
-            </Magnetic>
+            <DialogWithForm idPrefix="header-contact-desktop" />
           </div>
 
           {/* Mobile toggle */}
@@ -122,11 +121,11 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
           >
-            <div className="flex flex-col items-center justify-center gap-[5px]">
-              <span className={`h-0.5 w-5 transition-all duration-300 ${dark ? "bg-brand-ink" : "bg-white"} ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-              <span className={`h-0.5 w-5 transition-all duration-300 ${dark ? "bg-brand-ink" : "bg-white"} ${open ? "opacity-0" : ""}`} />
-              <span className={`h-0.5 w-5 transition-all duration-300 ${dark ? "bg-brand-ink" : "bg-white"} ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
-            </div>
+            {open ? (
+              <X className="h-5 w-5 text-brand-ink" aria-hidden />
+            ) : (
+              <Menu className={`h-5 w-5 ${dark ? "text-brand-ink" : "text-white"}`} aria-hidden />
+            )}
           </button>
         </Container>
       </div>
@@ -140,11 +139,12 @@ export function Header() {
         aria-label="Site menu"
         aria-hidden={!open}
         inert={!open ? true : undefined}
-        className={`fixed inset-0 z-40 bg-brand-mist transition-opacity duration-300 lg:hidden ${
+        data-lenis-prevent
+        className={`fixed inset-0 z-40 touch-pan-y overflow-y-auto overscroll-contain bg-brand-mist transition-opacity duration-300 lg:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <Container className="flex min-h-full flex-col justify-center gap-2 overflow-y-auto pb-12 pt-24">
+        <Container className="flex min-h-full flex-col gap-2 pb-12 pt-24">
           {nav.map((item) =>
             item.href === "/services" ? (
               <ServicesAccordion key={item.href} onNavigate={() => setOpen(false)} />
@@ -160,12 +160,15 @@ export function Header() {
             ),
           )}
           <div className="mt-8">
-            <Pill href="/contact" className="w-full justify-center text-base">
-              Let&apos;s Byldd
-            </Pill>
+            <DialogWithForm
+              idPrefix="header-contact-mobile"
+              onOpen={() => setOpen(false)}
+              triggerClassName="w-full text-base"
+            />
           </div>
         </Container>
       </div>
+
     </header>
   );
 }
