@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "./brand/marks";
+import { DialogWithForm } from "./modal/modal";
 
 export function Container({
   children,
@@ -47,6 +48,14 @@ type PillProps = {
 
 /** Pill CTA with the brand's up-right arrow — "Let's Byldd ↗". */
 export function Pill({ href, children, variant = "solid", className = "" }: PillProps) {
+  if (href === "/contact" || href === "#contact") {
+    return (
+      <DialogWithForm triggerClassName={className} triggerVariant={variant}>
+        {children}
+      </DialogWithForm>
+    );
+  }
+
   const base =
     "group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[0.95rem] font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2";
   const variants = {

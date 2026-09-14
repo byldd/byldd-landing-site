@@ -2,7 +2,6 @@ import { Container, Pill } from "../ui";
 import { Sparkle } from "../brand/marks";
 import { Reveal, Parallax } from "../motion/primitives";
 import { MaskText } from "../motion/split-reveal";
-import { Magnetic } from "../motion/magnetic";
 
 const mantra = ["Understand Better", "Decide Smarter", "Build What Matters"];
 
@@ -42,11 +41,9 @@ export function CTA() {
             </p>
           </Reveal>
           <Reveal delay={0.32}>
-            <Magnetic>
-              <Pill href="/contact">
-                Book a Strategy Session
-              </Pill>
-            </Magnetic>
+            <Pill href="/contact">
+              Book a Strategy Session
+            </Pill>
           </Reveal>
 
           <Reveal delay={0.44} className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
