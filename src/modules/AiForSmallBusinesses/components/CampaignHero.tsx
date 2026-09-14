@@ -78,6 +78,7 @@ export function CampaignHero() {
           <ContactForm
             idPrefix="ai-hero"
             submitLabel="Get my free AI plan"
+            variant="aiAudit"
             className="[&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center"
           />
           <p className="mt-4 text-center text-xs font-medium text-brand-ink/45">

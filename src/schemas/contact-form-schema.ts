@@ -13,6 +13,12 @@ export const contactFormSchema = z.object({
     .min(1, "Please enter your email")
     .email("Please enter a valid email address"),
 
+  businessName: z
+    .string()
+    .trim()
+    .max(120, "Business name cannot exceed 120 characters")
+    .optional(),
+
   phone: z
     .string()
     .min(1, "Please enter your phone number"),
@@ -20,6 +26,12 @@ export const contactFormSchema = z.object({
   budget: z
     .string()
     .min(1, "Please select your budget"),
+
+  timeConsumingTask: z
+    .string()
+    .trim()
+    .max(160, "Please choose a shorter answer")
+    .optional(),
 
   message: z
     .string()
@@ -29,6 +41,26 @@ export const contactFormSchema = z.object({
 
   smsConsent: z.boolean().optional(),
 });
+
+export const aiAuditContactFormSchema = contactFormSchema.superRefine(
+  (values, context) => {
+    if (!values.businessName) {
+      context.addIssue({
+        code: "custom",
+        path: ["businessName"],
+        message: "Please enter your business name",
+      });
+    }
+
+    if (!values.timeConsumingTask) {
+      context.addIssue({
+        code: "custom",
+        path: ["timeConsumingTask"],
+        message: "Please select what takes the most time",
+      });
+    }
+  },
+);
 
 export const contactSubmissionSchema = contactFormSchema
   .omit({ smsConsent: true })

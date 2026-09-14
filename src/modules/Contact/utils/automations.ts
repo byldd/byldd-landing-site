@@ -26,11 +26,13 @@ function getAutomationUrl(automation: Automation) {
 function createAutomationPayload(payload: ContactSubmission) {
   return {
     name: payload.name,
+    businessName: payload.businessName,
     ip: payload.ip,
     agent: payload.agent,
     email: payload.email,
     phone: payload.phone,
     budget: payload.budget,
+    timeConsumingTask: payload.timeConsumingTask,
     message: payload.message,
     isChecked: payload.isChecked,
     pageUrl: payload.pageUrl,
