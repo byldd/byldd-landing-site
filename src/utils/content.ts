@@ -388,9 +388,9 @@ export const footer = {
     },
   ],
   social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "YouTube", href: "https://youtube.com" },
+    { label: "Instagram", href: "https://www.instagram.com/byldddev/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/byldd" },
+    { label: "YouTube", href: "https://youtube.com/@byldddev?si=AxV0Wei8LB4L-Do7" },
   ],
   address: "32 Saint Marks Place, New York, NY 10003",
   email: "contactus@byldd.com",
