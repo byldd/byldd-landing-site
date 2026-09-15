@@ -45,7 +45,7 @@ export function FAQ() {
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-4 leading-relaxed text-brand-ink/65">{f.a}</p>
+                <div className="mt-4 flex flex-col gap-4 leading-relaxed text-brand-ink/65" dangerouslySetInnerHTML={{ __html: f.a }} />
               </details>
             </Reveal>
           ))}

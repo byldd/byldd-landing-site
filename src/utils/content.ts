@@ -254,28 +254,40 @@ export const testimonials = {
 /** Homepage FAQ (condensed) — full list lives on /faqs. */
 export const homeFaqs = [
   {
-    q: "How does it work — what's your process like?",
-    a: "Clarity before code. We pressure-test your idea with real evidence, cut it to what's worth building, then design, build, and ship with one senior team — idea to revenue in about 45 days.",
+    q: "How does it work? What is your process like?", 
+    a: "<p>We’ll start with a few deep dives with the founder. The purpose of the deep dives is to figure out the product vision, industry analysis, competitor analysis, and product strategy. We do about 2-3 deep dives to fully understand the founder’s vision and also to figure out technical feasibility and alternatives. This helps us nail down what problem we’re trying to solve and for whom. This helps us narrow down and identify our beachhead customers.</p><p>These will be the first set of customers that we’ll be going after, and we’ll define the scope of the product according to their most pressing problems.</p><p>Once we’ve identified the target audience, we then nail down all the user stories. User stories are a compilation of everything that the platform needs to do, starting with the basics like “Users should be able to log in” to nailing down the complexities of exactly how the product will function.</p><p>With the user stories defined, we create the user journeys and the low fidelity wireframes. This gives us a good idea of how users will interact with the product. We iterate over these as many times as necessary to make sure we’re creating the best, most intuitive experience for users. User experience is critical to the success of an app, and we want to make sure that end users can immediately figure out how to use a product without needing any kind of instruction.</p> <p>We then work on high fidelity wireframes - in this phase, we finalize all of the aesthetic aspects of the product, including color themes, fonts, etc. Once again, we can experiment and play with a lot of options here and finalize whatever feels best.</p> <p>The finished hi-fed wireframes will give us an exact idea of what the final product is going to look like. We only kick off the development phase once we’re fully satisfied with those wireframes.</p><p>During the development phase, we have weekly demo calls where we’ll show you the progress made and finalize product decisions. You’ll also have access to a demo app where you will have the ability to play with the product yourself. We’ll keep doing this until the product is fully developed.</p><p>Once the product is developed, we’ll help you market it to your target audience and get your initial paying customers. These customers are going to be incredibly valuable - not only for the revenue they give us, but because they feel the problem so acutely that they were willing to pay to experiment with a brand new product. Their feedback will help us drive further product development and scale the business. Paying customers are also the best way to validate and de-risk a venture. These customers will help us go to angels and seed-stage VCs for fundraising.</p><p>Once we’ve gotten this validation, we’re able to build a multi-month product scaling strategy. We shift to a longer term development process where we have a dedicated product team working exclusively with you over several months or years to achieve that vision.</p>",
+
   },
   {
     q: "How do I determine the product development cost?",
-    a: "Most MVPs come in under $15k. Larger builds and enterprise engagements vary with scope and integrations — we scope to outcomes and tell you honestly what a given result takes.",
+    a: "<p><strong>Byldd is able to build and launch the product for about $15K and in under 45 Days. We’ll talk about how we do that in a moment.</strong> Investment for product typically depends on a number of factors. Ultimately, it comes down to how many developer hours you need to build a product that is good enough to get paying customers. The simpler the product, the less developer hours you need and smaller your investment is going to be. You can read more about <a href=\"https://byldd.com/how-much-does-it-cost-to-build-an-app-part-1/\" style=\"color: blue;\">product development cost here</a>, but some of the factors that affect developer hours are:</p><p>Supported platforms (browser/web, iOS, Android, macOS, Windows, etc.) Number and complexity of the core features Complexity of the design Number and complexity of third-party integrations</p><p>Typically this can be anywhere from $30K to $50K and take 3 to 6 months, depending on the geography and experience of the development team. Byldd, however, specializes in launching products and can usually do it for under $15K and within 45 Days. We’re able to hit this price point because we’ve standardized the product development process by creating reusable blocks for common functionalities. Things like login, registration, payments, subscriptions, admin dashboards and more work out of the box and don’t cost any extra developer dollars or time. We provide these for free to all entrepreneurs that work with us to build their products. Beyond that, we have a really robust (read intense) process where we are in constant touch with founders, doing bi-weekly user experience reviews and product demos to make sure everyone is on the same page and we maintain development velocity.</p>",
+
+
   },
   {
     q: "What happens after the MVP is built?",
-    a: "We instrument from day one so real usage guides what's next — then keep iterating with you, or hand a clean, maintainable codebase to your team. Flexible maintenance and scaling packages are available.",
+    a: "<p>Once the product is developed, we’ll help you market it to your target audience and get your initial paying customers. These customers are going to be incredibly valuable - not only for the revenue they give us, but because they feel the problem so acutely that they are willing to pay to experiment with a brand new product. Their feedback will help us drive further product development and scale the business. Paying customers are also the best way to validate and de-risk a venture. These customers will help us go to angels and seed-stage VCs for fundraising.</p><p>Once we’ve gotten this validation, we’re able to build a multi-month product scaling strategy. We shift to a longer-term development process where we have a dedicated product team working exclusively with you over several months or years to achieve that vision.</p><p><strong>Our goal is to help you build a business from this idea, not for us to build an app as a one-off ticket. We’re here to help you make sure this is a successful product in the long term.</strong></p>",
+
+  },
+  {
+    q: "Which stack do we use?",
+    a: "We have a diverse range of expertise when it comes to technology stacks. We specialize in JavaScript stacks, including MERN (MongoDB, Express.js, React, Node.js) and MEAN (MongoDB, Express.js, Angular, Node.js), which are ideal for web development. Additionally, for mobile app development, we are well-versed in React Native. Beyond JavaScript, we also have specialists in Flutter, Swift, Kotlin, and Laravel, making us flexible and capable of adapting to various project requirements. Whether it's web or mobile development, our team is equipped to select the right stack that best suits your project's needs and ensures a successful outcome.",
   },
   {
     q: "Who owns the product?",
-    a: "You do — 100%. All code, assets, and documentation belong to you from day one.",
+    a: "100% of the ownership and intellectual property belongs to the entrepreneur with the idea. We just use our expertise to help you build and launch the product. In some cases, we offer funding for a small portion of equity. This is determined on a case by case basis.",
   },
   {
     q: "What happens on the first call?",
-    a: "A quick discovery call: we dig into your goals, scope, and timeline — and tell you honestly how we'd approach it, and whether we're the right partner.",
+    a: "On our first call, we'll touch on the core problem you're trying to solve and how you think we should go about it. I'll be able to give you an estimate on the timeline and investment amount on the call itself - no hiding pricing and asking for multiple follow up calls. We aim to build products in under 45 Days and for less than $15K.",
+  },
+  {
+    q: "Who handles the project management?",
+    a: "We provide end-to-end product development services and handle all project and product management internally to deliver the finished, polished product to you. We keep you in the loop with weekly meetings but you don’t need to worry about resource or project management.",
   },
   {
     q: "Are you like Bubble and other no-code platforms?",
-    a: "No — we write production-grade custom code. No-code is great for prototypes; we build products designed to scale, integrate, and be owned outright.",
+    a: "We are not a platform and founders who work with us aren't locked into any platfrom. The final deliverable if you choose to work with Byldd will be a unique, fully-customizable codebase that is independent of any 3rd parties and which you have 100% ownership of.",
   },
 ] as const;
 

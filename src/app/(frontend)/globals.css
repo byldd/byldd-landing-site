@@ -267,3 +267,7 @@
     transform: none !important;
   }
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
