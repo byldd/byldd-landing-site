@@ -12,6 +12,7 @@ import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
 import { TextInputField } from "@/modules/Contact/components/TextInputField";
+import { TimeConsumingTaskField } from "@/modules/Contact/components/TimeConsumingTaskField";
 import { trackContactFormSubmission } from "@/modules/Contact/utils/analytics";
 import {
   isCalendlyScheduledEvent,
@@ -26,6 +27,7 @@ import {
   persistLeadQueryParams,
 } from "@/modules/Contact/utils/lead-attribution";
 import {
+  aiAuditContactFormSchema,
   contactFormSchema,
   type ContactFormValues,
   type ContactSubmission,
@@ -40,13 +42,16 @@ type ContactFormProps = {
   className?: string;
   idPrefix?: string;
   submitLabel?: string;
+  variant?: "default" | "aiAudit";
 };
 
 export function ContactForm({
   className = "",
   idPrefix = "contact",
   submitLabel = "Book a Strategy Session",
+  variant = "default",
 }: ContactFormProps = {}) {
+  const isAiAudit = variant === "aiAudit";
   const [phoneInputKey, setPhoneInputKey] = useState(0);
   const [pendingCalendlySubmission, setPendingCalendlySubmission] =
     useState<ContactSubmission | null>(null);
@@ -60,13 +65,17 @@ export function ContactForm({
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(
+      isAiAudit ? aiAuditContactFormSchema : contactFormSchema,
+    ),
     defaultValues: {
       name: "",
+      businessName: "",
       email: "",
       phone: "",
       budget: "",
-      message: "",
+      timeConsumingTask: "",
+      message: isAiAudit ? "AI opportunity audit request" : "",
       smsConsent: false,
     },
   });
@@ -133,12 +142,17 @@ export function ContactForm({
       const params = getLeadQueryParams();
       const submission: ContactSubmission = {
         name: values.name,
+        businessName: isAiAudit ? values.businessName : undefined,
         ip,
         agent: window.navigator.userAgent,
         email: values.email,
         phone: values.phone,
         budget: values.budget,
-        message: values.message,
+        timeConsumingTask: isAiAudit ? values.timeConsumingTask : undefined,
+        message:
+          isAiAudit && values.timeConsumingTask
+            ? `AI opportunity audit: ${values.timeConsumingTask}`
+            : values.message,
         isChecked: values.smsConsent === true,
         pageUrl: window.location.href,
         utm: formatLeadQueryParams(params),
@@ -192,6 +206,18 @@ export function ContactForm({
           placeholder="Your full name"
           autoComplete="name"
         />
+        {isAiAudit && (
+          <TextInputField
+            id={`${idPrefix}-business-name`}
+            label="Business name"
+            registration={register("businessName")}
+            className={field}
+            error={errors.businessName?.message}
+            placeholder="Business name"
+            autoComplete="organization"
+            required
+          />
+        )}
         <TextInputField
           id={`${idPrefix}-email`}
           label="Email"
@@ -202,27 +228,48 @@ export function ContactForm({
           placeholder="Your email ID"
           autoComplete="email"
         />
+        {isAiAudit && (
+          <PhoneInput
+            key={phoneInputKey}
+            id={`${idPrefix}-phone`}
+            className={field}
+            error={errors.phone?.message}
+            onChange={handlePhoneChange}
+          />
+        )}
       </div>
 
-      <PhoneInput
-        key={phoneInputKey}
-        id={`${idPrefix}-phone`}
-        className={field}
-        error={errors.phone?.message}
-        onChange={handlePhoneChange}
-      />
+      {!isAiAudit && (
+        <PhoneInput
+          key={phoneInputKey}
+          id={`${idPrefix}-phone`}
+          className={field}
+          error={errors.phone?.message}
+          onChange={handlePhoneChange}
+        />
+      )}
+
+      {isAiAudit && (
+        <TimeConsumingTaskField
+          id={`${idPrefix}-time-consuming-task`}
+          className={field}
+          control={control}
+        />
+      )}
 
       <BudgetField control={control} idPrefix={idPrefix} />
 
-      <TextareaField
-        id={`${idPrefix}-message`}
-        label="What are you building?"
-        registration={register("message")}
-        className={field}
-        error={errors.message?.message}
-        placeholder="Tell us about your product..."
-        hint="(NDA Covered)"
-      />
+      {!isAiAudit && (
+        <TextareaField
+          id={`${idPrefix}-message`}
+          label="What are you building?"
+          registration={register("message")}
+          className={field}
+          error={errors.message?.message}
+          placeholder="Tell us about your product..."
+          hint="(NDA Covered)"
+        />
+      )}
 
       <SmsConsentField control={control} />
 

@@ -10,6 +10,7 @@ type TextInputFieldProps = {
   type?: HTMLInputTypeAttribute;
   placeholder?: string;
   autoComplete?: string;
+  required?: boolean;
 };
 
 export function TextInputField({
@@ -21,6 +22,7 @@ export function TextInputField({
   type = "text",
   placeholder,
   autoComplete,
+  required = false,
 }: TextInputFieldProps) {
   const errorId = `${id}-error`;
 
@@ -34,6 +36,7 @@ export function TextInputField({
         className={className}
         placeholder={placeholder}
         autoComplete={autoComplete}
+        required={required}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
       />

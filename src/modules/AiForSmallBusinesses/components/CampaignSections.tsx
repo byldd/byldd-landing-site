@@ -219,6 +219,7 @@ export function AuditSection() {
           <ContactForm
             idPrefix="ai-footer"
             submitLabel="Get my free AI plan"
+            variant="aiAudit"
             className="[&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center"
           />
         </div>

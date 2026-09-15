@@ -77,7 +77,11 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div
         className={`relative z-50 transition-all duration-300 ${
-          scrolled ? "border-b border-brand-ink/5 bg-brand-mist/80 backdrop-blur-xl" : "bg-transparent"
+          open
+            ? "border-b border-brand-ink/5 bg-brand-mist"
+            : scrolled
+              ? "border-b border-brand-ink/5 bg-brand-mist/80 backdrop-blur-xl"
+              : "bg-transparent"
         }`}
       >
         <Container className="flex h-18 items-center justify-between py-3.5">
