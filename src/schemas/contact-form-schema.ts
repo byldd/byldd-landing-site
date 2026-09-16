@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { isValidPhoneNumber } from "libphonenumber-js";
+
 
 export const contactFormSchema = z.object({
   name: z
@@ -19,9 +21,14 @@ export const contactFormSchema = z.object({
     .max(120, "Business name cannot exceed 120 characters")
     .optional(),
 
-  phone: z
-    .string()
-    .min(1, "Please enter your phone number"),
+ phone: z
+  .string()
+  .trim()
+  .min(1, "Please enter your phone number")
+  .refine(
+      (phone) => isValidPhoneNumber(phone),
+      "Please enter a valid phone number",
+    ),
 
   budget: z
     .string()

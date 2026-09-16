@@ -66,6 +66,7 @@ export function PhoneInput({
         className={`${className} !pl-[100px]`}
         placeholder="Phone number"
         autoComplete="tel"
+        required
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
       />
