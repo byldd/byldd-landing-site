@@ -1,4 +1,8 @@
-import { sendToMakeAutomation } from "@/modules/Contact/utils/automations";
+import {
+  sendToMakeAutomation,
+  sendToSlack,
+} from "@/modules/Contact/utils/automations";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { contactSubmissionSchema } from "@/schemas/contact-form-schema";
 
 export async function POST(request: Request) {
@@ -9,28 +13,25 @@ export async function POST(request: Request) {
       return Response.json({ error: "Invalid form submission." }, { status: 400 });
     }
 
-    const formEndpoint = process.env.FORM_ENDPOINT_URL;
-    if (!formEndpoint) {
-      throw new Error("Missing FORM_ENDPOINT_URL");
+    const { recaptchaToken } = payload.data;
+    if (!recaptchaToken) {
+      return Response.json({ error: "reCAPTCHA token missing." }, { status: 400 });
     }
 
-    const [response] = await Promise.all([
-      fetch(formEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload.data, utmData: undefined }),
-        cache: "no-store",
-      }),
+    const recaptchaVerified = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaVerified) {
+      return Response.json(
+        { error: "reCAPTCHA verification failed." },
+        { status: 400 },
+      );
+    }
+
+    await Promise.all([
+      sendToSlack(payload.data),
       sendToMakeAutomation(payload.data),
     ]);
-    const body = await response.text();
 
-    return new Response(body || null, {
-      status: response.status,
-      headers: {
-        "Content-Type": response.headers.get("content-type") || "application/json",
-      },
-    });
+    return Response.json({ status: "success" });
   } catch {
     return Response.json(
       { error: "We couldn't submit your enquiry. Please try again." },
