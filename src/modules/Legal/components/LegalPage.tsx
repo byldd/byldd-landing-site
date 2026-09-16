@@ -28,16 +28,30 @@ export function LegalPage({
                 <h2 className="text-2xl font-semibold text-brand-ink">{section.heading}</h2>
 
                 <div className="mt-3 flex flex-col gap-3 leading-relaxed text-brand-ink/70">
-                  {section.body.map((item, index) =>
-                    typeof item === "string" ? (
-                      <p key={index}>{item}</p>
-                    ) : (
+                  {section.body.map((item, index) => {
+                    if (typeof item === "string") {
+                      return <p key={index}>{item}</p>;
+                    }
+
+                    if ("type" in item) {
+                      return (
+                        <ol key={index} className="list-decimal space-y-3 pl-6">
+                          {item.items.map((listItem) => (
+                            <li key={listItem} className="pl-1">
+                              {listItem}
+                            </li>
+                          ))}
+                        </ol>
+                      );
+                    }
+
+                    return (
                       <p key={item.heading}>
                         <span className="font-semibold text-brand-ink">{item.heading}:</span>{" "}
                         {item.text}
                       </p>
-                    ),
-                  )}
+                    );
+                  })}
                 </div>
               </Reveal>
             ))}
