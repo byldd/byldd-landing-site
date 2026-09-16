@@ -73,7 +73,6 @@ export function ContactForm({
       businessName: "",
       email: "",
       phone: "",
-      phoneValid: false,
       budget: "",
       timeConsumingTask: "",
       message: isAiAudit ? "AI opportunity audit request" : "",
@@ -125,12 +124,8 @@ export function ContactForm({
   }, [pendingCalendlySubmission, setError]);
 
   const handlePhoneChange = useCallback(
-    (phone: string, isValid: boolean) => {
+    (phone: string) => {
       setValue("phone", phone, {
-        shouldValidate: true,
-        shouldDirty: true,
-      });
-      setValue("phoneValid", isValid, {
         shouldValidate: true,
         shouldDirty: true,
       });
@@ -238,7 +233,7 @@ export function ContactForm({
             key={phoneInputKey}
             id={`${idPrefix}-phone`}
             className={field}
-            error={errors.phone?.message ?? errors.phoneValid?.message}
+            error={errors.phone?.message}
             onChange={handlePhoneChange}
           />
         )}
@@ -249,7 +244,7 @@ export function ContactForm({
           key={phoneInputKey}
           id={`${idPrefix}-phone`}
           className={field}
-          error={errors.phone?.message ?? errors.phoneValid?.message}
+          error={errors.phone?.message}
           onChange={handlePhoneChange}
         />
       )}

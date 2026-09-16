@@ -8,7 +8,7 @@ type PhoneInputProps = {
   className: string;
   error?: string;
   id?: string;
-  onChange: (phone: string, isValid: boolean) => void;
+  onChange: (phone: string) => void;
 };
 
 export function PhoneInput({
@@ -42,12 +42,7 @@ export function PhoneInput({
       }
     };
 
-    const syncPhone = () => {
-      const digitCount = input.value.replace(/\D/g, "").length;
-      const isValid = digitCount >= 10 && phone.isValidNumber() === true;
-
-      onChange(phone.getNumber(), isValid);
-    };
+    const syncPhone = () => onChange(phone.getNumber());
 
     input.addEventListener("input", syncPhone, { signal: events.signal });
     input.addEventListener("countrychange", syncPhone, { signal: events.signal });

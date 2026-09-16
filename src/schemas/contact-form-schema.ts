@@ -19,13 +19,14 @@ export const contactFormSchema = z.object({
     .max(120, "Business name cannot exceed 120 characters")
     .optional(),
 
-  phone: z
-    .string()
-    .min(1, "Please enter your phone number"),
-
-  phoneValid: z.boolean().refine((isValid) => isValid, {
-    message: "Please enter a valid phone number",
-  }),
+ phone: z
+  .string()
+  .trim()
+  .min(1, "Please enter your phone number")
+  .regex(
+    /^\+[1-9]\d{0,3}[\s-]?\d{11}$/,
+    "Please enter a valid phone number",
+  ),
 
   budget: z
     .string()
@@ -67,7 +68,7 @@ export const aiAuditContactFormSchema = contactFormSchema.superRefine(
 );
 
 export const contactSubmissionSchema = contactFormSchema
-  .omit({ smsConsent: true, phoneValid: true })
+  .omit({ smsConsent: true })
   .extend({
     ip: z.string(),
     agent: z.string(),
