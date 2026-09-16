@@ -23,6 +23,10 @@ export const contactFormSchema = z.object({
     .string()
     .min(1, "Please enter your phone number"),
 
+  phoneValid: z.boolean().refine((isValid) => isValid, {
+    message: "Please enter a valid phone number",
+  }),
+
   budget: z
     .string()
     .min(1, "Please select your budget"),
@@ -63,7 +67,7 @@ export const aiAuditContactFormSchema = contactFormSchema.superRefine(
 );
 
 export const contactSubmissionSchema = contactFormSchema
-  .omit({ smsConsent: true })
+  .omit({ smsConsent: true, phoneValid: true })
   .extend({
     ip: z.string(),
     agent: z.string(),

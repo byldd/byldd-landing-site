@@ -8,7 +8,7 @@ type PhoneInputProps = {
   className: string;
   error?: string;
   id?: string;
-  onChange: (phone: string) => void;
+  onChange: (phone: string, isValid: boolean) => void;
 };
 
 export function PhoneInput({
@@ -42,7 +42,12 @@ export function PhoneInput({
       }
     };
 
-    const syncPhone = () => onChange(phone.getNumber());
+    const syncPhone = () => {
+      const digitCount = input.value.replace(/\D/g, "").length;
+      const isValid = digitCount >= 10 && phone.isValidNumber() === true;
+
+      onChange(phone.getNumber(), isValid);
+    };
 
     input.addEventListener("input", syncPhone, { signal: events.signal });
     input.addEventListener("countrychange", syncPhone, { signal: events.signal });
@@ -66,6 +71,7 @@ export function PhoneInput({
         className={`${className} !pl-[100px]`}
         placeholder="Phone number"
         autoComplete="tel"
+        required
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
       />
