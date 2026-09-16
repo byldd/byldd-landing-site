@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { isValidPhoneNumber } from "libphonenumber-js";
+
 
 export const contactFormSchema = z.object({
   name: z
@@ -23,10 +25,10 @@ export const contactFormSchema = z.object({
   .string()
   .trim()
   .min(1, "Please enter your phone number")
-  .regex(
-    /^\+[1-9]\d{0,3}[\s-]?\d{11}$/,
-    "Please enter a valid phone number",
-  ),
+  .refine(
+      (phone) => isValidPhoneNumber(phone),
+      "Please enter a valid phone number",
+    ),
 
   budget: z
     .string()
