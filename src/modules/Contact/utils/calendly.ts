@@ -2,7 +2,13 @@ const CALENDLY_SCRIPT = "https://assets.calendly.com/assets/external/widget.js";
 const CALENDLY_STYLES = "https://assets.calendly.com/assets/external/widget.css";
 
 type CalendlyApi = {
-  initPopupWidget: (options: { url: string }) => void;
+  initPopupWidget: (options: {
+    url: string;
+    prefill?: {
+      name?: string;
+      email?: string;
+    };
+  }) => void;
 };
 
 export type CalendlyScheduledEvent = MessageEvent<{
@@ -82,13 +88,17 @@ export async function openCalendly(name: string, email: string) {
   }
 
   const url = new URL(calendlyUrl);
-  url.searchParams.set("name", name);
-  url.searchParams.set("email", email);
 
   try {
     const calendly = await preloadCalendly();
-    calendly.initPopupWidget({ url: url.toString() });
+    calendly.initPopupWidget({
+      url: url.toString(),
+      prefill: { name, email },
+    });
   } catch {
-    window.location.assign(url.toString());
+    url.searchParams.set("name", name);
+    url.searchParams.set("email", email);
+
+    window.location.assign(url.toString().replaceAll("+", "%20"));
   }
 }
