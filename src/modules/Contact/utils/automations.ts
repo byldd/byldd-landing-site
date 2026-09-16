@@ -5,11 +5,12 @@ import type {
   ContactSubmission,
 } from "@/schemas/contact-form-schema";
 
-type Automation = "make" | "calendly";
+type Automation = "make" | "calendly" | "slack";
 
 const environmentKeys: Record<Automation, string> = {
   make: "MAKE_AUTOMATION_URL",
   calendly: "CALENDLY_AUTOMATION_URL",
+  slack: "SLACK_WEBHOOK_URL",
 };
 
 function getAutomationUrl(automation: Automation) {
@@ -62,6 +63,29 @@ async function sendToAutomation(
 
 export function sendToMakeAutomation(payload: ContactSubmission) {
   return sendToAutomation("make", createAutomationPayload(payload));
+}
+
+function createSlackMessage(payload: ContactSubmission) {
+  const lines = [
+    `Name: ${payload.name}`,
+    `Email: ${payload.email}`,
+    `Phone: ${payload.phone}`,
+    `Message: ${payload.message}`,
+    `Business Name: ${payload.businessName ?? ""}`,
+    `Budget: ${payload.budget}`,
+    `Time Consuming Task: ${payload.timeConsumingTask ?? ""}`,
+    `Accepted Terms: ${payload.isChecked}`,
+    `Page URL: ${payload.pageUrl}`,
+    `IP Address: ${payload.ip}`,
+    `Agent: ${payload.agent}`,
+    `UTM: ${payload.utm}`,
+  ];
+
+  return lines.join("\n");
+}
+
+export function sendToSlack(payload: ContactSubmission) {
+  return sendToAutomation("slack", { text: createSlackMessage(payload) });
 }
 
 export function sendToCalendlyAutomation(
