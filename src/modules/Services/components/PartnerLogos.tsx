@@ -22,7 +22,7 @@ export function PartnerLogos({
     <section className={`bg-white py-12 md:py-16 ${className}`}>
       <Container>
         <Reveal>
-          <p className="text-sm font-medium text-brand-ink/50">{label}</p>
+          <p className="text-sm font-medium text-brand-purple">{label}</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-5">
             {logos.map((l) => (
               // eslint-disable-next-line @next/next/no-img-element
@@ -31,7 +31,7 @@ export function PartnerLogos({
                 src={l.src}
                 alt={l.alt}
                 loading="lazy"
-                className="h-7 w-auto object-contain opacity-55 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-8"
+                className="h-7 w-auto object-contain transition duration-300 md:h-8"
               />
             ))}
           </div>
