@@ -39,6 +39,7 @@ export function TextInputField({
         required={required}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
+        maxLength={100}
       />
       {error && (
         <span id={errorId} className="text-sm text-red-500">

@@ -7,6 +7,7 @@ export const contactFormSchema = z.object({
     .string()
     .trim()
     .min(1, "Please enter your name")
+    .max(100, "Name must be 100 characters or less")
     .regex(/^[A-Za-z\s]+$/, "Name should contain only letters"),
 
   email: z

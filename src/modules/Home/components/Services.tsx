@@ -88,7 +88,7 @@ export function Services() {
 
             {/* Backed-by logo row */}
             <div className="mt-14 border-t border-brand-ink/10 pt-8">
-              <p className="text-sm font-medium text-brand-ink/50">{audience.backedByLabel}</p>
+              <p className="text-sm font-medium text-brand-purple">{audience.backedByLabel}</p>
               <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-5">
                 {audience.logos.map((l) => (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -96,7 +96,7 @@ export function Services() {
                     key={l.alt}
                     src={l.src}
                     alt={l.alt}
-                    className="h-7 w-auto object-contain opacity-55 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-8"
+                    className="h-7 w-auto object-contain transition duration-300 md:h-8"
                   />
                 ))}
               </div>
