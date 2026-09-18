@@ -5,7 +5,7 @@ export const developmentPartnersContent = {
     headline: "While you're hiring, your",
     highlightedHeadline: "competitors are shipping.",
     description:
-      "Byldd gives you a ready-to-execute product team that takes your startup from concept to launch in 45 days,without the delays and costs of hiring in-house.",
+      "Byldd gives you a ready-to-execute product team that takes your startup from concept to launch in 45 days, without the delays and costs of hiring in-house.",
     stats: [
       { value: "100+", label: "Products built" },
       { value: "9.8/10", label: "Founder satisfaction" },
@@ -37,7 +37,7 @@ export const developmentPartnersContent = {
           "Who exactly it serves",
           "What core problem it solves",
           "Where AI adds real value (and where it does not)",
-          "What the MVP must include—and what it should avoid",
+          "What the product must include—and what it should avoid",
         ],
         result: "You leave with clarity, not ambiguity.",
         icon: "/campaign/dev-partner/bulb.svg",
@@ -181,11 +181,6 @@ export const developmentPartnersContent = {
         question: "How do I determine the product development cost?",
         answer:
           "Cost depends on platforms, feature complexity, design and integrations. Byldd specializes in lean launches and can usually build the first market-ready product for around $15K in under 45 days. We give you a realistic range on the first strategy call.",
-      },
-      {
-        question: "What happens after the MVP is built?",
-        answer:
-          "We help you learn from early customers and turn that evidence into a longer-term scaling roadmap. When it makes sense, the team shifts from launch mode into continuous product development and infrastructure growth.",
       },
       {
         question: "Who owns the product and source code?",
