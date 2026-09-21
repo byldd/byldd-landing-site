@@ -35,7 +35,9 @@ export async function BlogPostPage({ params }: { params: Promise<{ slug: string 
 
   const featuredImage =
     post.featuredImage && typeof post.featuredImage !== "string" ? post.featuredImage : null;
-  const featuredImageUrl = featuredImage?.url;
+  const featuredImageUrl = featuredImage?.filename
+    ? `/media/${encodeURIComponent(featuredImage.filename)}`
+    : featuredImage?.url;
   const featuredImageWidth = featuredImage?.width ?? 1600;
   const featuredImageHeight = featuredImage?.height ?? 900;
 
@@ -49,7 +51,7 @@ export async function BlogPostPage({ params }: { params: Promise<{ slug: string 
             <figure className="mx-auto mb-14 max-w-5xl overflow-hidden rounded-3xl md:mb-20">
               <Image
                 src={featuredImageUrl}
-                alt={featuredImage.alt || post.title}
+                alt={featuredImage?.alt || post.title}
                 width={featuredImageWidth}
                 height={featuredImageHeight}
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1024px"
