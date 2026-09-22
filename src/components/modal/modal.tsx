@@ -1,6 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { type ReactNode, useId, useState } from "react";
+import type { Iso2 } from "intl-tel-input";
 import { ArrowUpRight } from "@/components/brand/marks";
 import {
   Dialog,
@@ -14,6 +16,7 @@ import { ContactForm } from "@/modules/Contact/components/ContactForm";
 
 type DialogWithFormProps = {
   children?: ReactNode;
+  defaultCountry?: Iso2;
   idPrefix?: string;
   onOpen?: () => void;
   triggerClassName?: string;
@@ -22,14 +25,21 @@ type DialogWithFormProps = {
 
 export function DialogWithForm({
   children = "Get Started",
+  defaultCountry,
   idPrefix,
   onOpen,
   triggerClassName = "",
   triggerVariant = "solid",
 }: DialogWithFormProps = {}) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const generatedId = useId().replaceAll(":", "");
   const formIdPrefix = idPrefix ?? `contact-modal-${generatedId}`;
+  const formDefaultCountry =
+    defaultCountry ??
+    (pathname === "/campaign/uae_product-development-for-founders"
+      ? "ae"
+      : "us");
   const triggerVariants = {
     solid:
       "bg-brand-purple text-white shadow-[0_10px_30px_-8px_rgba(131,77,251,0.6)] hover:-translate-y-0.5 hover:shadow-[0_16px_44px_-10px_rgba(131,77,251,0.75)]",
@@ -68,7 +78,10 @@ export function DialogWithForm({
           </DialogDescription>
         </DialogHeader>
 
-        <ContactForm idPrefix={formIdPrefix} />
+        <ContactForm
+          idPrefix={formIdPrefix}
+          defaultCountry={formDefaultCountry}
+        />
       </DialogContent>
     </Dialog>
   );
