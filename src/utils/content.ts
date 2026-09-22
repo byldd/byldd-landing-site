@@ -265,7 +265,7 @@ export const homeFaqs = [
 
   },
   {
-    q: "What happens after the MVP is built?",
+    q: "What happens after the product is built?",
     a: "<p>Once the product is developed, we’ll help you market it to your target audience and get your initial paying customers. These customers are going to be incredibly valuable - not only for the revenue they give us, but because they feel the problem so acutely that they are willing to pay to experiment with a brand new product. Their feedback will help us drive further product development and scale the business. Paying customers are also the best way to validate and de-risk a venture. These customers will help us go to angels and seed-stage VCs for fundraising.</p><p>Once we’ve gotten this validation, we’re able to build a multi-month product scaling strategy. We shift to a longer-term development process where we have a dedicated product team working exclusively with you over several months or years to achieve that vision.</p><p><strong>Our goal is to help you build a business from this idea, not for us to build an app as a one-off ticket. We’re here to help you make sure this is a successful product in the long term.</strong></p>",
 
   },
