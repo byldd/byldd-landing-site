@@ -41,6 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # payload
-media
-public/media
+/media
 !.env.example

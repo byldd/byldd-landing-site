@@ -1,3 +1,5 @@
+import type { Iso2 } from "intl-tel-input";
+
 export type CampaignStat = {
   value: string;
   label: string;
@@ -11,6 +13,7 @@ export type CampaignHeroContent = {
   formId: string;
   formIdPrefix: string;
   submitLabel: string;
+  defaultCountry?: Iso2;
 };
 
 export type CampaignBacker = {
@@ -91,6 +94,7 @@ export type CampaignStrategyCallContent = {
   formDescription: string;
   formIdPrefix: string;
   submitLabel: string;
+  defaultCountry?: Iso2;
 };
 
 export type CampaignFaqItem = {
