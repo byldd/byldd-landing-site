@@ -15,6 +15,7 @@ export const uaeProductDevelopmentForFoundersContent = {
     formId: "uae-product-development-for-founders-form",
     formIdPrefix: "uae-product-development-for-founders-hero",
     submitLabel: "Get in touch",
+    defaultCountry: "ae",
   },
   backers: {
     heading: "Our portfolio companies are backed by",
@@ -167,6 +168,7 @@ export const uaeProductDevelopmentForFoundersContent = {
     formDescription: "",
     formIdPrefix: "uae-product-development-for-founders-footer",
     submitLabel: "Get in touch",
+    defaultCountry: "ae",
   },
   faq: {
     eyebrow: "Frequently asked questions",

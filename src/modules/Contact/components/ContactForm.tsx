@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import type { Iso2 } from "intl-tel-input";
 
 import { ArrowUpRight } from "@/components/brand/marks";
 import { useCaptcha } from "@/hooks/use-captcha";
@@ -40,6 +41,7 @@ const calendlyBookingEndpoint = "/api/contact/calendly";
 
 type ContactFormProps = {
   className?: string;
+  defaultCountry?: Iso2;
   idPrefix?: string;
   submitLabel?: string;
   variant?: "default" | "aiAudit";
@@ -47,6 +49,7 @@ type ContactFormProps = {
 
 export function ContactForm({
   className = "",
+  defaultCountry = "us",
   idPrefix = "contact",
   submitLabel = "Book a Strategy Session",
   variant = "default",
@@ -233,6 +236,7 @@ export function ContactForm({
             key={phoneInputKey}
             id={`${idPrefix}-phone`}
             className={field}
+            defaultCountry={defaultCountry}
             error={errors.phone?.message}
             onChange={handlePhoneChange}
           />
@@ -244,6 +248,7 @@ export function ContactForm({
           key={phoneInputKey}
           id={`${idPrefix}-phone`}
           className={field}
+          defaultCountry={defaultCountry}
           error={errors.phone?.message}
           onChange={handlePhoneChange}
         />

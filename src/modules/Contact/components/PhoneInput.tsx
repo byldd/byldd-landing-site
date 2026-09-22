@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import intlTelInput from "intl-tel-input";
+import type { Iso2 } from "intl-tel-input";
 import "intl-tel-input/styles";
 
 type PhoneInputProps = {
   className: string;
+  defaultCountry?: Iso2;
   error?: string;
   id?: string;
   onChange: (phone: string) => void;
@@ -13,6 +15,7 @@ type PhoneInputProps = {
 
 export function PhoneInput({
   className,
+  defaultCountry = "us",
   error,
   id = "contact-phone",
   onChange,
@@ -25,7 +28,7 @@ export function PhoneInput({
 
     const phone = intlTelInput(input, {
       separateDialCode: true,
-      initialCountry: "us",
+      initialCountry: defaultCountry,
       countryOrder: ["in", "us", "au"],
       loadUtils: () => import("intl-tel-input/utils"),
     });
@@ -54,7 +57,7 @@ export function PhoneInput({
       events.abort();
       phone.destroy();
     };
-  }, [onChange]);
+  }, [defaultCountry, onChange]);
 
   return (
     <label className="flex w-full flex-col gap-1.5">
