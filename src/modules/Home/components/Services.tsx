@@ -40,7 +40,7 @@ export function Services() {
                 role="tab"
                 aria-selected={active === i}
                 onClick={() => setActive(i)}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple ${
+                className={`rounded-full cursor-pointer px-5 py-2.5 text-sm font-semibold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple ${
                   active === i ? "bg-brand-purple text-white" : "text-brand-ink/60 hover:text-brand-ink"
                 }`}
               >

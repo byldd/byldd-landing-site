@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import { PageHero } from "@/components/site/page-hero";
 import { Container } from "@/components/ui";
 import { Reveal } from "@/components/motion/primitives";
@@ -11,52 +12,99 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "How does it work — what's your process like?",
-    a: "Clarity before code. We pressure-test your idea with real evidence, cut it to what's worth building, then design, build, and ship with one senior team. From idea to revenue in about 45 days.",
+    heading: "General",
+    q: "What does Byldd do?",
+    a: "We design and build web and mobile apps for startups and enterprises — from MVPs to full-scale digital products.",
   },
   {
     q: "How long does it take to launch an MVP?",
-    a: "Most MVPs are built in under 45 days, depending on complexity. We bias hard toward shipping early and iterating with real users.",
+    a: "Most MVPs are built in <b>under 45 days</b>, depending on complexity.",
   },
   {
-    q: "How do I determine the product development cost?",
-    a: "Most MVPs come in under $15k. Larger builds and enterprise engagements vary with scope and integrations — we scope to outcomes, not hours, and tell you honestly what a given result takes.",
+    q: "How much does it cost?",
+    a: "Most MVPs cost <b>under $15k</b>, though enterprise solutions vary based on scope and integrations.",
   },
   {
-    q: "What happens on the first call?",
-    a: "A quick discovery call: we dig into your goals, scope, and timeline — and tell you honestly how we'd approach it, and whether we're the right partner.",
+    q: "Do you provide maintenance?",
+    a: "Yes. We offer flexible post-launch maintenance and scaling packages.",
   },
   {
-    q: "Do I need to be technical?",
-    a: "No. Most of the founders we work with aren't engineers. We handle strategy, design, and engineering, and translate everything into plain language so you stay in control.",
+    q: "What technologies do you use?",
+    a: "React, React Native, Flutter, Node.js, Nest.js, Python, AWS, GCP, and more — chosen based on the project’s needs.",
   },
   {
-    q: "Who handles project management?",
-    a: "A dedicated Byldd project lead runs your build end to end — planning, priorities, and regular demos — so you always know exactly where things stand.",
-  },
-  {
-    q: "Who owns the product?",
-    a: "You do — 100%. All code, assets, and documentation belong to you from day one. No lock-in.",
-  },
-  {
-    q: "What happens after the MVP is built?",
-    a: "We instrument from day one so real usage guides what's next. We can keep iterating with you, or hand a clean, maintainable codebase to your team — with flexible post-launch maintenance and scaling packages.",
-  },
-  {
-    q: "Which stack do we use?",
-    a: "React, React Native, Flutter, Node.js, Nest.js, Python, AWS, GCP, and more — chosen for the project's needs, never for lock-in.",
+    q: "Do we own the code?",
+    a: "Yes, 100%. All code, assets, and documentation belong to you from day one.",
   },
   {
     q: "Can you integrate AI into products?",
-    a: "Absolutely — GPT-powered features, recommendation systems, and intelligent automations, built around your use case and data.",
-  },
-  {
-    q: "Are you like Bubble and other no-code platforms?",
-    a: "No — we write production-grade custom code. No-code is great for prototypes; we build products designed to scale, integrate, and be owned outright.",
+    a: "Absolutely — we specialize in integrating GPT-powered features, recommendation systems, and intelligent automations.",
   },
   {
     q: "How do we start working with Byldd?",
-    a: "Book a strategy session — we'll discuss goals, scope, and timelines, and come back with how we'd approach it.",
+    a: 'Book a quick discovery call — we’ll discuss goals, scope, and timelines. <a href="/contact">Book a Call</a>',
+  },
+  {
+    heading: "Services",
+    q: "What’s included in Byldd’s app development services?",
+    a: "We handle end-to-end builds — design, development, testing, and launch across iOS, Android, and Web.",
+  },
+  {
+    q: "How long does it take to build an app?",
+    a: "Most MVPs go live in 45 days, depending on scope and integrations.",
+  },
+  {
+    q: "What kind of AI solutions do you build?",
+    a: "From GPT-powered chatbots to predictive analytics and workflow automation — all built around your use case.",
+  },
+  {
+    q: "Do you offer custom model training or fine-tuning?",
+    a: "Yes. We fine-tune and deploy models using your proprietary data for accuracy and domain fit.",
+  },
+  {
+    q: "Can you automate existing processes without replacing our tools?",
+    a: "Yes — we integrate with CRMs, ERPs, and SaaS platforms like Notion, HubSpot, and Salesforce.",
+  },
+  {
+    q: "How much time or cost can automation save?",
+    a: "Clients typically see up to 70% time saved and 50% lower ops costs.",
+  },
+  {
+    q: "Do you work with existing systems or build from scratch?",
+    a: "Both — we can re-engineer legacy systems or design new applications from the ground up.",
+  },
+  {
+    q: "Do we retain full ownership of custom software?",
+    a: "Yes, you own all IP, source code, and documentation from day one.",
+  },
+  {
+    q: "Do cross-platform apps perform as well as native ones?",
+    a: "Yes — when architected right, Flutter and React Native apps feel just as smooth and native.",
+  },
+  {
+    q: "Can you migrate an existing web app to mobile?",
+    a: "Absolutely — we reuse core logic and optimize for iOS and Android.",
+  },
+  {
+    heading: "Industries",
+    q: "What industries does Byldd serve?",
+    a: "Byldd partners with startups and enterprises across 25+ industries — including <b>Healthcare, FinTech, Retail, Education, Real Estate, Logistics, Travel, Insurance, and E-commerce</b>. Whether you’re building a customer app, AI-powered workflow, or enterprise platform, we tailor our approach to your domain.",
+  },
+  {
+    q: "Do you have experience with regulated or complex industries like Healthcare and Banking?",
+    a: "Yes. We’ve delivered apps and platforms that comply with <b>HIPAA, PCI DSS, and SOC2</b> standards. Our team understands data security, integrations with core systems, and industry-specific compliance needs — from <b>medical data management to digital banking solutions</b>.",
+  },
+  {
+    q: "Can you help with digital transformation across traditional industries like Manufacturing, Supply Chain, or Construction?",
+    a: "Absolutely. We modernize legacy systems through <b>custom software, AI, and automation</b>, helping teams streamline operations, improve visibility, and reduce manual work. Our projects often involve <b>infrastructure modernization, workflow automation, and app re-engineering</b> for operational efficiency.",
+  },
+  {
+    q: "Do you work with creative or consumer-focused industries like Entertainment, OTT, Fitness, or Social Media?",
+    a: "Yes — we’ve built scalable consumer platforms, streaming apps, and engagement-driven products that handle high traffic and user interaction. From <b>fitness tracking to social media integrations</b>, we design experiences that convert and retain users.",
+  },
+  {
+    q: "How does your approach differ by industry?",
+    a: "Each industry has unique challenges — so we customize everything from <b>architecture to feature prioritization</b>. FinTech apps need compliance and uptime; Retail needs personalization and analytics; Healthcare demands security and accessibility. Our pods adapt their tech stack and process to match those needs.",
   },
 ];
 
@@ -74,19 +122,35 @@ export function FaqsPage() {
         <Container className="max-w-3xl">
           <div className="flex flex-col gap-3">
             {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={i * 0.03}>
-                <details className="group rounded-card border border-brand-ink/[0.07] bg-white px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-brand-ink">
-                    {f.q}
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-lavender/60 text-brand-purple transition-transform duration-300 group-open:rotate-45">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-4 leading-relaxed text-brand-ink/65">{f.a}</p>
-                </details>
-              </Reveal>
+              <Fragment key={f.q}>
+                {f.heading && (
+                  <Reveal>
+                    <h2
+                      className={`display text-3xl text-brand-purple md:text-4xl ${
+                        i === 0 ? "mb-3" : "mb-3 mt-12"
+                      }`}
+                    >
+                      {f.heading}
+                    </h2>
+                  </Reveal>
+                )}
+                <Reveal delay={i * 0.03}>
+                  <details className="group rounded-card border border-brand-ink/[0.07] bg-white px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-brand-ink">
+                      {f.q}
+                      <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-lavender/60 text-brand-purple transition-transform duration-300 group-open:rotate-45">
+                        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                          <path d="M12 5v14M5 12h14" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div
+                      className="mt-4 leading-relaxed text-brand-ink/65 [&_a]:text-brand-purple"
+                      dangerouslySetInnerHTML={{ __html: f.a }}
+                    />
+                  </details>
+                </Reveal>
+              </Fragment>
             ))}
           </div>
         </Container>

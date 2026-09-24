@@ -18,7 +18,7 @@ export function CampaignBackersSection({ content }: { content: CampaignBackersCo
               alt={backer.alt}
               width={130}
               height={38}
-              className="h-7 w-auto max-w-28 object-contain opacity-65 grayscale"
+              className="h-7 w-auto max-w-28 object-contain"
             />
           ))}
         </div>
