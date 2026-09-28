@@ -8,7 +8,10 @@ import type { Iso2 } from "intl-tel-input";
 
 import { ArrowUpRight } from "@/components/brand/marks";
 import { useCaptcha } from "@/hooks/use-captcha";
-import { BudgetField } from "@/modules/Contact/components/BudgetField";
+import {
+  BudgetField,
+  type BudgetOption,
+} from "@/modules/Contact/components/BudgetField";
 import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
@@ -40,6 +43,7 @@ const formEndpoint = "/api/contact";
 const calendlyBookingEndpoint = "/api/contact/calendly";
 
 type ContactFormProps = {
+  budgetOptions?: readonly BudgetOption[];
   className?: string;
   defaultCountry?: Iso2;
   idPrefix?: string;
@@ -48,6 +52,7 @@ type ContactFormProps = {
 };
 
 export function ContactForm({
+  budgetOptions,
   className = "",
   defaultCountry = "us",
   idPrefix = "contact",
@@ -262,7 +267,11 @@ export function ContactForm({
         />
       )}
 
-      <BudgetField control={control} idPrefix={idPrefix} />
+      <BudgetField
+        control={control}
+        idPrefix={idPrefix}
+        options={budgetOptions}
+      />
 
       {!isAiAudit && (
         <TextareaField

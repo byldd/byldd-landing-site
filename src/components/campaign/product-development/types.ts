@@ -1,4 +1,5 @@
 import type { Iso2 } from "intl-tel-input";
+import type { BudgetOption } from "@/modules/Contact/components/BudgetField";
 
 export type CampaignStat = {
   value: string;
@@ -14,6 +15,7 @@ export type CampaignHeroContent = {
   formIdPrefix: string;
   submitLabel: string;
   defaultCountry?: Iso2;
+  budgetOptions?: readonly BudgetOption[];
 };
 
 export type CampaignBacker = {
@@ -95,6 +97,7 @@ export type CampaignStrategyCallContent = {
   formIdPrefix: string;
   submitLabel: string;
   defaultCountry?: Iso2;
+  budgetOptions?: readonly BudgetOption[];
 };
 
 export type CampaignFaqItem = {

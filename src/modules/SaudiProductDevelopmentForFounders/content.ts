@@ -1,14 +1,14 @@
 import type { ProductDevelopmentCampaignContent } from "@/components/campaign/product-development/types";
 
-const uaeBudgetOptions = [
-  { label: "AED 0–30K", value: "0-30000 AED" },
-  { label: "AED 30–60K", value: "30000-60000 AED" },
-  { label: "AED 60–100K", value: "60000-100000 AED" },
-  { label: "AED 100–300K", value: "100000-300000 AED" },
-  { label: "AED 300K+", value: "300000+ AED" },
+const saudiBudgetOptions = [
+  { label: "SAR 0–30K", value: "0-30000 SAR" },
+  { label: "SAR 30–60K", value: "30000-60000 SAR" },
+  { label: "SAR 60–100K", value: "60000-100000 SAR" },
+  { label: "SAR 100–300K", value: "100000-300000 SAR" },
+  { label: "SAR 300K+", value: "300000+ SAR" },
 ] as const;
 
-export const uaeProductDevelopmentForFoundersContent = {
+export const saudiProductDevelopmentForFoundersContent = {
   hero: { 
     headline: "From idea to working software",
     highlightedHeadline: "in 45 days.",
@@ -20,11 +20,11 @@ export const uaeProductDevelopmentForFoundersContent = {
       { value: "45 Days", label: "Most products launched" },
       { value: "~$15K", label: "Typical investment" },
     ],
-    formId: "uae-product-development-for-founders-form",
-    formIdPrefix: "uae-product-development-for-founders-hero",
+    formId: "saudi-product-development-for-founders-form",
+    formIdPrefix: "saudi-product-development-for-founders-hero",
     submitLabel: "Get in touch",
-    defaultCountry: "ae",
-    budgetOptions: uaeBudgetOptions,
+    defaultCountry: "sa",
+    budgetOptions: saudiBudgetOptions,
   },
   backers: {
     heading: "Our portfolio companies are backed by",
@@ -119,7 +119,7 @@ export const uaeProductDevelopmentForFoundersContent = {
     },
   },
   testimonials: {
-    id: "uae-product-development-for-founders-testimonials",
+    id: "saudi-product-development-for-founders-testimonials",
     headline: "Build products that investors and customers love.",
     sub: "Founders are RAVING about us.",
     showLogos: false,
@@ -175,10 +175,10 @@ export const uaeProductDevelopmentForFoundersContent = {
     emphasizedClosingText: "you'll leave with clarity.",
     formHeading: "Get your no-cost product consultation",
     formDescription: "",
-    formIdPrefix: "uae-product-development-for-founders-footer",
+    formIdPrefix: "saudi-product-development-for-founders-footer",
     submitLabel: "Get in touch",
-    defaultCountry: "ae",
-    budgetOptions: uaeBudgetOptions,
+    defaultCountry: "sa",
+    budgetOptions: saudiBudgetOptions,
   },
   faq: {
     eyebrow: "Frequently asked questions",

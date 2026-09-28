@@ -33,6 +33,7 @@ export function CampaignStrategyCallSection({ content }: { content: CampaignStra
             idPrefix={content.formIdPrefix}
             submitLabel={content.submitLabel}
             defaultCountry={content.defaultCountry}
+            budgetOptions={content.budgetOptions}
             className="[&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center"
           />
         </div>
