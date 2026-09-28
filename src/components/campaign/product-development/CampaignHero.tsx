@@ -23,6 +23,7 @@ export function CampaignHero({ content }: { content: CampaignHeroContent }) {
             idPrefix={content.formIdPrefix}
             submitLabel={content.submitLabel}
             defaultCountry={content.defaultCountry}
+            budgetOptions={content.budgetOptions}
             className="gap-3 [&>div.grid]:grid-cols-1 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_label>span:first-child]:sr-only [&_textarea]:min-h-[150px]"
           />
         </div>

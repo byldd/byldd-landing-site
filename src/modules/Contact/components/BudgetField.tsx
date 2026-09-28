@@ -4,7 +4,12 @@ import { useController, type Control } from "react-hook-form";
 
 import type { ContactFormValues } from "@/schemas/contact-form-schema";
 
-const budgets = [
+export type BudgetOption = {
+  label: string;
+  value: string;
+};
+
+const defaultBudgets: readonly BudgetOption[] = [
   { label: "$10k – $30k", value: "10000-30000$" },
   { label: "$30k – $50k", value: "30000-50000$" },
   { label: "$50k – $75k", value: "50000-75000$" },
@@ -16,11 +21,13 @@ const budgets = [
 type BudgetFieldProps = {
   control: Control<ContactFormValues>;
   idPrefix?: string;
+  options?: readonly BudgetOption[];
 };
 
 export function BudgetField({
   control,
   idPrefix = "contact",
+  options = defaultBudgets,
 }: BudgetFieldProps) {
   const {
     field: budgetField,
@@ -39,7 +46,7 @@ export function BudgetField({
       </legend>
 
       <div className="flex flex-wrap gap-2">
-        {budgets.map((budget) => {
+        {options.map((budget) => {
           const isSelected = budgetField.value === budget.value;
 
           return (
