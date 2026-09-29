@@ -4,7 +4,7 @@ import type { CampaignHeroContent } from "@/components/campaign/product-developm
 export function CampaignHero({ content }: { content: CampaignHeroContent }) {
   return (
     <section className="relative bg-white px-[15px] pb-[60px] pt-[140px] text-brand-ink before:absolute before:inset-x-0 before:top-0 before:h-[4.5rem] before:bg-brand-night">
-      <div className="relative mx-auto grid max-w-[1170px] lg:grid-cols-[3fr_2fr]">
+      <div className="relative mx-auto grid max-w-[1170px] lg:grid-cols-[3fr_2.5fr]">
         <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:block lg:text-left">
           <h1 className="max-w-full text-[2.5rem] font-semibold leading-[1.3] tracking-[-0.01em] text-[#1a1a2e] lg:max-w-[702px] lg:text-[3.75rem]">
             {content.headline}{" "}
@@ -24,7 +24,7 @@ export function CampaignHero({ content }: { content: CampaignHeroContent }) {
             submitLabel={content.submitLabel}
             defaultCountry={content.defaultCountry}
             budgetOptions={content.budgetOptions}
-            className="gap-3 [&>div.grid]:grid-cols-1 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_label>span:first-child]:sr-only [&_textarea]:min-h-[150px]"
+            className="gap-3 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_label>span:first-child]:sr-only [&_textarea]:min-h-[100px]"
           />
         </div>
       </div>

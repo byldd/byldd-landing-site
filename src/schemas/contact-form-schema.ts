@@ -3,12 +3,19 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 
 
 export const contactFormSchema = z.object({
-  name: z
+  firstName: z
     .string()
     .trim()
-    .min(1, "Please enter your name")
-    .max(100, "Name must be 100 characters or less")
-    .regex(/^[A-Za-z\s]+$/, "Name should contain only letters"),
+    .min(1, "Please enter your first name")
+    .max(100, "First name must be 100 characters or less")
+    .regex(/^[A-Za-z\s]+$/, "First name should contain only letters"),
+
+  lastName: z
+    .string()
+    .trim()
+    .min(1, "Please enter your last name")
+    .max(100, "Last name must be 100 characters or less")
+    .regex(/^[A-Za-z\s]+$/, "Last name should contain only letters"),
 
   email: z
     .string()
@@ -47,6 +54,7 @@ export const contactFormSchema = z.object({
     .min(1, "Please tell us what you're building")
     .max(1700, "Message cannot exceed 1700 characters"),
 
+  needsNda: z.boolean(),
   smsConsent: z.boolean().optional(),
 });
 

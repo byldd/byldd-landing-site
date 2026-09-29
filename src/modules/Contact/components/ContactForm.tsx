@@ -12,6 +12,7 @@ import {
   BudgetField,
   type BudgetOption,
 } from "@/modules/Contact/components/BudgetField";
+import { NdaField } from "@/modules/Contact/components/NdaField";
 import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
@@ -77,13 +78,15 @@ export function ContactForm({
       isAiAudit ? aiAuditContactFormSchema : contactFormSchema,
     ),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       businessName: "",
       email: "",
       phone: "",
       budget: "",
       timeConsumingTask: "",
       message: isAiAudit ? "AI opportunity audit request" : "",
+      needsNda: false,
       smsConsent: false,
     },
   });
@@ -147,9 +150,11 @@ export function ContactForm({
         getCaptchaToken("submit"),
         getIpAddress(),
       ]);
+
       const params = getLeadQueryParams();
       const submission: ContactSubmission = {
-        name: values.name,
+        firstName: values.firstName,
+        lastName: values.lastName,
         businessName: isAiAudit ? values.businessName : undefined,
         ip,
         agent: window.navigator.userAgent,
@@ -161,6 +166,7 @@ export function ContactForm({
           isAiAudit && values.timeConsumingTask
             ? `AI opportunity audit: ${values.timeConsumingTask}`
             : values.message,
+        needsNda: values.needsNda === true,
         isChecked: values.smsConsent === true,
         pageUrl: window.location.href,
         utm: formatLeadQueryParams(params),
@@ -184,7 +190,7 @@ export function ContactForm({
 
       trackContactFormSubmission();
       setPendingCalendlySubmission(submission);
-      await openCalendly(values.name, values.email);
+      await openCalendly(values.firstName, values.lastName, values.email);
       reset();
       setPhoneInputKey((key) => key + 1);
     } catch (error) {
@@ -206,26 +212,39 @@ export function ContactForm({
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <TextInputField
-          id={`${idPrefix}-name`}
-          label="Name"
-          registration={register("name")}
+          id={`${idPrefix}-first-name`}
+          label="First name"
+          registration={register("firstName")}
           className={field}
-          error={errors.name?.message}
-          placeholder="Your full name"
-          autoComplete="name"
+          error={errors.firstName?.message}
+          placeholder="Your first name"
+          autoComplete="given-name"
         />
-        {isAiAudit && (
-          <TextInputField
-            id={`${idPrefix}-business-name`}
-            label="Business name"
-            registration={register("businessName")}
-            className={field}
-            error={errors.businessName?.message}
-            placeholder="Business name"
-            autoComplete="organization"
-            required
-          />
-        )}
+        <TextInputField
+          id={`${idPrefix}-last-name`}
+          label="Last name"
+          registration={register("lastName")}
+          className={field}
+          error={errors.lastName?.message}
+          placeholder="Your last name"
+          autoComplete="family-name"
+        />
+      </div>
+
+      {isAiAudit && (
+        <TextInputField
+          id={`${idPrefix}-business-name`}
+          label="Business name"
+          registration={register("businessName")}
+          className={field}
+          error={errors.businessName?.message}
+          placeholder="Business name"
+          autoComplete="organization"
+          required
+        />
+      )}
+
+      <div className="grid gap-4 sm:grid-cols-2">
         <TextInputField
           id={`${idPrefix}-email`}
           label="Email"
@@ -236,19 +255,6 @@ export function ContactForm({
           placeholder="Your email ID"
           autoComplete="email"
         />
-        {isAiAudit && (
-          <PhoneInput
-            key={phoneInputKey}
-            id={`${idPrefix}-phone`}
-            className={field}
-            defaultCountry={defaultCountry}
-            error={errors.phone?.message}
-            onChange={handlePhoneChange}
-          />
-        )}
-      </div>
-
-      {!isAiAudit && (
         <PhoneInput
           key={phoneInputKey}
           id={`${idPrefix}-phone`}
@@ -257,7 +263,7 @@ export function ContactForm({
           error={errors.phone?.message}
           onChange={handlePhoneChange}
         />
-      )}
+      </div>
 
       {isAiAudit && (
         <TimeConsumingTaskField
@@ -281,9 +287,10 @@ export function ContactForm({
           className={field}
           error={errors.message?.message}
           placeholder="Tell us about your product..."
-          hint="(NDA Covered)"
         />
       )}
+
+      <NdaField control={control} />
 
       <SmsConsentField control={control} />
 
