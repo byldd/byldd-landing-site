@@ -80,14 +80,19 @@ export function preloadCalendly() {
   return calendlyPromise;
 }
 
-export async function openCalendly(name: string, email: string) {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+export async function openCalendly(
+  firstName: string,
+  lastName: string,
+  email: string,
+) {
+  const calendlyUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 
   if (!calendlyUrl) {
-    throw new Error("Missing NEXT_PUBLIC_CALENDLY_URL");
+    throw new Error("Missing NEXT_PUBLIC_GHL_CALENDLY_URL");
   }
 
   const url = new URL(calendlyUrl);
+  const name = `${firstName} ${lastName}`.trim();
 
   try {
     const calendly = await preloadCalendly();
