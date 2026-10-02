@@ -12,6 +12,7 @@ import {
   UseCasesSection,
 } from "@/modules/AiForSmallBusinesses/components/CampaignSections";
 import { StickyAuditBar } from "@/modules/AiForSmallBusinesses/components/StickyAuditBar";
+import { Testimonials } from "@/components/sections/testimonials";
 
 export const metadata: Metadata = {
   title: "AI for Small Businesses | Byldd",
@@ -29,6 +30,7 @@ export function AiForSmallBusinessesPage() {
       <ProcessSection />
       <ComparisonSection />
       <ProofSection />
+      <Testimonials />
       <AuditSection />
       <CampaignFaq />
       <StickyAuditBar />
