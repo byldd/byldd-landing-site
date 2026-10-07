@@ -84,6 +84,7 @@ export async function openCalendly(
   firstName: string,
   lastName: string,
   email: string,
+  phone: string,
 ) {
   const calendlyUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 
@@ -94,6 +95,12 @@ export async function openCalendly(
   const url = new URL(calendlyUrl);
   const name = `${firstName} ${lastName}`.trim();
 
+  url.searchParams.set("first_name", firstName);
+  url.searchParams.set("last_name", lastName);
+  url.searchParams.set("name", name);
+  url.searchParams.set("email", email);
+  url.searchParams.set("phone", phone);
+
   try {
     const calendly = await preloadCalendly();
     calendly.initPopupWidget({
@@ -101,9 +108,6 @@ export async function openCalendly(
       prefill: { name, email },
     });
   } catch {
-    url.searchParams.set("name", name);
-    url.searchParams.set("email", email);
-
     window.location.assign(url.toString().replaceAll("+", "%20"));
   }
 }
