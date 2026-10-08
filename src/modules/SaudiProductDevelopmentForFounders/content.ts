@@ -1,11 +1,11 @@
 import type { ProductDevelopmentCampaignContent } from "@/components/campaign/product-development/types";
 
 const saudiBudgetOptions = [
-  { label: "SAR 0–30K", value: "0-30000 SAR" },
   { label: "SAR 30–60K", value: "30000-60000 SAR" },
   { label: "SAR 60–100K", value: "60000-100000 SAR" },
   { label: "SAR 100–300K", value: "100000-300000 SAR" },
-  { label: "SAR 300K+", value: "300000+ SAR" },
+  { label: "SAR 300–500K", value: "300000-500000 SAR" },
+  { label: "SAR 500K+", value: "500000+ SAR" },
 ] as const;
 
 export const saudiProductDevelopmentForFoundersContent = {

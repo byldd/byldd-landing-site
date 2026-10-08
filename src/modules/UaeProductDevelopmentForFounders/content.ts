@@ -1,11 +1,11 @@
 import type { ProductDevelopmentCampaignContent } from "@/components/campaign/product-development/types";
 
 const uaeBudgetOptions = [
-  { label: "AED 0–30K", value: "0-30000 AED" },
   { label: "AED 30–60K", value: "30000-60000 AED" },
   { label: "AED 60–100K", value: "60000-100000 AED" },
   { label: "AED 100–300K", value: "100000-300000 AED" },
-  { label: "AED 300K+", value: "300000+ AED" },
+  { label: "AED 300-500K", value: "300000-500000 AED" },
+  { label: "AED 500K+", value: "500000+ AED" },
 ] as const;
 
 export const uaeProductDevelopmentForFoundersContent = {
