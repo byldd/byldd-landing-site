@@ -64,27 +64,31 @@ export function WhatWeBuildIndexPage() {
       </section>
 
       <section className="bg-brand-mist pt-16 md:pt-24">
-        <Container className="max-w-3xl">
-          <Reveal>
-            <h2 className="display text-3xl leading-tight text-brand-ink sm:text-4xl">{indexPage.modulesHeading}</h2>
-            <p className="mt-4 text-[1.05rem] leading-relaxed text-brand-ink/70">{indexPage.modulesIntro}</p>
-          </Reveal>
+        <Container>
+          <div className="max-w-3xl">
+            <Reveal>
+              <h2 className="display text-3xl leading-tight text-brand-ink sm:text-4xl">{indexPage.modulesHeading}</h2>
+              <p className="mt-4 text-[1.05rem] leading-relaxed text-brand-ink/70">{indexPage.modulesIntro}</p>
+            </Reveal>
+          </div>
         </Container>
       </section>
       <ModulesSection variant="index" ids={modules.map((m) => m.id)} />
 
       <section className="bg-white py-16 md:py-24">
-        <Container className="max-w-3xl">
-          <Reveal>
-            <h2 className="display text-3xl leading-tight text-brand-ink sm:text-4xl">{indexPage.whyHeading}</h2>
-            <p className="mt-4 text-[1.05rem] leading-relaxed text-brand-ink/70">{indexPage.whySummary}</p>
-            <Link
-              href={`${BASE_PATH}/why-byldd`}
-              className="mt-6 inline-block font-semibold text-brand-violet underline decoration-brand-purple/30 underline-offset-4 hover:decoration-brand-purple"
-            >
-              Why Byldd →
-            </Link>
-          </Reveal>
+        <Container>
+          <div className="max-w-3xl">
+            <Reveal>
+              <h2 className="display text-3xl leading-tight text-brand-ink sm:text-4xl">{indexPage.whyHeading}</h2>
+              <p className="mt-4 text-[1.05rem] leading-relaxed text-brand-ink/70">{indexPage.whySummary}</p>
+              <Link
+                href={`${BASE_PATH}/why-byldd`}
+                className="mt-6 inline-block font-semibold text-brand-violet underline decoration-brand-purple/30 underline-offset-4 hover:decoration-brand-purple"
+              >
+                Why Byldd →
+              </Link>
+            </Reveal>
+          </div>
         </Container>
       </section>
 

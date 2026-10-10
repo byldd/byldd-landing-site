@@ -36,7 +36,10 @@ function Prose({ blocks }: { blocks: Block[] }) {
               <ul key={i} className="mt-4 flex flex-col gap-2.5">
                 {b.items.map((it, j) => (
                   <li key={j} className="relative pl-5 text-[1.05rem] leading-relaxed text-brand-ink/70">
-                    <span aria-hidden className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full bg-brand-purple" />
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full bg-brand-purple"
+                    />
                     <RichText text={it} />
                   </li>
                 ))}
@@ -103,8 +106,10 @@ export function ContentBlocks({
     if (run.length === 0) return;
     out.push(
       <section key={key} className="bg-white py-16 md:py-20">
-        <Container className="max-w-3xl">
-          <Prose blocks={run} />
+        <Container>
+          <div className="max-w-3xl">
+            <Prose blocks={run} />
+          </div>
         </Container>
       </section>,
     );
@@ -124,8 +129,10 @@ export function ContentBlocks({
         if (heading.length) {
           out.push(
             <section key={`modules-head-${i}`} className="bg-brand-mist pt-16 md:pt-24">
-              <Container className="max-w-3xl">
-                <Prose blocks={heading} />
+              <Container>
+                <div className="max-w-3xl">
+                  <Prose blocks={heading} />
+                </div>
               </Container>
             </section>,
           );
@@ -194,33 +201,42 @@ export function FaqSection({ faqs, heading }: { faqs: Faq[]; heading: string }) 
   if (faqs.length === 0) return null;
   return (
     <section className="bg-white py-16 md:py-24">
-      <Container className="max-w-3xl">
-        <Reveal>
-          <Eyebrow>FAQs</Eyebrow>
-          <MaskText
-            as="h2"
-            text={heading}
-            className="display mt-4 text-pretty text-3xl leading-tight text-brand-ink sm:text-4xl"
-          />
-        </Reveal>
-        <div className="mt-10 flex flex-col gap-3">
-          {faqs.map((f, i) => (
-            <Reveal key={f.q} delay={i * 0.03}>
-              <details className="group rounded-card border border-brand-ink/[0.07] bg-brand-mist/60 px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-brand-ink">
-                  {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-lavender/60 text-brand-purple transition-transform duration-300 group-open:rotate-45">
-                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                      <path d="M12 5v14M5 12h14" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="mt-4 leading-relaxed text-brand-ink/65">
-                  <RichText text={f.a} />
-                </p>
-              </details>
-            </Reveal>
-          ))}
+      <Container>
+        <div className="max-w-3xl">
+          <Reveal>
+            <Eyebrow>FAQs</Eyebrow>
+            <MaskText
+              as="h2"
+              text={heading}
+              className="display mt-4 text-pretty text-3xl leading-tight text-brand-ink sm:text-4xl"
+            />
+          </Reveal>
+          <div className="mt-10 flex flex-col gap-3">
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 0.03}>
+                <details className="group rounded-card border border-brand-ink/[0.07] bg-brand-mist/60 px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-brand-ink">
+                    {f.q}
+                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-lavender/60 text-brand-purple transition-transform duration-300 group-open:rotate-45">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                      >
+                        <path d="M12 5v14M5 12h14" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <p className="mt-4 leading-relaxed text-brand-ink/65">
+                    <RichText text={f.a} />
+                  </p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
