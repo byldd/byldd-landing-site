@@ -29,7 +29,8 @@ export async function generateMetadata({
   return {
     title: s.title,
     description: s.tagline,
-    openGraph: { title: s.title, description: s.tagline, url: `/services/${s.slug}/` },
+    alternates: { canonical: `/services/${s.slug}` },
+    openGraph: { title: s.title, description: s.tagline, url: `/services/${s.slug}` },
   };
 }
 

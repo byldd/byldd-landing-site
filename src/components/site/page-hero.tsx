@@ -9,9 +9,12 @@ export function PageHero({
   title,
   gradientFrom,
   subtitle,
+  breadcrumbs,
   children,
 }: {
   eyebrow?: string;
+  /** Rendered above the eyebrow/title, e.g. a breadcrumb trail. */
+  breadcrumbs?: ReactNode;
   title: string;
   gradientFrom?: number;
   subtitle?: string;
@@ -27,6 +30,7 @@ export function PageHero({
         style={{ background: "radial-gradient(circle, rgba(131,77,251,0.14), transparent 65%)" }}
       />
       <Container className="relative">
+        {breadcrumbs}
         {eyebrow && (
           <Reveal className="mb-6">
             <Eyebrow tone="light">{eyebrow}</Eyebrow>
