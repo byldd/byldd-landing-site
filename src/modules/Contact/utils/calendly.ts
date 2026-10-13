@@ -95,11 +95,17 @@ export async function openCalendly(
   const url = new URL(calendlyUrl);
   const name = `${firstName} ${lastName}`.trim();
 
-  url.searchParams.set("first_name", firstName);
-  url.searchParams.set("last_name", lastName);
-  url.searchParams.set("name", name);
-  url.searchParams.set("email", email);
-  url.searchParams.set("phone", phone);
+const fields = [
+  ["first_name", firstName],
+  ["last_name", lastName],
+  ["name", name],
+  ["email", email],
+  ["phone", phone],
+];
+
+fields.forEach(([key, value]) => {
+  url.searchParams.set(key, value);
+});
 
   try {
     const calendly = await preloadCalendly();
