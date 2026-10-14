@@ -190,7 +190,12 @@ export function ContactForm({
 
       trackContactFormSubmission();
       setPendingCalendlySubmission(submission);
-      await openCalendly(values.firstName, values.lastName, values.email);
+      await openCalendly(
+        values.firstName,
+        values.lastName,
+        values.email,
+        values.phone,
+      );
       reset();
       setPhoneInputKey((key) => key + 1);
     } catch (error) {
