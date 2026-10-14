@@ -80,14 +80,32 @@ export function preloadCalendly() {
   return calendlyPromise;
 }
 
-export async function openCalendly(name: string, email: string) {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+export async function openCalendly(
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone: string,
+) {
+  const calendlyUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 
   if (!calendlyUrl) {
-    throw new Error("Missing NEXT_PUBLIC_CALENDLY_URL");
+    throw new Error("Missing NEXT_PUBLIC_GHL_CALENDLY_URL");
   }
 
   const url = new URL(calendlyUrl);
+  const name = `${firstName} ${lastName}`.trim();
+
+const fields = [
+  ["first_name", firstName],
+  ["last_name", lastName],
+  ["name", name],
+  ["email", email],
+  ["phone", phone],
+];
+
+fields.forEach(([key, value]) => {
+  url.searchParams.set(key, value);
+});
 
   try {
     const calendly = await preloadCalendly();
@@ -96,9 +114,6 @@ export async function openCalendly(name: string, email: string) {
       prefill: { name, email },
     });
   } catch {
-    url.searchParams.set("name", name);
-    url.searchParams.set("email", email);
-
     window.location.assign(url.toString().replaceAll("+", "%20"));
   }
 }

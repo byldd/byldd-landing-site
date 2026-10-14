@@ -1,6 +1,6 @@
 # Byldd Landing Site
 
-Next.js 16 (App Router, Turbopack) + Tailwind CSS v4 + shadcn/ui, with Payload CMS 3 on MongoDB.
+Next.js 16 (App Router, Turbopack) + Tailwind CSS v4 + shadcn/ui, with Payload CMS 3 on MongoDB
 
 ## Stack
 

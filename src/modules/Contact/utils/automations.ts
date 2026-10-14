@@ -26,7 +26,8 @@ function getAutomationUrl(automation: Automation) {
 
 function createAutomationPayload(payload: ContactSubmission) {
   return {
-    name: payload.name,
+    firstName: payload.firstName,
+    lastName: payload.lastName,
     businessName: payload.businessName,
     ip: payload.ip,
     agent: payload.agent,
@@ -35,6 +36,7 @@ function createAutomationPayload(payload: ContactSubmission) {
     budget: payload.budget,
     timeConsumingTask: payload.timeConsumingTask,
     message: payload.message,
+    needsNda: payload.needsNda,
     isChecked: payload.isChecked,
     pageUrl: payload.pageUrl,
     ...payload.utmData,
@@ -67,10 +69,12 @@ export function sendToMakeAutomation(payload: ContactSubmission) {
 
 function createSlackMessage(payload: ContactSubmission) {
   const lines = [
-    `Name: ${payload.name}`,
+    `First Name: ${payload.firstName}`,
+    `Last Name: ${payload.lastName}`,
     `Email: ${payload.email}`,
     `Phone: ${payload.phone}`,
     `Message: ${payload.message}`,
+    `Needs NDA: ${payload.needsNda}`,
     `Business Name: ${payload.businessName ?? ""}`,
     `Budget: ${payload.budget}`,
     `Time Consuming Task: ${payload.timeConsumingTask ?? ""}`,

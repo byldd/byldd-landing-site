@@ -32,7 +32,8 @@ export async function POST(request: Request) {
     ]);
 
     return Response.json({ status: "success" });
-  } catch {
+  } catch(err) {
+    console.log(err,"IM THE ONE");
     return Response.json(
       { error: "We couldn't submit your enquiry. Please try again." },
       { status: 502 },

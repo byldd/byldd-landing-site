@@ -19,7 +19,7 @@ export function TextareaField({
   error,
   placeholder,
   hint,
-  rows = 4,
+  rows = 3,
 }: TextareaFieldProps) {
   const errorId = `${id}-error`;
 
