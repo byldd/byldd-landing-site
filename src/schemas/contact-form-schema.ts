@@ -83,6 +83,7 @@ export const contactSubmissionSchema = contactFormSchema
   .extend({
     ip: z.string(),
     region: z.string().trim().min(1).optional(),
+    lastSubmissionDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     agent: z.string(),
     isChecked: z.boolean(),
     pageUrl: z.string().url(),

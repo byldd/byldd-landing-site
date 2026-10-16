@@ -28,6 +28,7 @@ export async function POST(request: Request) {
     }
 
     await addRegionToSubmission(payload.data, request);
+    payload.data.lastSubmissionDate = new Date().toISOString().slice(0, 10);
 
     await Promise.all([
       sendToSlack(payload.data),
