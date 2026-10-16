@@ -26,11 +26,11 @@ import {
 } from "@/modules/Contact/utils/calendly";
 import {
   formatLeadQueryParams,
-  getIpAddress,
   getLeadQueryParams,
   getLeadUtmData,
   persistLeadQueryParams,
 } from "@/modules/Contact/utils/lead-attribution";
+import { getIpAddress } from "@/modules/Contact/utils/region";
 import {
   aiAuditContactFormSchema,
   contactFormSchema,

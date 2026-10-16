@@ -1,4 +1,5 @@
 import { sendToCalendlyAutomation } from "@/modules/Contact/utils/automations";
+import { addRegionToSubmission } from "@/modules/Contact/utils/region";
 import { calendlyBookingSubmissionSchema } from "@/schemas/contact-form-schema";
 
 export async function POST(request: Request) {
@@ -11,6 +12,7 @@ export async function POST(request: Request) {
       return Response.json({ error: "Invalid Calendly booking." }, { status: 400 });
     }
 
+    await addRegionToSubmission(payload.data, request);
     await sendToCalendlyAutomation(payload.data);
     return Response.json({ success: true });
   } catch {

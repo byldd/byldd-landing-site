@@ -82,6 +82,7 @@ export const contactSubmissionSchema = contactFormSchema
   .omit({ smsConsent: true })
   .extend({
     ip: z.string(),
+    region: z.string().trim().min(1).optional(),
     agent: z.string(),
     isChecked: z.boolean(),
     pageUrl: z.string().url(),
