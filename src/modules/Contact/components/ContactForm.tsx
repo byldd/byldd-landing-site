@@ -282,6 +282,13 @@ export function ContactForm({
         control={control}
         idPrefix={idPrefix}
         options={budgetOptions}
+        question={
+          defaultCountry === "ae"
+            ? "Most products we build land between AED 50k and AED 100k. Where does that put you?"
+            : defaultCountry === "sa"
+              ? "Most products we build land between SAR 50k and SAR 100k. Where does that put you?"
+              : "Most products we build land between $15k and $40k. Where does that put you?"
+        }
       />
 
       {!isAiAudit && (

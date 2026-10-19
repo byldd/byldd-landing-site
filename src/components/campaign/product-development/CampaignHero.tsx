@@ -24,7 +24,11 @@ export function CampaignHero({ content }: { content: CampaignHeroContent }) {
             submitLabel={content.submitLabel}
             defaultCountry={content.defaultCountry}
             budgetOptions={content.budgetOptions}
-            className="gap-3 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_label>span:first-child]:sr-only [&_textarea]:min-h-[100px]"
+            className={`gap-3 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_textarea]:min-h-[100px] ${
+              content.defaultCountry === "ae" || content.defaultCountry === "sa"
+                ? ""
+                : "[&_label>span:first-child]:sr-only"
+            }`}
           />
         </div>
       </div>
