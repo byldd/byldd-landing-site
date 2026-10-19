@@ -1,4 +1,5 @@
 import { ContactForm } from "@/modules/Contact/components/ContactForm";
+import { CountryCode } from "@/modules/Contact/enums/country-code";
 import type { CampaignHeroContent } from "@/components/campaign/product-development/types";
 
 export function CampaignHero({ content }: { content: CampaignHeroContent }) {
@@ -25,7 +26,8 @@ export function CampaignHero({ content }: { content: CampaignHeroContent }) {
             defaultCountry={content.defaultCountry}
             budgetOptions={content.budgetOptions}
             className={`gap-3 [&_button[type=submit]]:mt-0 [&_button[type=submit]]:w-full [&_button[type=submit]]:justify-center [&_button[type=submit]]:rounded-[10px] [&_textarea]:min-h-[100px] ${
-              content.defaultCountry === "ae" || content.defaultCountry === "sa"
+              content.defaultCountry === CountryCode.UnitedArabEmirates ||
+              content.defaultCountry === CountryCode.SaudiArabia
                 ? ""
                 : "[&_label>span:first-child]:sr-only"
             }`}
