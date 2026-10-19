@@ -3,6 +3,7 @@ import {
   sendToSlack,
 } from "@/modules/Contact/utils/automations";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { addRegionToSubmission } from "@/modules/Contact/utils/region";
 import { contactSubmissionSchema } from "@/schemas/contact-form-schema";
 
 export async function POST(request: Request) {
@@ -25,6 +26,9 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
+
+    await addRegionToSubmission(payload.data, request);
+    payload.data.lastSubmissionDate = new Date().toISOString().slice(0, 10);
 
     await Promise.all([
       sendToSlack(payload.data),

@@ -1,13 +1,5 @@
 import type { ProductDevelopmentCampaignContent } from "@/components/campaign/product-development/types";
 
-const uaeBudgetOptions = [
-  { label: "AED 0–30K", value: "0-30000 AED" },
-  { label: "AED 30–60K", value: "30000-60000 AED" },
-  { label: "AED 60–100K", value: "60000-100000 AED" },
-  { label: "AED 100–300K", value: "100000-300000 AED" },
-  { label: "AED 300K+", value: "300000+ AED" },
-] as const;
-
 export const uaeProductDevelopmentForFoundersContent = {
   hero: { 
     headline: "From idea to working software",
@@ -24,7 +16,6 @@ export const uaeProductDevelopmentForFoundersContent = {
     formIdPrefix: "uae-product-development-for-founders-hero",
     submitLabel: "Get in touch",
     defaultCountry: "ae",
-    budgetOptions: uaeBudgetOptions,
   },
   backers: {
     heading: "Our portfolio companies are backed by",
@@ -178,7 +169,6 @@ export const uaeProductDevelopmentForFoundersContent = {
     formIdPrefix: "uae-product-development-for-founders-footer",
     submitLabel: "Get in touch",
     defaultCountry: "ae",
-    budgetOptions: uaeBudgetOptions,
   },
   faq: {
     eyebrow: "Frequently asked questions",

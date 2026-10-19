@@ -30,6 +30,8 @@ function createAutomationPayload(payload: ContactSubmission) {
     lastName: payload.lastName,
     businessName: payload.businessName,
     ip: payload.ip,
+    region: payload.region,
+    lastSubmissionDate: payload.lastSubmissionDate,
     agent: payload.agent,
     email: payload.email,
     phone: payload.phone,
@@ -81,6 +83,8 @@ function createSlackMessage(payload: ContactSubmission) {
     `Accepted Terms: ${payload.isChecked}`,
     `Page URL: ${payload.pageUrl}`,
     `IP Address: ${payload.ip}`,
+    `Region: ${payload.region}`,
+    `Last Submission Date: ${payload.lastSubmissionDate}`,
     `Agent: ${payload.agent}`,
     `UTM: ${payload.utm}`,
   ];

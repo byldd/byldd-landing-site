@@ -61,15 +61,3 @@ export function getLeadUtmData(params: URLSearchParams): LeadUtmData {
     ),
   };
 }
-
-export async function getIpAddress() {
-  try {
-    const response = await fetch("https://api.ipify.org?format=json");
-    if (!response.ok) return "";
-
-    const data = (await response.json()) as { ip?: string };
-    return data.ip ?? "";
-  } catch {
-    return "";
-  }
-}
