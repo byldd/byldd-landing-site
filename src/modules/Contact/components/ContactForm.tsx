@@ -45,6 +45,8 @@ const formEndpoint = "/api/contact";
 const calendlyBookingEndpoint = "/api/contact/calendly";
 const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
+const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
+const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
 const budgetQuestionByCountry: Partial<Record<Iso2, string>> = {
   [CountryCode.UnitedArabEmirates]:
     "Most products we build land between AED 50k and AED 100k. Where does that put you?",
@@ -204,6 +206,10 @@ export function ContactForm({
         values.lastName,
         values.email,
         values.phone,
+        defaultCountry === CountryCode.UnitedArabEmirates ||
+          defaultCountry === CountryCode.SaudiArabia
+          ? regionalCalendarUrl
+          : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);

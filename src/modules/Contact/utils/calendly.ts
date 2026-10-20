@@ -85,27 +85,26 @@ export async function openCalendly(
   lastName: string,
   email: string,
   phone: string,
+  calendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL,
 ) {
-  const calendlyUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
-
-  if (!calendlyUrl) {
-    throw new Error("Missing NEXT_PUBLIC_GHL_CALENDLY_URL");
+  if (!calendarUrl) {
+    throw new Error("Missing calendar URL");
   }
 
-  const url = new URL(calendlyUrl);
+  const url = new URL(calendarUrl);
   const name = `${firstName} ${lastName}`.trim();
 
-const fields = [
-  ["first_name", firstName],
-  ["last_name", lastName],
-  ["name", name],
-  ["email", email],
-  ["phone", phone],
-];
+  const fields = [
+    ["first_name", firstName],
+    ["last_name", lastName],
+    ["name", name],
+    ["email", email],
+    ["phone", phone],
+  ];
 
-fields.forEach(([key, value]) => {
-  url.searchParams.set(key, value);
-});
+  fields.forEach(([key, value]) => {
+    url.searchParams.set(key, value);
+  });
 
   try {
     const calendly = await preloadCalendly();
