@@ -13,6 +13,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ContactForm } from "@/modules/Contact/components/ContactForm";
+import { CountryCode } from "@/modules/Contact/enums/country-code";
+
+const campaignCountryByPath: Partial<Record<string, Iso2>> = {
+  "/campaign/uae_product-development-for-founders":
+    CountryCode.UnitedArabEmirates,
+  "/campaign/saudi_product-development-for-founders": CountryCode.SaudiArabia,
+};
 
 type DialogWithFormProps = {
   children?: ReactNode;
@@ -36,10 +43,7 @@ export function DialogWithForm({
   const generatedId = useId().replaceAll(":", "");
   const formIdPrefix = idPrefix ?? `contact-modal-${generatedId}`;
   const formDefaultCountry =
-    defaultCountry ??
-    (pathname === "/campaign/uae_product-development-for-founders"
-      ? "ae"
-      : "us");
+    defaultCountry ?? campaignCountryByPath[pathname] ?? CountryCode.UnitedStates;
   const triggerVariants = {
     solid:
       "bg-brand-purple text-white shadow-[0_10px_30px_-8px_rgba(131,77,251,0.6)] hover:-translate-y-0.5 hover:shadow-[0_16px_44px_-10px_rgba(131,77,251,0.75)]",
