@@ -1,13 +1,5 @@
 import type { ProductDevelopmentCampaignContent } from "@/components/campaign/product-development/types";
 
-const saudiBudgetOptions = [
-  { label: "SAR 30–60K", value: "30000-60000 SAR" },
-  { label: "SAR 60–100K", value: "60000-100000 SAR" },
-  { label: "SAR 100–300K", value: "100000-300000 SAR" },
-  { label: "SAR 300–500K", value: "300000-500000 SAR" },
-  { label: "SAR 500K+", value: "500000+ SAR" },
-] as const;
-
 export const saudiProductDevelopmentForFoundersContent = {
   hero: { 
     headline: "From idea to working software",
@@ -24,7 +16,6 @@ export const saudiProductDevelopmentForFoundersContent = {
     formIdPrefix: "saudi-product-development-for-founders-hero",
     submitLabel: "Get in touch",
     defaultCountry: "sa",
-    budgetOptions: saudiBudgetOptions,
   },
   backers: {
     heading: "Our portfolio companies are backed by",
@@ -178,7 +169,6 @@ export const saudiProductDevelopmentForFoundersContent = {
     formIdPrefix: "saudi-product-development-for-founders-footer",
     submitLabel: "Get in touch",
     defaultCountry: "sa",
-    budgetOptions: saudiBudgetOptions,
   },
   faq: {
     eyebrow: "Frequently asked questions",

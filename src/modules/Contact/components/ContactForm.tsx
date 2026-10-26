@@ -18,6 +18,7 @@ import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
 import { TextInputField } from "@/modules/Contact/components/TextInputField";
 import { TimeConsumingTaskField } from "@/modules/Contact/components/TimeConsumingTaskField";
+import { CountryCode } from "@/modules/Contact/enums/country-code";
 import { trackContactFormSubmission } from "@/modules/Contact/utils/analytics";
 import {
   isCalendlyScheduledEvent,
@@ -26,11 +27,11 @@ import {
 } from "@/modules/Contact/utils/calendly";
 import {
   formatLeadQueryParams,
-  getIpAddress,
   getLeadQueryParams,
   getLeadUtmData,
   persistLeadQueryParams,
 } from "@/modules/Contact/utils/lead-attribution";
+import { getIpAddress } from "@/modules/Contact/utils/region";
 import {
   aiAuditContactFormSchema,
   contactFormSchema,
@@ -42,6 +43,16 @@ const field =
   "w-full rounded-xl border border-brand-ink/15 bg-white px-4 py-3 text-brand-ink outline-none transition-colors placeholder:text-brand-ink/40 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20";
 const formEndpoint = "/api/contact";
 const calendlyBookingEndpoint = "/api/contact/calendly";
+const defaultBudgetQuestion =
+  "Most products we build land between $15k and $40k. Where does that put you?";
+const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
+const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
+const budgetQuestionByCountry: Partial<Record<Iso2, string>> = {
+  [CountryCode.UnitedArabEmirates]:
+    "Most products we build land between AED 50k and AED 100k. Where does that put you?",
+  [CountryCode.SaudiArabia]:
+    "Most products we build land between SAR 50k and SAR 100k. Where does that put you?",
+};
 
 type ContactFormProps = {
   budgetOptions?: readonly BudgetOption[];
@@ -55,7 +66,7 @@ type ContactFormProps = {
 export function ContactForm({
   budgetOptions,
   className = "",
-  defaultCountry = "us",
+  defaultCountry = CountryCode.UnitedStates,
   idPrefix = "contact",
   submitLabel = "Book a Strategy Session",
   variant = "default",
@@ -195,6 +206,10 @@ export function ContactForm({
         values.lastName,
         values.email,
         values.phone,
+        defaultCountry === CountryCode.UnitedArabEmirates ||
+          defaultCountry === CountryCode.SaudiArabia
+          ? regionalCalendarUrl
+          : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);
@@ -282,6 +297,7 @@ export function ContactForm({
         control={control}
         idPrefix={idPrefix}
         options={budgetOptions}
+        question={budgetQuestionByCountry[defaultCountry] ?? defaultBudgetQuestion}
       />
 
       {!isAiAudit && (
