@@ -47,6 +47,11 @@ const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
 const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
+const middleEastRegions = new Set(["United Arab Emirates", "Saudi Arabia"]);
+const regionalCountryCodes = new Set<Iso2>([
+  CountryCode.UnitedArabEmirates,
+  CountryCode.SaudiArabia,
+]);
 const budgetQuestionByCountry: Partial<Record<Iso2, string>> = {
   [CountryCode.UnitedArabEmirates]:
     "Most products we build land between AED 50k and AED 100k. Where does that put you?",
@@ -191,6 +196,7 @@ export function ContactForm({
       });
       const result = (await response.json().catch(() => null)) as {
         error?: string;
+        region?: string;
       } | null;
 
       if (!response.ok || result?.error) {
@@ -201,15 +207,16 @@ export function ContactForm({
 
       trackContactFormSubmission();
       setPendingCalendlySubmission(submission);
+      const useRegionalCalendar =
+        regionalCountryCodes.has(defaultCountry) ||
+        (result?.region ? middleEastRegions.has(result.region) : false);
+
       await openCalendly(
         values.firstName,
         values.lastName,
         values.email,
         values.phone,
-        defaultCountry === CountryCode.UnitedArabEmirates ||
-          defaultCountry === CountryCode.SaudiArabia
-          ? regionalCalendarUrl
-          : defaultCalendarUrl,
+        useRegionalCalendar ? regionalCalendarUrl : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);
