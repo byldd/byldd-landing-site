@@ -6,11 +6,15 @@ import type { ContactFormValues } from "@/schemas/contact-form-schema";
 
 const consentText =
   "I agree to receive text messages from Byldd about my inquiry, including replies, scheduling, and appointment reminders. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help";
+const shortConsentText =
+  "I agree to receive text messages from Byldd about my inquiry, including replies, scheduling, and appointment reminders. Reply STOP to opt out anytime.";
 
 export function SmsConsentField({
   control,
+  short = false,
 }: {
   control: Control<ContactFormValues>;
+  short?: boolean;
 }) {
   const {
     field: {
@@ -36,7 +40,7 @@ export function SmsConsentField({
           onChange={(event) => onChange(event.target.checked)}
           className="mt-1 size-4 shrink-0 cursor-pointer accent-brand-purple"
         />
-        <span>{consentText}</span>
+        <span>{short ? shortConsentText : consentText}</span>
       </label>
     </fieldset>
   );

@@ -6,9 +6,8 @@ import {
   AuditSection,
   ComparisonSection,
   ModulesSection,
-  ProblemSection,
   ProcessSection,
-  ProofSection,
+  RoiSection,
 } from "@/modules/ApAutomation/components/ApSections";
 import { StickyAuditBar } from "@/modules/ApAutomation/components/StickyAuditBar";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -23,12 +22,11 @@ export function ApAutomationPage() {
   return (
     <main className="overflow-clip">
       <ApHero />
-      <ProblemSection />
       <ModulesSection />
       <ProcessSection />
       <ComparisonSection />
-      <ProofSection />
-      <Testimonials />
+      <RoiSection />
+      <Testimonials showLogos={false} />
       <AuditSection />
       <ApFaq />
       <StickyAuditBar />

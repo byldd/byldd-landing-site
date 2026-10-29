@@ -5,55 +5,11 @@ import {
   auditOutcomes,
   comparison,
   modules,
-  problems,
   processSteps,
-  testimonials,
 } from "@/modules/ApAutomation/utils/content";
 
 const section = "px-5 py-20 md:py-28";
-const eyebrow = "eyebrow text-brand-violet";
 const heading = "display mt-4 text-balance text-4xl leading-[1.04] md:text-5xl";
-
-function PlaceholderTag({ className = "" }: { className?: string }) {
-  return (
-    <span className={`inline-block rounded-full border border-dashed border-red-400 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-red-500 ${className}`}>
-      Placeholder
-    </span>
-  );
-}
-
-export function ProblemSection() {
-  return (
-    <section className={`${section} bg-brand-mist text-brand-ink`}>
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className={eyebrow}>The real problem</p>
-          <h2 className={heading}>
-            Your AP team isn&apos;t slow.{" "}
-            <span className="text-brand-violet">
-              Your process is held together by inboxes and spreadsheets.
-            </span>
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-brand-ink/60">
-            Most finance leaders we talk to have already demoed an AP platform.
-            Either the approval rules didn&apos;t fit, the ERP sync broke on their
-            chart of accounts, or the quote grew with invoice volume until it
-            looked like another salary.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {problems.map((problem, index) => (
-            <article key={problem.title} className="rounded-3xl border border-brand-lavender bg-white p-7 shadow-soft">
-              <span className="text-xs font-semibold text-red-500">0{index + 1}</span>
-              <h3 className="mt-3 text-xl font-bold">{problem.title}</h3>
-              <p className="mt-2 leading-7 text-brand-ink/60">{problem.description}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function ModulesSection() {
   return (
@@ -62,7 +18,10 @@ export function ModulesSection() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <div className="max-w-3xl">
             <p className="eyebrow text-brand-purple-light">What we build</p>
-            <h2 className={heading}>Every step of AP, from inbox to payment file</h2>
+            <h2 className={heading}>
+              Every step of AP, from inbox to payment file,{" "}
+              <span className="text-brand-purple-light">and custom built for your process.</span>
+            </h2>
             <p className="mt-5 text-lg leading-8 text-brand-mist/65">
               Take the whole cycle or start with the step that hurts most. It all
               runs inside your ERP and the tools your team already uses.
@@ -102,17 +61,13 @@ export function ProcessSection() {
   return (
     <section className={`${section} bg-brand-mist text-brand-ink`}>
       <div className="mx-auto max-w-7xl">
-        <p className={eyebrow}>The 10-day path</p>
-        <h2 className={`${heading} max-w-3xl`}>From your first call to invoices flowing through it</h2>
+        <h2 className={`${heading} max-w-3xl`}>From a 30-minute call to AP running in your ERP</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {processSteps.map((step, index) => {
             const final = index === processSteps.length - 1;
             return (
               <article key={step.title} className={`rounded-3xl border p-7 ${final ? "border-brand-night bg-brand-night text-brand-mist" : "border-brand-lavender bg-white"}`}>
-                <div className="flex items-center justify-between">
-                  <span className="grid size-9 place-items-center rounded-full bg-brand-purple text-sm font-bold text-white">{index + 1}</span>
-                  <span className={`eyebrow ${final ? "text-white/45" : "text-brand-ink/40"}`}>{step.day}</span>
-                </div>
+                <span className="grid size-9 place-items-center rounded-full bg-brand-purple text-sm font-bold text-white">{index + 1}</span>
                 <h3 className="mt-5 text-xl font-bold">{step.title}</h3>
                 <p className={`mt-2 leading-7 ${final ? "text-brand-mist/65" : "text-brand-ink/60"}`}>{step.description}</p>
               </article>
@@ -134,7 +89,7 @@ export function ComparisonSection() {
           <ComparisonCard title="The Byldd build" items={comparison.byldd} winning />
         </div>
         <p className="mt-8 text-center text-sm text-brand-mist/45">
-          100+ products built · SOC2, GDPR & HIPAA-aligned practices · Full audit trail on every invoice · Based in New York City
+          100+ products built · SOC2, GDPR & HIPAA-aligned practices · Full audit trail on every invoice
         </p>
       </div>
     </section>
@@ -157,24 +112,16 @@ function ComparisonCard({ title, items, winning = false }: { title: string; item
   );
 }
 
-export function ProofSection() {
+export function RoiSection() {
   return (
     <section className={`${section} bg-brand-mist text-brand-ink`}>
-      <div className="mx-auto max-w-7xl">
-        <p className={eyebrow}>Proof</p>
-        <h2 className={`${heading} max-w-3xl`}>Finance teams that stopped keying invoices</h2>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <figure key={testimonial.stat} className="flex flex-col rounded-3xl border border-brand-lavender bg-white p-7 shadow-soft">
-              {testimonial.placeholder && <PlaceholderTag className="mb-4 self-start" />}
-              <p className="text-3xl font-bold tracking-tight">{testimonial.stat}</p>
-              <blockquote className="mt-5 flex-1 leading-7 text-brand-ink/70">“{testimonial.quote}”</blockquote>
-              <figcaption className="mt-6 border-t border-brand-lavender pt-4">
-                <span className="text-sm font-semibold text-brand-ink/60">{testimonial.role}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+      <div className="mx-auto max-w-4xl text-center">
+        <h2 className={heading}>
+          ROI in 3 months.{" "}
+          <span className="text-brand-violet">
+            For much less than one year of AP software subscriptions.
+          </span>
+        </h2>
       </div>
     </section>
   );
@@ -187,7 +134,7 @@ export function AuditSection() {
         <div>
           <p className="eyebrow text-brand-purple-light">Your free AP audit</p>
           <h2 className={heading}>Book a 30-minute AP audit</h2>
-          <p className="mt-5 text-lg text-brand-mist/65">Straight to our founder, not a sales rep. On the call we&apos;ll:</p>
+          <p className="mt-5 text-lg text-brand-mist/65">Straight to a product manager, not a sales rep. On the call we&apos;ll:</p>
           <ul className="mt-7 grid gap-4">
             {auditOutcomes.map((outcome) => (
               <li key={outcome} className="flex items-start gap-3 leading-7 text-brand-mist/85">
@@ -203,7 +150,7 @@ export function AuditSection() {
         </div>
         <div className="rounded-[2rem] bg-brand-mist p-6 text-brand-ink md:p-8">
           <h3 className="text-2xl font-bold tracking-tight">Claim your no-cost AP audit</h3>
-          <p className="mb-6 mt-2 text-sm text-brand-ink/55">Takes less than a minute. NDA covered.</p>
+          <p className="mb-6 mt-2 text-sm text-brand-ink/55">NDA covered.</p>
           <ContactForm
             idPrefix="ap-footer"
             submitLabel="Get my AP plan"

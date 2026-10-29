@@ -1,24 +1,3 @@
-// Testimonials with `placeholder: true` render a visible "Placeholder" tag. Replace
-// them with real client quotes, then drop the flag, before this page launches.
-
-export const problems = [
-  {
-    title: "Invoices arrive everywhere",
-    description:
-      "Email, vendor portals, scanned paper, PDFs with forty line items. Someone keys every one into the ERP by hand, and the backlog lands on your close.",
-  },
-  {
-    title: "Approvals die in someone's inbox",
-    description:
-      "A $40k invoice waits on a VP who's travelling. You find out when the vendor calls about the late fee.",
-  },
-  {
-    title: "Software that bills you for growing",
-    description:
-      "Per-invoice and per-user pricing means your AP cost rises every time the business does well. And your workflow still has to bend to theirs.",
-  },
-] as const;
-
 export const modules = [
   {
     title: "Invoice capture",
@@ -69,25 +48,21 @@ export const modules = [
 
 export const processSteps = [
   {
-    day: "Day 1",
     title: "Map your AP",
     description:
       "A 30-minute call. We walk your flow from invoice received to invoice paid, find where the hours go and price the fix.",
   },
   {
-    day: "Day 2",
     title: "Fixed plan and price",
     description:
       "Scope, ERP integration, approval matrix and one number. You sign off before we build anything.",
   },
   {
-    day: "Day 3–9",
     title: "Build on your real invoices",
     description:
       "We connect to your ERP sandbox, run last month's invoices through it and tune extraction and coding until your team trusts the output.",
   },
   {
-    day: "Day 10",
     title: "Go live and hand over",
     description:
       "Accounts in your name, your AP team trained, documentation your auditors can read, and a monthly check-in.",
@@ -103,40 +78,15 @@ export const comparison = {
     "Sync breaks on custom fields, multiple entities or an unusual chart of accounts",
   ],
   byldd: [
-    "One fixed fee, $5k–$10k. No subscription, ever",
-    "Built around how your team already works",
+    "One fixed fee. No subscription, ever",
+    "Purpose-built for how your team actually works",
     "Any approval logic you can describe, we can build",
     "Runs in your cloud account, under your control",
     "Built for your ERP setup, custom fields and multi-entity included",
   ],
 } as const;
 
-export const testimonials = [
-  {
-    stat: "Four days off the close",
-    quote:
-      "We were keying 1,200 invoices a month into NetSuite by hand. Byldd built capture and three-way matching around how our warehouses receive goods, and our two AP clerks now spend their day on exceptions instead of data entry. Our close went from nine days to five.",
-    role: "Controller, multi-location distributor",
-    placeholder: true,
-  },
-  {
-    stat: "No late fees since launch",
-    quote:
-      "Approvals used to sit in a VP's inbox for a week. Now they approve from Slack in one tap and nothing waits more than 48 hours. We haven't paid a late fee since we went live.",
-    role: "CFO, regional construction firm",
-    placeholder: true,
-  },
-  {
-    stat: "Less than one year of the software quote",
-    quote:
-      "We were quoted five figures a year for AP software that couldn't handle our three entities. Byldd built exactly what we needed for less than one year of that subscription, and we own it.",
-    role: "VP Finance, PE-backed services company",
-    placeholder: true,
-  },
-] as const;
-
 export const auditOutcomes = [
-  "Work out what each invoice costs you today and where the hours go",
   "Show which steps are worth automating and which should stay manual",
   "Give you a fixed price and timeline on the call",
   "Flag risks in your ERP setup and vendor data before you spend anything",
@@ -161,7 +111,7 @@ export const faqs = [
   {
     question: "How accurate is the invoice extraction?",
     answer:
-      "Every invoice gets a confidence score. Anything below your threshold goes to a person instead of straight into the ERP. During the build we tune it on your real invoices, so it's tested against your vendors before go-live.",
+      "Every invoice gets a confidence score. Anything below very high confidence goes to a person instead of straight into the ERP. During the build we tune it on your real invoices, so it's tested against your vendors before go-live.",
   },
   {
     question: "What about controls and audits?",

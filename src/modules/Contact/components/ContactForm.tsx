@@ -379,7 +379,7 @@ export function ContactForm({
 
       <NdaField control={control} />
 
-      <SmsConsentField control={control} />
+      <SmsConsentField control={control} short={isApAudit} />
 
       <button
         type="submit"
