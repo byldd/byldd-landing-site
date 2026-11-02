@@ -61,7 +61,7 @@ export function ProcessSection() {
   return (
     <section className={`${section} bg-brand-mist text-brand-ink`}>
       <div className="mx-auto max-w-7xl">
-        <h2 className={`${heading} max-w-3xl`}>From a 30-minute call to AP running in your ERP</h2>
+        <h2 className={`${heading} max-w-3xl`}>How it works</h2>
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {processSteps.map((step, index) => {
             const final = index === processSteps.length - 1;
