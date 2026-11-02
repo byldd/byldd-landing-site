@@ -66,6 +66,8 @@ const erps = [
 ];
 const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
+const apAutomationCalendarUrl =
+  process.env.NEXT_PUBLIC_GHL_AP_AUTOMATION_CALENDAR_URL;
 const middleEastRegions = new Set(["United Arab Emirates", "Saudi Arabia"]);
 const regionalCountryCodes = new Set<Iso2>([
   CountryCode.UnitedArabEmirates,
@@ -250,7 +252,11 @@ export function ContactForm({
         values.lastName,
         values.email,
         values.phone,
-        useRegionalCalendar ? regionalCalendarUrl : defaultCalendarUrl,
+        isApAudit
+          ? apAutomationCalendarUrl
+          : useRegionalCalendar
+            ? regionalCalendarUrl
+            : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);
