@@ -27,14 +27,8 @@ export function ApHero() {
       />
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         <div>
-          <span className="eyebrow inline-flex items-center gap-2 rounded-full border border-brand-purple/40 bg-brand-purple/10 px-4 py-2 text-brand-purple-light">
-            <span className="size-1.5 rounded-full bg-brand-purple-light" />
-            For CFOs and controllers
-          </span>
-          <h1 className="display mt-6 max-w-3xl text-balance text-[clamp(2.5rem,5.2vw,4.5rem)] leading-[0.98]">
-            <span className="mb-4 block text-[0.55em] leading-[1.08] text-brand-purple-light">
-              Frustrated with a broken AP process?
-            </span>
+          <h1 className="display max-w-3xl text-balance text-[clamp(2.5rem,5.2vw,4.5rem)] leading-[0.98]">
+            Frustrated with a broken AP process?{" "}
             Get a custom-built accounts payable dashboard for your business in{" "}
             <span className="text-gradient">10 days</span> for $5k.
           </h1>
