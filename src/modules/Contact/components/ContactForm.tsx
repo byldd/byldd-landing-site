@@ -48,7 +48,7 @@ const calendlyBookingEndpoint = "/api/contact/calendly";
 const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
 const apAuditBudgetQuestion =
-  "Most AP builds land between $5k and $10k. Where does that put you?";
+  "AP builds start from $5k. Where does that put you?";
 const invoiceVolumes = [
   "Under 200",
   "200–500",

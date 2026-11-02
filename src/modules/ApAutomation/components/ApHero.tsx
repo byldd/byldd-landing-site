@@ -5,7 +5,7 @@ import { ContactForm } from "@/modules/Contact/components/ContactForm";
 import { clientLogos } from "@/utils/content";
 
 const benefits = [
-  "Fixed scope, $5k–$10k, quoted on the first call",
+  "Fixed scope from $5k, quoted on the first call",
   "Works with QuickBooks Online, Xero, NetSuite, Sage Intacct and Business Central",
   "Your code, your cloud account, your data. No per-invoice or per-seat fees, ever",
 ];
