@@ -2,7 +2,15 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 
 import { ContactForm } from "@/modules/Contact/components/ContactForm";
-import { clientLogos } from "@/utils/content";
+
+// Real client logos, taken from the pre-relaunch byldd.com.
+const clientLogos = [
+  { src: "/brand/logos/clients/real/rake.png", alt: "Rake", width: 116, height: 29 },
+  { src: "/brand/logos/clients/real/rekt.png", alt: "REKT", width: 119, height: 90 },
+  { src: "/brand/logos/clients/real/skiddoo.png", alt: "Skiddoo", width: 102, height: 25 },
+  { src: "/brand/logos/clients/real/election-bridge.png", alt: "Election Bridge", width: 115, height: 25 },
+  { src: "/brand/logos/clients/real/realiize.png", alt: "Realiize", width: 103, height: 25 },
+];
 
 const benefits = [
   "Fixed scope from $5k, quoted on the first call",
@@ -51,14 +59,14 @@ export function ApHero() {
           <div className="mt-10 border-t border-white/10 pt-7">
             <p className="eyebrow text-white/45">Teams we&apos;ve built with</p>
             <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5 opacity-65">
-              {clientLogos.slice(0, 6).map((logo) => (
+              {clientLogos.map((logo) => (
                 <Image
                   key={logo.src}
                   src={logo.src}
                   alt={logo.alt}
-                  width={110}
-                  height={28}
-                  className="h-6 w-auto brightness-0 invert"
+                  width={logo.width}
+                  height={logo.height}
+                  className={`${logo.height > 40 ? "-my-4 h-16" : "h-6"} w-auto brightness-0 invert`}
                 />
               ))}
             </div>
