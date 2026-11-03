@@ -48,6 +48,18 @@ export const contactFormSchema = z.object({
     .max(160, "Please choose a shorter answer")
     .optional(),
 
+  invoiceVolume: z
+    .string()
+    .trim()
+    .max(60, "Please choose a shorter answer")
+    .optional(),
+
+  erp: z
+    .string()
+    .trim()
+    .max(60, "Please choose a shorter answer")
+    .optional(),
+
   message: z
     .string()
     .trim()
@@ -73,6 +85,34 @@ export const aiAuditContactFormSchema = contactFormSchema.superRefine(
         code: "custom",
         path: ["timeConsumingTask"],
         message: "Please select what takes the most time",
+      });
+    }
+  },
+);
+
+export const apAuditContactFormSchema = contactFormSchema.superRefine(
+  (values, context) => {
+    if (!values.businessName) {
+      context.addIssue({
+        code: "custom",
+        path: ["businessName"],
+        message: "Please enter your company name",
+      });
+    }
+
+    if (!values.invoiceVolume) {
+      context.addIssue({
+        code: "custom",
+        path: ["invoiceVolume"],
+        message: "Please select your monthly invoice volume",
+      });
+    }
+
+    if (!values.erp) {
+      context.addIssue({
+        code: "custom",
+        path: ["erp"],
+        message: "Please select your accounting system",
       });
     }
   },
