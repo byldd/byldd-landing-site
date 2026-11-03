@@ -125,6 +125,7 @@ export const contactSubmissionSchema = contactFormSchema
     region: z.string().trim().min(1).optional(),
     lastSubmissionDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     agent: z.string(),
+    timezone: z.string().trim().min(1),
     isChecked: z.boolean(),
     pageUrl: z.string().url(),
     utm: z.string(),

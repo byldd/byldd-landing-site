@@ -207,6 +207,7 @@ export function ContactForm({
           isAiAudit || isApAudit ? values.businessName : undefined,
         ip,
         agent: window.navigator.userAgent,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
         email: values.email,
         phone: values.phone,
         budget: values.budget,
