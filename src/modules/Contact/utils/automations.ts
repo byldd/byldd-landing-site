@@ -33,6 +33,7 @@ function createAutomationPayload(payload: ContactSubmission) {
     region: payload.region,
     lastSubmissionDate: payload.lastSubmissionDate,
     agent: payload.agent,
+    timezone: payload.timezone,
     email: payload.email,
     phone: payload.phone,
     budget: payload.budget,
@@ -85,6 +86,7 @@ function createSlackMessage(payload: ContactSubmission) {
     `IP Address: ${payload.ip}`,
     `Region: ${payload.region}`,
     `Last Submission Date: ${payload.lastSubmissionDate}`,
+    `Timezone: ${payload.timezone}`,
     `Agent: ${payload.agent}`,
     `UTM: ${payload.utm}`,
   ];
