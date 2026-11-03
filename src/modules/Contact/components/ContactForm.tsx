@@ -49,6 +49,16 @@ const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
 const apAuditBudgetQuestion =
   "Most AP builds land between $5k and $10k. Where does that put you?";
+const apAuditBudgetOptions: readonly BudgetOption[] = [
+  {
+    label: "Ready to invest in that range",
+    value: "Ready to invest in that range",
+  },
+  {
+    label: "That’s more than I can invest right now",
+    value: "That’s more than I can invest right now",
+  },
+];
 const invoiceVolumes = [
   "Under 200",
   "200–500",
@@ -366,7 +376,7 @@ export function ContactForm({
       <BudgetField
         control={control}
         idPrefix={idPrefix}
-        options={budgetOptions}
+        options={isApAudit ? apAuditBudgetOptions : budgetOptions}
         question={
           isApAudit
             ? apAuditBudgetQuestion
