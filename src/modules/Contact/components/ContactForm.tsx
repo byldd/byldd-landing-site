@@ -208,6 +208,7 @@ export function ContactForm({
         ip,
         agent: window.navigator.userAgent,
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
+        tags: isApAudit ? "accounts payable" : undefined,
         email: values.email,
         phone: values.phone,
         budget: values.budget,
