@@ -48,7 +48,17 @@ const calendlyBookingEndpoint = "/api/contact/calendly";
 const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
 const apAuditBudgetQuestion =
-  "AP builds start from $5k. Where does that put you?";
+  "Most AP builds land between $5k and $10k. Where does that put you?";
+const apAuditBudgetOptions: readonly BudgetOption[] = [
+  {
+    label: "Ready to invest in that range",
+    value: "Ready to invest in that range",
+  },
+  {
+    label: "That’s more than I can invest right now",
+    value: "That’s more than I can invest right now",
+  },
+];
 const invoiceVolumes = [
   "Under 200",
   "200–500",
@@ -66,6 +76,8 @@ const erps = [
 ];
 const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
+const apAutomationCalendarUrl =
+  process.env.NEXT_PUBLIC_GHL_AP_AUTOMATION_CALENDAR_URL;
 const middleEastRegions = new Set(["United Arab Emirates", "Saudi Arabia"]);
 const regionalCountryCodes = new Set<Iso2>([
   CountryCode.UnitedArabEmirates,
@@ -205,6 +217,8 @@ export function ContactForm({
           isAiAudit || isApAudit ? values.businessName : undefined,
         ip,
         agent: window.navigator.userAgent,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
+        tags: isApAudit ? "accounts payable" : undefined,
         email: values.email,
         phone: values.phone,
         budget: values.budget,
@@ -250,7 +264,11 @@ export function ContactForm({
         values.lastName,
         values.email,
         values.phone,
-        useRegionalCalendar ? regionalCalendarUrl : defaultCalendarUrl,
+        isApAudit
+          ? apAutomationCalendarUrl
+          : useRegionalCalendar
+            ? regionalCalendarUrl
+            : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);
@@ -358,7 +376,7 @@ export function ContactForm({
       <BudgetField
         control={control}
         idPrefix={idPrefix}
-        options={budgetOptions}
+        options={isApAudit ? apAuditBudgetOptions : budgetOptions}
         question={
           isApAudit
             ? apAuditBudgetQuestion
