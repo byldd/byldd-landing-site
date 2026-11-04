@@ -96,7 +96,7 @@ export const faqs = [
   {
     question: "What does it cost, and what do we pay after launch?",
     answer:
-      "Most builds are $5k–$10k, fixed and agreed before we start. After launch there's no license or subscription to Byldd. You pay your cloud hosting and AI processing directly to those providers, and we estimate that monthly cost for your invoice volume on the audit call. An optional support plan is available.",
+      "Builds start from $5k, with a fixed price agreed before we start. After launch there's no license or subscription to Byldd. You pay your cloud hosting and AI processing directly to those providers, and we estimate that monthly cost for your invoice volume on the audit call. An optional support plan is available.",
   },
   {
     question: "Will it work with our ERP?",
