@@ -15,7 +15,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 export const metadata: Metadata = {
   title: "Custom Accounts Payable Automation | Byldd",
   description:
-    "AP automation built around your approval rules and your ERP, live in 10 days for a fixed $5k–$10k. You own the code. No subscription, no per-invoice fees.",
+    "AP automation built around your approval rules and your ERP, live in 10 days, from $5k fixed. You own the code. No subscription, no per-invoice fees.",
 };
 
 export function ApAutomationPage() {

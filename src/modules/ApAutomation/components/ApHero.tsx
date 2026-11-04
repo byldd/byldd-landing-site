@@ -2,10 +2,18 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 
 import { ContactForm } from "@/modules/Contact/components/ContactForm";
-import { clientLogos } from "@/utils/content";
+
+// Real client logos, taken from the pre-relaunch byldd.com.
+const clientLogos = [
+  { src: "/brand/logos/clients/real/rake.png", alt: "Rake", width: 116, height: 29 },
+  { src: "/brand/logos/clients/real/rekt.png", alt: "REKT", width: 119, height: 90 },
+  { src: "/brand/logos/clients/real/skiddoo.png", alt: "Skiddoo", width: 102, height: 25 },
+  { src: "/brand/logos/clients/real/election-bridge.png", alt: "Election Bridge", width: 115, height: 25 },
+  { src: "/brand/logos/clients/real/realiize.png", alt: "Realiize", width: 103, height: 25 },
+];
 
 const benefits = [
-  "Fixed scope, $5k–$10k, quoted on the first call",
+  "Fixed scope from $5k, quoted on the first call",
   "Works with QuickBooks Online, Xero, NetSuite, Sage Intacct and Business Central",
   "Your code, your cloud account, your data. No per-invoice or per-seat fees, ever",
 ];
@@ -19,12 +27,8 @@ export function ApHero() {
       />
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         <div>
-          <p className="text-lg font-semibold text-brand-purple-light">Frustrated with a broken AP process?</p>
-          <span className="eyebrow mt-4 inline-flex items-center gap-2 rounded-full border border-brand-purple/40 bg-brand-purple/10 px-4 py-2 text-brand-purple-light">
-            <span className="size-1.5 rounded-full bg-brand-purple-light" />
-            For CFOs and controllers
-          </span>
-          <h1 className="display mt-6 max-w-3xl text-balance text-[clamp(2.5rem,5.2vw,4.5rem)] leading-[0.98]">
+          <h1 className="display max-w-3xl text-balance text-[clamp(2.5rem,5.2vw,4.5rem)] leading-[0.98]">
+            Frustrated with a broken AP process?{" "}
             Get a custom-built accounts payable dashboard for your business in{" "}
             <span className="text-gradient">10 days</span> for $5k.
           </h1>
@@ -49,14 +53,14 @@ export function ApHero() {
           <div className="mt-10 border-t border-white/10 pt-7">
             <p className="eyebrow text-white/45">Teams we&apos;ve built with</p>
             <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5 opacity-65">
-              {clientLogos.slice(0, 6).map((logo) => (
+              {clientLogos.map((logo) => (
                 <Image
                   key={logo.src}
                   src={logo.src}
                   alt={logo.alt}
-                  width={110}
-                  height={28}
-                  className="h-6 w-auto brightness-0 invert"
+                  width={logo.width}
+                  height={logo.height}
+                  className={`${logo.height > 40 ? "-my-4 h-16" : "h-6"} w-auto brightness-0 invert`}
                 />
               ))}
             </div>
