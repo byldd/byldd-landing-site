@@ -48,6 +48,18 @@ export const contactFormSchema = z.object({
     .max(160, "Please choose a shorter answer")
     .optional(),
 
+  invoiceVolume: z
+    .string()
+    .trim()
+    .max(60, "Please choose a shorter answer")
+    .optional(),
+
+  erp: z
+    .string()
+    .trim()
+    .max(60, "Please choose a shorter answer")
+    .optional(),
+
   message: z
     .string()
     .trim()
@@ -78,6 +90,34 @@ export const aiAuditContactFormSchema = contactFormSchema.superRefine(
   },
 );
 
+export const apAuditContactFormSchema = contactFormSchema.superRefine(
+  (values, context) => {
+    if (!values.businessName) {
+      context.addIssue({
+        code: "custom",
+        path: ["businessName"],
+        message: "Please enter your company name",
+      });
+    }
+
+    if (!values.invoiceVolume) {
+      context.addIssue({
+        code: "custom",
+        path: ["invoiceVolume"],
+        message: "Please select your monthly invoice volume",
+      });
+    }
+
+    if (!values.erp) {
+      context.addIssue({
+        code: "custom",
+        path: ["erp"],
+        message: "Please select your accounting system",
+      });
+    }
+  },
+);
+
 export const contactSubmissionSchema = contactFormSchema
   .omit({ smsConsent: true })
   .extend({
@@ -85,6 +125,8 @@ export const contactSubmissionSchema = contactFormSchema
     region: z.string().trim().min(1).optional(),
     lastSubmissionDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     agent: z.string(),
+    timezone: z.string().trim().min(1),
+    tags: z.string().trim().min(1).optional(),
     isChecked: z.boolean(),
     pageUrl: z.string().url(),
     utm: z.string(),

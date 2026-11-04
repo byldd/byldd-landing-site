@@ -14,6 +14,7 @@ import {
 } from "@/modules/Contact/components/BudgetField";
 import { NdaField } from "@/modules/Contact/components/NdaField";
 import { PhoneInput } from "@/modules/Contact/components/PhoneInput";
+import { SelectField } from "@/modules/Contact/components/SelectField";
 import { SmsConsentField } from "@/modules/Contact/components/SmsConsentField";
 import { TextareaField } from "@/modules/Contact/components/TextareaField";
 import { TextInputField } from "@/modules/Contact/components/TextInputField";
@@ -34,6 +35,7 @@ import {
 import { getIpAddress } from "@/modules/Contact/utils/region";
 import {
   aiAuditContactFormSchema,
+  apAuditContactFormSchema,
   contactFormSchema,
   type ContactFormValues,
   type ContactSubmission,
@@ -45,8 +47,42 @@ const formEndpoint = "/api/contact";
 const calendlyBookingEndpoint = "/api/contact/calendly";
 const defaultBudgetQuestion =
   "Most products we build land between $15k and $40k. Where does that put you?";
+const apAuditBudgetQuestion =
+  "Most AP builds land between $5k and $10k. Where does that put you?";
+const apAuditBudgetOptions: readonly BudgetOption[] = [
+  {
+    label: "Ready to invest in that range",
+    value: "Ready to invest in that range",
+  },
+  {
+    label: "That’s more than I can invest right now",
+    value: "That’s more than I can invest right now",
+  },
+];
+const invoiceVolumes = [
+  "Under 200",
+  "200–500",
+  "500–1,500",
+  "1,500–5,000",
+  "5,000+",
+];
+const erps = [
+  "QuickBooks Online",
+  "Xero",
+  "NetSuite",
+  "Sage Intacct",
+  "Business Central",
+  "Other or several",
+];
 const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
+const apAutomationCalendarUrl =
+  process.env.NEXT_PUBLIC_GHL_AP_AUTOMATION_CALENDAR_URL;
+const middleEastRegions = new Set(["United Arab Emirates", "Saudi Arabia"]);
+const regionalCountryCodes = new Set<Iso2>([
+  CountryCode.UnitedArabEmirates,
+  CountryCode.SaudiArabia,
+]);
 const budgetQuestionByCountry: Partial<Record<Iso2, string>> = {
   [CountryCode.UnitedArabEmirates]:
     "Most products we build land between AED 50k and AED 100k. Where does that put you?",
@@ -60,7 +96,7 @@ type ContactFormProps = {
   defaultCountry?: Iso2;
   idPrefix?: string;
   submitLabel?: string;
-  variant?: "default" | "aiAudit";
+  variant?: "default" | "aiAudit" | "apAudit";
 };
 
 export function ContactForm({
@@ -72,6 +108,7 @@ export function ContactForm({
   variant = "default",
 }: ContactFormProps = {}) {
   const isAiAudit = variant === "aiAudit";
+  const isApAudit = variant === "apAudit";
   const [phoneInputKey, setPhoneInputKey] = useState(0);
   const [pendingCalendlySubmission, setPendingCalendlySubmission] =
     useState<ContactSubmission | null>(null);
@@ -86,7 +123,11 @@ export function ContactForm({
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(
-      isAiAudit ? aiAuditContactFormSchema : contactFormSchema,
+      isApAudit
+        ? apAuditContactFormSchema
+        : isAiAudit
+          ? aiAuditContactFormSchema
+          : contactFormSchema,
     ),
     defaultValues: {
       firstName: "",
@@ -96,7 +137,13 @@ export function ContactForm({
       phone: "",
       budget: "",
       timeConsumingTask: "",
-      message: isAiAudit ? "AI opportunity audit request" : "",
+      invoiceVolume: "",
+      erp: "",
+      message: isApAudit
+        ? "AP automation audit request"
+        : isAiAudit
+          ? "AI opportunity audit request"
+          : "",
       needsNda: false,
       smsConsent: false,
     },
@@ -166,15 +213,21 @@ export function ContactForm({
       const submission: ContactSubmission = {
         firstName: values.firstName,
         lastName: values.lastName,
-        businessName: isAiAudit ? values.businessName : undefined,
+        businessName:
+          isAiAudit || isApAudit ? values.businessName : undefined,
         ip,
         agent: window.navigator.userAgent,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
+        tags: isApAudit ? "accounts payable" : undefined,
         email: values.email,
         phone: values.phone,
         budget: values.budget,
         timeConsumingTask: isAiAudit ? values.timeConsumingTask : undefined,
-        message:
-          isAiAudit && values.timeConsumingTask
+        invoiceVolume: isApAudit ? values.invoiceVolume : undefined,
+        erp: isApAudit ? values.erp : undefined,
+        message: isApAudit
+          ? `AP automation audit: ${values.invoiceVolume} invoices/month on ${values.erp}`
+          : isAiAudit && values.timeConsumingTask
             ? `AI opportunity audit: ${values.timeConsumingTask}`
             : values.message,
         needsNda: values.needsNda === true,
@@ -191,6 +244,7 @@ export function ContactForm({
       });
       const result = (await response.json().catch(() => null)) as {
         error?: string;
+        region?: string;
       } | null;
 
       if (!response.ok || result?.error) {
@@ -201,15 +255,20 @@ export function ContactForm({
 
       trackContactFormSubmission();
       setPendingCalendlySubmission(submission);
+      const useRegionalCalendar =
+        regionalCountryCodes.has(defaultCountry) ||
+        (result?.region ? middleEastRegions.has(result.region) : false);
+
       await openCalendly(
         values.firstName,
         values.lastName,
         values.email,
         values.phone,
-        defaultCountry === CountryCode.UnitedArabEmirates ||
-          defaultCountry === CountryCode.SaudiArabia
-          ? regionalCalendarUrl
-          : defaultCalendarUrl,
+        isApAudit
+          ? apAutomationCalendarUrl
+          : useRegionalCalendar
+            ? regionalCalendarUrl
+            : defaultCalendarUrl,
       );
       reset();
       setPhoneInputKey((key) => key + 1);
@@ -251,14 +310,14 @@ export function ContactForm({
         />
       </div>
 
-      {isAiAudit && (
+      {(isAiAudit || isApAudit) && (
         <TextInputField
           id={`${idPrefix}-business-name`}
-          label="Business name"
+          label={isApAudit ? "Company" : "Business name"}
           registration={register("businessName")}
           className={field}
           error={errors.businessName?.message}
-          placeholder="Business name"
+          placeholder={isApAudit ? "Company name" : "Business name"}
           autoComplete="organization"
           required
         />
@@ -267,7 +326,7 @@ export function ContactForm({
       <div className="grid gap-4 sm:grid-cols-2">
         <TextInputField
           id={`${idPrefix}-email`}
-          label="Email"
+          label={isApAudit ? "Work email" : "Email"}
           registration={register("email")}
           className={field}
           error={errors.email?.message}
@@ -293,14 +352,39 @@ export function ContactForm({
         />
       )}
 
+      {isApAudit && (
+        <div className="grid gap-4 sm:grid-cols-2">
+          <SelectField
+            id={`${idPrefix}-invoice-volume`}
+            label="Invoices per month"
+            name="invoiceVolume"
+            options={invoiceVolumes}
+            className={field}
+            control={control}
+          />
+          <SelectField
+            id={`${idPrefix}-erp`}
+            label="Accounting system / ERP"
+            name="erp"
+            options={erps}
+            className={field}
+            control={control}
+          />
+        </div>
+      )}
+
       <BudgetField
         control={control}
         idPrefix={idPrefix}
-        options={budgetOptions}
-        question={budgetQuestionByCountry[defaultCountry] ?? defaultBudgetQuestion}
+        options={isApAudit ? apAuditBudgetOptions : budgetOptions}
+        question={
+          isApAudit
+            ? apAuditBudgetQuestion
+            : (budgetQuestionByCountry[defaultCountry] ?? defaultBudgetQuestion)
+        }
       />
 
-      {!isAiAudit && (
+      {!isAiAudit && !isApAudit && (
         <TextareaField
           id={`${idPrefix}-message`}
           label="What are you building?"
@@ -313,7 +397,7 @@ export function ContactForm({
 
       <NdaField control={control} />
 
-      <SmsConsentField control={control} />
+      <SmsConsentField control={control} short={isApAudit} />
 
       <button
         type="submit"

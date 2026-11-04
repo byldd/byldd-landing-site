@@ -35,7 +35,10 @@ export async function POST(request: Request) {
       sendToMakeAutomation(payload.data),
     ]);
 
-    return Response.json({ status: "success" });
+    return Response.json({
+      status: "success",
+      region: payload.data.region,
+    });
   } catch(err) {
     console.log(err,"IM THE ONE");
     return Response.json(
