@@ -141,6 +141,7 @@ export const contactSubmissionSchema = contactFormSchema
       utmTerm: z.string().min(1),
       utmBusinessCategory: z.string().min(1),
     }),
+    metaEventId: z.string().uuid().optional(),
     recaptchaToken: z.string().min(1).optional(),
   });
 
