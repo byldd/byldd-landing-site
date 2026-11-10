@@ -45,6 +45,7 @@ function createAutomationPayload(payload: ContactSubmission) {
     needsNda: payload.needsNda,
     isChecked: payload.isChecked,
     pageUrl: payload.pageUrl,
+    metaEventId: payload.metaEventId,
     ...payload.utmData,
   };
 }
