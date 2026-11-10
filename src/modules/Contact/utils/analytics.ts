@@ -6,7 +6,9 @@ declare global {
   }
 }
 
-export function trackContactFormSubmission() {
+// eventId must match the event_id the CRM sends to the Conversions API for
+// the same lead, so Meta deduplicates the browser and server Lead events.
+export function trackContactFormSubmission(eventId: string) {
   try {
     window.gtag?.("event", "click", {
       event_category: "Home page Send",
@@ -22,7 +24,7 @@ export function trackContactFormSubmission() {
   }
 
   try {
-    window.fbq?.("track", "Lead");
+    window.fbq?.("track", "Lead", {}, { eventID: eventId });
   } catch {
     // Analytics must never interrupt the form submission flow.
   }
