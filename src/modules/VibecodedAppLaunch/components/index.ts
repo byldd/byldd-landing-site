@@ -1,0 +1,13 @@
+export { BackersSection } from "@/modules/VibecodedAppLaunch/components/BackersSection";
+export { CaseStudiesSection } from "@/modules/VibecodedAppLaunch/components/CaseStudiesSection";
+export { ComparisonSection } from "@/modules/VibecodedAppLaunch/components/ComparisonSection";
+export { FaqSection } from "@/modules/VibecodedAppLaunch/components/FaqSection";
+export { HeroSection } from "@/modules/VibecodedAppLaunch/components/HeroSection";
+export { HowItWorksSection } from "@/modules/VibecodedAppLaunch/components/HowItWorksSection";
+export { PainPointsSection } from "@/modules/VibecodedAppLaunch/components/PainPointsSection";
+export { PilotSection } from "@/modules/VibecodedAppLaunch/components/PilotSection";
+export { ReviewSection } from "@/modules/VibecodedAppLaunch/components/ReviewSection";
+export { StatsSection } from "@/modules/VibecodedAppLaunch/components/StatsSection";
+export { TeamSection } from "@/modules/VibecodedAppLaunch/components/TeamSection";
+export { TestimonialsSection } from "@/modules/VibecodedAppLaunch/components/TestimonialsSection";
+export { TrustSection } from "@/modules/VibecodedAppLaunch/components/TrustSection";

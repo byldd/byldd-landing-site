@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Iso2 } from "intl-tel-input";
 
@@ -39,6 +39,7 @@ import {
   contactFormSchema,
   type ContactFormValues,
   type ContactSubmission,
+  vibeCodedLaunchContactFormSchema,
 } from "@/schemas/contact-form-schema";
 
 const field =
@@ -74,6 +75,23 @@ const erps = [
   "Business Central",
   "Other or several",
 ];
+const vibeCodingTools = [
+  "Lovable",
+  "Base44",
+  "Bolt",
+  "Replit",
+  "Claude or ChatGPT",
+  "Cursor or Claude Code",
+  "Bubble or another no-code tool",
+  "Something else",
+  "Nothing built yet",
+];
+const launchTimings = ["In the next 30 days", "In 1–3 months", "No fixed date"];
+const pilotReadinessOptions = [
+  "Ready to start",
+  "I need to check with a partner or investor first",
+  "Not right now",
+];
 const defaultCalendarUrl = process.env.NEXT_PUBLIC_GHL_CALENDLY_URL;
 const regionalCalendarUrl = process.env.NEXT_PUBLIC_GHL_UAE_SAUDI_CALENDAR_URL;
 const apAutomationCalendarUrl =
@@ -96,7 +114,7 @@ type ContactFormProps = {
   defaultCountry?: Iso2;
   idPrefix?: string;
   submitLabel?: string;
-  variant?: "default" | "aiAudit" | "apAudit";
+  variant?: "default" | "aiAudit" | "apAudit" | "vibeCodedLaunch";
 };
 
 export function ContactForm({
@@ -109,6 +127,7 @@ export function ContactForm({
 }: ContactFormProps = {}) {
   const isAiAudit = variant === "aiAudit";
   const isApAudit = variant === "apAudit";
+  const isVibeCodedLaunch = variant === "vibeCodedLaunch";
   const [phoneInputKey, setPhoneInputKey] = useState(0);
   const [pendingCalendlySubmission, setPendingCalendlySubmission] =
     useState<ContactSubmission | null>(null);
@@ -127,7 +146,9 @@ export function ContactForm({
         ? apAuditContactFormSchema
         : isAiAudit
           ? aiAuditContactFormSchema
-          : contactFormSchema,
+          : isVibeCodedLaunch
+            ? vibeCodedLaunchContactFormSchema
+            : contactFormSchema,
     ),
     defaultValues: {
       firstName: "",
@@ -139,6 +160,10 @@ export function ContactForm({
       timeConsumingTask: "",
       invoiceVolume: "",
       erp: "",
+      builtWith: "",
+      blocker: "",
+      launchTiming: "",
+      pilotReadiness: "",
       message: isApAudit
         ? "AP automation audit request"
         : isAiAudit
@@ -148,6 +173,13 @@ export function ContactForm({
       smsConsent: false,
     },
   });
+  const builtWith = useWatch({ control, name: "builtWith" });
+  const pilotReadiness = useWatch({ control, name: "pilotReadiness" });
+
+  useEffect(() => {
+    if (!isVibeCodedLaunch) return;
+    setValue("budget", pilotReadiness ?? "", { shouldValidate: false });
+  }, [isVibeCodedLaunch, pilotReadiness, setValue]);
 
   useEffect(() => {
     persistLeadQueryParams();
@@ -219,13 +251,21 @@ export function ContactForm({
         ip,
         agent: window.navigator.userAgent,
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
-        tags: isApAudit ? "accounts payable" : undefined,
+        tags: isApAudit
+          ? "accounts payable"
+          : isVibeCodedLaunch
+            ? "vibecoded app launch, diy-build"
+            : undefined,
         email: values.email,
         phone: values.phone,
         budget: values.budget,
         timeConsumingTask: isAiAudit ? values.timeConsumingTask : undefined,
         invoiceVolume: isApAudit ? values.invoiceVolume : undefined,
         erp: isApAudit ? values.erp : undefined,
+        builtWith: isVibeCodedLaunch ? values.builtWith : undefined,
+        blocker: isVibeCodedLaunch ? values.blocker : undefined,
+        launchTiming: isVibeCodedLaunch ? values.launchTiming : undefined,
+        pilotReadiness: isVibeCodedLaunch ? values.pilotReadiness : undefined,
         message: isApAudit
           ? `AP automation audit: ${values.invoiceVolume} invoices/month on ${values.erp}`
           : isAiAudit && values.timeConsumingTask
@@ -375,26 +415,81 @@ export function ContactForm({
         </div>
       )}
 
-      <BudgetField
-        control={control}
-        idPrefix={idPrefix}
-        options={isApAudit ? apAuditBudgetOptions : budgetOptions}
-        question={
-          isApAudit
-            ? apAuditBudgetQuestion
-            : (budgetQuestionByCountry[defaultCountry] ?? defaultBudgetQuestion)
-        }
-      />
+      {!isVibeCodedLaunch && (
+        <BudgetField
+          control={control}
+          idPrefix={idPrefix}
+          options={isApAudit ? apAuditBudgetOptions : budgetOptions}
+          question={
+            isApAudit
+              ? apAuditBudgetQuestion
+              : (budgetQuestionByCountry[defaultCountry] ?? defaultBudgetQuestion)
+          }
+        />
+      )}
 
       {!isAiAudit && !isApAudit && (
         <TextareaField
           id={`${idPrefix}-message`}
-          label="What are you building?"
+          label={isVibeCodedLaunch ? "Tell us about your idea" : "What are you building?"}
           registration={register("message")}
           className={field}
           error={errors.message?.message}
-          placeholder="Tell us about your product..."
+          placeholder={
+            isVibeCodedLaunch
+              ? "What it does and who it's for"
+              : "Tell us about your product..."
+          }
         />
+      )}
+
+      {isVibeCodedLaunch && (
+        <>
+          <SelectField
+            id={`${idPrefix}-built-with`}
+            label="What did you build it with?"
+            name="builtWith"
+            options={vibeCodingTools}
+            className={field}
+            control={control}
+          />
+          {builtWith === "Nothing built yet" && (
+            <p className="-mt-1 rounded-xl border border-brand-purple/15 bg-brand-purple/5 px-4 py-3 text-sm text-brand-ink/70">
+              Still at the idea stage? Our{" "}
+              <Link
+                href="/campaign/product-development-for-founders"
+                className="font-semibold text-brand-violet hover:underline"
+              >
+                product development page
+              </Link>{" "}
+              is a better fit.
+            </p>
+          )}
+          <TextareaField
+            id={`${idPrefix}-blocker`}
+            label="What's stopping it from going live?"
+            registration={register("blocker")}
+            className={field}
+            error={errors.blocker?.message}
+            placeholder="e.g. login breaks, there's no real backend, you're unsure it's secure, or you can't get it into an app store"
+          />
+          <SelectField
+            id={`${idPrefix}-launch-timing`}
+            label="When do you need it live?"
+            name="launchTiming"
+            options={launchTimings}
+            className={field}
+            control={control}
+          />
+          <SelectField
+            id={`${idPrefix}-pilot-readiness`}
+            label="The pilot is $4,000, refundable for 14 days. Where are you?"
+            name="pilotReadiness"
+            options={pilotReadinessOptions}
+            className={field}
+            control={control}
+          />
+        </>
       )}
 
       <NdaField control={control} />

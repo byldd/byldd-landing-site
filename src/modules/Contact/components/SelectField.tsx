@@ -10,7 +10,12 @@ type SelectFieldProps = {
   control: Control<ContactFormValues>;
   id: string;
   label: string;
-  name: "invoiceVolume" | "erp";
+  name:
+    | "invoiceVolume"
+    | "erp"
+    | "builtWith"
+    | "launchTiming"
+    | "pilotReadiness";
   options: readonly string[];
 };
 
