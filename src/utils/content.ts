@@ -381,6 +381,20 @@ export const footer = {
       ],
     },
     {
+      heading: "Products We Build",
+      links: [
+        { label: "SaaS Development", href: "/what-we-build/saas-development" },
+        { label: "Marketplace Development", href: "/what-we-build/marketplace-development" },
+        { label: "Sales & Marketing Software", href: "/what-we-build/sales-marketing-software" },
+        { label: "Operations Software", href: "/what-we-build/operations-software" },
+        { label: "HR & Recruiting Software", href: "/what-we-build/hr-software-development" },
+        { label: "Fintech Apps", href: "/what-we-build/fintech-app-development" },
+        { label: "Healthcare Software", href: "/what-we-build/healthcare-software-development" },
+        { label: "EdTech", href: "/what-we-build/edtech-development" },
+        { label: "AI Products", href: "/what-we-build/ai-product-development" },
+      ],
+    },
+    {
       heading: "Company",
       links: [
         { label: "How We Work", href: "/#process" },
