@@ -60,6 +60,30 @@ export const contactFormSchema = z.object({
     .max(60, "Please choose a shorter answer")
     .optional(),
 
+  builtWith: z
+    .string()
+    .trim()
+    .max(80, "Please choose a shorter answer")
+    .optional(),
+
+  blocker: z
+    .string()
+    .trim()
+    .max(1700, "Launch blocker cannot exceed 1700 characters")
+    .optional(),
+
+  launchTiming: z
+    .string()
+    .trim()
+    .max(80, "Please choose a shorter answer")
+    .optional(),
+
+  pilotReadiness: z
+    .string()
+    .trim()
+    .max(120, "Please choose a shorter answer")
+    .optional(),
+
   message: z
     .string()
     .trim()
@@ -113,6 +137,26 @@ export const apAuditContactFormSchema = contactFormSchema.superRefine(
         code: "custom",
         path: ["erp"],
         message: "Please select your accounting system",
+      });
+    }
+  },
+);
+
+export const vibeCodedLaunchContactFormSchema = contactFormSchema.superRefine(
+  (values, context) => {
+    if (!values.builtWith) {
+      context.addIssue({
+        code: "custom",
+        path: ["builtWith"],
+        message: "Please select what you built your app with",
+      });
+    }
+
+    if (!values.pilotReadiness) {
+      context.addIssue({
+        code: "custom",
+        path: ["pilotReadiness"],
+        message: "Please select where you are with the pilot",
       });
     }
   },
